@@ -267,3 +267,1404 @@ in APPPATH\Views\templates\header.php on line 20.
 17 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
 18 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
 19 SYSTEMPATH\Commands\Server\rewrite.php(49): require_once('E:\\Project\\PHP Project\\freelance\\absence\\public\\index.php')
+ERROR - 2024-04-21 08:29:09 --> mysqli_sql_exception: Unknown column 'student_id' in 'field list' in E:\Project\PHP Project\freelance\absence\system\Database\MySQLi\Connection.php:308
+Stack trace:
+#0 E:\Project\PHP Project\freelance\absence\system\Database\MySQLi\Connection.php(308): mysqli->query('INSERT INTO `ab...', 0)
+#1 E:\Project\PHP Project\freelance\absence\system\Database\BaseConnection.php(722): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `ab...')
+#2 E:\Project\PHP Project\freelance\absence\system\Database\BaseConnection.php(636): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `ab...')
+#3 E:\Project\PHP Project\freelance\absence\system\Database\BaseBuilder.php(2325): CodeIgniter\Database\BaseConnection->query('INSERT INTO `ab...', Array, false)
+#4 E:\Project\PHP Project\freelance\absence\app\Database\Seeds\AbsenceSeeder.php(11): CodeIgniter\Database\BaseBuilder->insert(Array)
+#5 E:\Project\PHP Project\freelance\absence\system\Database\Seeder.php(147): App\Database\Seeds\AbsenceSeeder->run()
+#6 E:\Project\PHP Project\freelance\absence\app\Database\Seeds\DataSeeder.php(13): CodeIgniter\Database\Seeder->call('App\\Database\\Se...')
+#7 E:\Project\PHP Project\freelance\absence\system\Database\Seeder.php(147): App\Database\Seeds\DataSeeder->run()
+#8 E:\Project\PHP Project\freelance\absence\system\Commands\Database\Seed.php(79): CodeIgniter\Database\Seeder->call('App\\Database\\Se...')
+#9 E:\Project\PHP Project\freelance\absence\system\CLI\Commands.php(70): CodeIgniter\Commands\Database\Seed->run(Array)
+#10 E:\Project\PHP Project\freelance\absence\system\CLI\Console.php(48): CodeIgniter\CLI\Commands->run('db:seed', Array)
+#11 E:\Project\PHP Project\freelance\absence\system\Boot.php(338): CodeIgniter\CLI\Console->run()
+#12 E:\Project\PHP Project\freelance\absence\system\Boot.php(104): CodeIgniter\Boot::runCommand(Object(CodeIgniter\CLI\Console))
+#13 E:\Project\PHP Project\freelance\absence\spark(84): CodeIgniter\Boot::bootSpark(Object(Config\Paths))
+#14 {main}
+CRITICAL - 2024-04-21 08:44:57 --> ErrorException: Undefined global variable $_SESSION
+[Method: GET, Route: member/auth]
+in APPPATH\Views\member\loginView.php on line 13.
+ 1 APPPATH\Views\member\loginView.php(13): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined global variable $_SESSION', 'E:\\Project\\PHP Project\\freelance\\absence\\app\\Views\\member\\loginView.php', 13)
+ 2 SYSTEMPATH\View\View.php(234): include('E:\\Project\\PHP Project\\freelance\\absence\\app\\Views\\member\\loginView.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('member/loginView', [], true)
+ 5 APPPATH\Controllers\Member\Auth.php(13): view('member/loginView')
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Member\Auth->index()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Member\Auth))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\Commands\Server\rewrite.php(49): require_once('E:\\Project\\PHP Project\\freelance\\absence\\public\\index.php')
+CRITICAL - 2024-04-21 08:45:02 --> ErrorException: Undefined global variable $_SESSION
+[Method: GET, Route: /]
+in APPPATH\Views\member\loginView.php on line 13.
+ 1 APPPATH\Views\member\loginView.php(13): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined global variable $_SESSION', 'E:\\Project\\PHP Project\\freelance\\absence\\app\\Views\\member\\loginView.php', 13)
+ 2 SYSTEMPATH\View\View.php(234): include('E:\\Project\\PHP Project\\freelance\\absence\\app\\Views\\member\\loginView.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('member/loginView', [], true)
+ 5 APPPATH\Controllers\Member\Auth.php(13): view('member/loginView')
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Member\Auth->index()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Member\Auth))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\Commands\Server\rewrite.php(49): require_once('E:\\Project\\PHP Project\\freelance\\absence\\public\\index.php')
+CRITICAL - 2024-04-21 08:45:03 --> ErrorException: Undefined global variable $_SESSION
+[Method: GET, Route: /]
+in APPPATH\Views\member\loginView.php on line 13.
+ 1 APPPATH\Views\member\loginView.php(13): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined global variable $_SESSION', 'E:\\Project\\PHP Project\\freelance\\absence\\app\\Views\\member\\loginView.php', 13)
+ 2 SYSTEMPATH\View\View.php(234): include('E:\\Project\\PHP Project\\freelance\\absence\\app\\Views\\member\\loginView.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('member/loginView', [], true)
+ 5 APPPATH\Controllers\Member\Auth.php(13): view('member/loginView')
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Member\Auth->index()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Member\Auth))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\Commands\Server\rewrite.php(49): require_once('E:\\Project\\PHP Project\\freelance\\absence\\public\\index.php')
+CRITICAL - 2024-04-21 08:45:05 --> ErrorException: Undefined global variable $_SESSION
+[Method: GET, Route: /]
+in APPPATH\Views\member\loginView.php on line 13.
+ 1 APPPATH\Views\member\loginView.php(13): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined global variable $_SESSION', 'E:\\Project\\PHP Project\\freelance\\absence\\app\\Views\\member\\loginView.php', 13)
+ 2 SYSTEMPATH\View\View.php(234): include('E:\\Project\\PHP Project\\freelance\\absence\\app\\Views\\member\\loginView.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('member/loginView', [], true)
+ 5 APPPATH\Controllers\Member\Auth.php(13): view('member/loginView')
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Member\Auth->index()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Member\Auth))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\Commands\Server\rewrite.php(49): require_once('E:\\Project\\PHP Project\\freelance\\absence\\public\\index.php')
+CRITICAL - 2024-04-21 08:45:10 --> ParseError: syntax error, unexpected end of file, expecting "elseif" or "else" or "endif"
+[Method: GET, Route: /]
+in APPPATH\Views\member\loginView.php on line 60.
+ 1 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 2 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('member/loginView', [], true)
+ 3 APPPATH\Controllers\Member\Auth.php(13): view('member/loginView')
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Member\Auth->index()
+ 5 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Member\Auth))
+ 6 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+10 SYSTEMPATH\Commands\Server\rewrite.php(49): require_once('E:\\Project\\PHP Project\\freelance\\absence\\public\\index.php')
+CRITICAL - 2024-04-21 08:45:32 --> ErrorException: Undefined global variable $_SESSION
+[Method: GET, Route: /]
+in APPPATH\Views\member\loginView.php on line 13.
+ 1 APPPATH\Views\member\loginView.php(13): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined global variable $_SESSION', 'E:\\Project\\PHP Project\\freelance\\absence\\app\\Views\\member\\loginView.php', 13)
+ 2 SYSTEMPATH\View\View.php(234): include('E:\\Project\\PHP Project\\freelance\\absence\\app\\Views\\member\\loginView.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('member/loginView', [], true)
+ 5 APPPATH\Controllers\Member\Auth.php(13): view('member/loginView')
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Member\Auth->index()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Member\Auth))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\Commands\Server\rewrite.php(49): require_once('E:\\Project\\PHP Project\\freelance\\absence\\public\\index.php')
+CRITICAL - 2024-04-21 08:46:08 --> ErrorException: Undefined global variable $_SESSION
+[Method: GET, Route: /]
+in APPPATH\Views\member\loginView.php on line 13.
+ 1 APPPATH\Views\member\loginView.php(13): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined global variable $_SESSION', 'E:\\Project\\PHP Project\\freelance\\absence\\app\\Views\\member\\loginView.php', 13)
+ 2 SYSTEMPATH\View\View.php(234): include('E:\\Project\\PHP Project\\freelance\\absence\\app\\Views\\member\\loginView.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('member/loginView', [], true)
+ 5 APPPATH\Controllers\Member\Auth.php(13): view('member/loginView')
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Member\Auth->index()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Member\Auth))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\Commands\Server\rewrite.php(49): require_once('E:\\Project\\PHP Project\\freelance\\absence\\public\\index.php')
+CRITICAL - 2024-04-21 08:46:19 --> ErrorException: Undefined global variable $_SESSION
+[Method: GET, Route: /]
+in APPPATH\Views\member\loginView.php on line 13.
+ 1 APPPATH\Views\member\loginView.php(13): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined global variable $_SESSION', 'E:\\Project\\PHP Project\\freelance\\absence\\app\\Views\\member\\loginView.php', 13)
+ 2 SYSTEMPATH\View\View.php(234): include('E:\\Project\\PHP Project\\freelance\\absence\\app\\Views\\member\\loginView.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('member/loginView', [], true)
+ 5 APPPATH\Controllers\Member\Auth.php(13): view('member/loginView')
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Member\Auth->index()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Member\Auth))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\Commands\Server\rewrite.php(49): require_once('E:\\Project\\PHP Project\\freelance\\absence\\public\\index.php')
+INFO - 2024-04-21 08:46:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-21 08:47:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-21 08:47:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-21 08:47:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-21 08:47:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-21 08:47:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-21 08:48:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-04-21 08:48:24 --> TypeError: CodeIgniter\Session\Session::push(): Argument #2 ($data) must be of type array, string given, called in E:\Project\PHP Project\freelance\absence\app\Views\member\loginView.php on line 13
+[Method: GET, Route: member/auth]
+in SYSTEMPATH\Session\Session.php on line 538.
+ 1 APPPATH\Views\member\loginView.php(13): CodeIgniter\Session\Session->push('a', 'a')
+ 2 SYSTEMPATH\View\View.php(234): include('E:\\Project\\PHP Project\\freelance\\absence\\app\\Views\\member\\loginView.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('member/loginView', [], true)
+ 5 APPPATH\Controllers\Member\Auth.php(13): view('member/loginView')
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Member\Auth->index()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Member\Auth))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\Commands\Server\rewrite.php(49): require_once('E:\\Project\\PHP Project\\freelance\\absence\\public\\index.php')
+INFO - 2024-04-21 08:49:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-21 08:49:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-21 08:50:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-21 08:50:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-21 08:50:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-21 08:51:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-21 08:51:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-21 08:51:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-21 08:51:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-21 08:51:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-04-21 08:51:42 --> ErrorException: Undefined array key "password"
+[Method: GET, Route: member/auth]
+in APPPATH\Views\member\loginView.php on line 41.
+ 1 APPPATH\Views\member\loginView.php(41): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "password"', 'E:\\Project\\PHP Project\\freelance\\absence\\app\\Views\\member\\loginView.php', 41)
+ 2 SYSTEMPATH\View\View.php(234): include('E:\\Project\\PHP Project\\freelance\\absence\\app\\Views\\member\\loginView.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('member/loginView', [], true)
+ 5 APPPATH\Controllers\Member\Auth.php(13): view('member/loginView')
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Member\Auth->index()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Member\Auth))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\Commands\Server\rewrite.php(49): require_once('E:\\Project\\PHP Project\\freelance\\absence\\public\\index.php')
+INFO - 2024-04-21 08:51:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-21 08:51:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-21 08:51:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-21 08:52:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-21 08:52:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-21 08:52:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-04-21 08:52:02 --> ErrorException: Undefined array key "password"
+[Method: GET, Route: member/auth]
+in APPPATH\Views\member\loginView.php on line 41.
+ 1 APPPATH\Views\member\loginView.php(41): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "password"', 'E:\\Project\\PHP Project\\freelance\\absence\\app\\Views\\member\\loginView.php', 41)
+ 2 SYSTEMPATH\View\View.php(234): include('E:\\Project\\PHP Project\\freelance\\absence\\app\\Views\\member\\loginView.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('member/loginView', [], true)
+ 5 APPPATH\Controllers\Member\Auth.php(13): view('member/loginView')
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Member\Auth->index()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Member\Auth))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\Commands\Server\rewrite.php(49): require_once('E:\\Project\\PHP Project\\freelance\\absence\\public\\index.php')
+INFO - 2024-04-21 08:52:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-21 08:52:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-21 08:52:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-21 08:52:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-21 08:52:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-21 08:53:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-21 08:53:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-21 08:53:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-21 08:54:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-21 08:55:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-21 08:55:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-21 08:55:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-21 08:56:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-21 08:57:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-21 08:57:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-21 08:57:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-21 08:58:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-21 08:58:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-21 08:58:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-21 08:58:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-21 08:58:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-04-21 08:58:41 --> CodeIgniter\HTTP\Exceptions\HTTPException: The route for "member/auth" cannot be found.
+[Method: GET, Route: member/dashboard]
+in SYSTEMPATH\HTTP\RedirectResponse.php on line 64.
+ 1 SYSTEMPATH\HTTP\RedirectResponse.php(64): CodeIgniter\HTTP\Exceptions\HTTPException::forInvalidRedirectRoute('member/auth')
+ 2 SYSTEMPATH\Common.php(853): CodeIgniter\HTTP\RedirectResponse->route(false)
+ 3 APPPATH\Controllers\Member\AuthController.php(19): redirect('member/auth')
+ 4 SYSTEMPATH\CodeIgniter.php(903): App\Controllers\Member\AuthController->__construct()
+ 5 SYSTEMPATH\CodeIgniter.php(500): CodeIgniter\CodeIgniter->createController()
+ 6 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+10 SYSTEMPATH\Commands\Server\rewrite.php(49): require_once('E:\\Project\\PHP Project\\freelance\\absence\\public\\index.php')
+INFO - 2024-04-21 08:58:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-04-21 08:58:45 --> CodeIgniter\HTTP\Exceptions\HTTPException: The route for "/member/auth" cannot be found.
+[Method: GET, Route: member/dashboard]
+in SYSTEMPATH\HTTP\RedirectResponse.php on line 64.
+ 1 SYSTEMPATH\HTTP\RedirectResponse.php(64): CodeIgniter\HTTP\Exceptions\HTTPException::forInvalidRedirectRoute('/member/auth')
+ 2 SYSTEMPATH\Common.php(853): CodeIgniter\HTTP\RedirectResponse->route(false)
+ 3 APPPATH\Controllers\Member\AuthController.php(19): redirect('/member/auth')
+ 4 SYSTEMPATH\CodeIgniter.php(903): App\Controllers\Member\AuthController->__construct()
+ 5 SYSTEMPATH\CodeIgniter.php(500): CodeIgniter\CodeIgniter->createController()
+ 6 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+10 SYSTEMPATH\Commands\Server\rewrite.php(49): require_once('E:\\Project\\PHP Project\\freelance\\absence\\public\\index.php')
+INFO - 2024-04-21 09:00:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-21 09:01:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-21 09:02:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-21 09:02:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-21 09:02:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-21 09:02:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-21 09:02:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-21 09:02:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-21 09:02:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-21 09:02:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-21 09:02:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-21 09:03:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-21 09:03:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-21 09:03:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-21 09:04:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-21 09:05:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-21 09:05:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-21 09:05:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-04-21 09:05:23 --> Error: Call to undefined method App\Controllers\Member\Logout::redirect()
+[Method: GET, Route: member/logout]
+in APPPATH\Controllers\Member\Logout.php on line 15.
+ 1 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Member\Logout->index()
+ 2 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Member\Logout))
+ 3 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 7 SYSTEMPATH\Commands\Server\rewrite.php(49): require_once('E:\\Project\\PHP Project\\freelance\\absence\\public\\index.php')
+INFO - 2024-04-21 09:05:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-04-21 09:05:46 --> TypeError: App\Controllers\Member\Logout::index(): Return value must be of type string, CodeIgniter\HTTP\RedirectResponse returned
+[Method: GET, Route: member/logout]
+in APPPATH\Controllers\Member\Logout.php on line 15.
+ 1 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Member\Logout->index()
+ 2 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Member\Logout))
+ 3 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 7 SYSTEMPATH\Commands\Server\rewrite.php(49): require_once('E:\\Project\\PHP Project\\freelance\\absence\\public\\index.php')
+INFO - 2024-04-21 09:05:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-04-21 09:05:48 --> TypeError: App\Controllers\Member\Logout::index(): Return value must be of type string, CodeIgniter\HTTP\RedirectResponse returned
+[Method: GET, Route: member/logout]
+in APPPATH\Controllers\Member\Logout.php on line 15.
+ 1 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Member\Logout->index()
+ 2 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Member\Logout))
+ 3 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 7 SYSTEMPATH\Commands\Server\rewrite.php(49): require_once('E:\\Project\\PHP Project\\freelance\\absence\\public\\index.php')
+INFO - 2024-04-21 09:05:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-04-21 09:05:55 --> TypeError: App\Controllers\Member\Logout::index(): Return value must be of type string, none returned
+[Method: GET, Route: member/logout]
+in APPPATH\Controllers\Member\Logout.php on line 16.
+ 1 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Member\Logout->index()
+ 2 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Member\Logout))
+ 3 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 7 SYSTEMPATH\Commands\Server\rewrite.php(49): require_once('E:\\Project\\PHP Project\\freelance\\absence\\public\\index.php')
+INFO - 2024-04-21 09:05:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-04-21 09:05:57 --> TypeError: App\Controllers\Member\Logout::index(): Return value must be of type string, none returned
+[Method: GET, Route: member/logout]
+in APPPATH\Controllers\Member\Logout.php on line 16.
+ 1 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Member\Logout->index()
+ 2 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Member\Logout))
+ 3 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 7 SYSTEMPATH\Commands\Server\rewrite.php(49): require_once('E:\\Project\\PHP Project\\freelance\\absence\\public\\index.php')
+INFO - 2024-04-21 09:06:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-04-21 09:06:22 --> TypeError: App\Controllers\Member\Logout::index(): Return value must be of type string, CodeIgniter\HTTP\RedirectResponse returned
+[Method: GET, Route: member/logout]
+in APPPATH\Controllers\Member\Logout.php on line 15.
+ 1 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Member\Logout->index()
+ 2 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Member\Logout))
+ 3 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 7 SYSTEMPATH\Commands\Server\rewrite.php(49): require_once('E:\\Project\\PHP Project\\freelance\\absence\\public\\index.php')
+INFO - 2024-04-21 09:06:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-21 09:06:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-21 09:06:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-21 09:06:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-21 09:06:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-21 09:07:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-21 09:07:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-21 09:07:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-21 09:07:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-21 09:09:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-21 09:09:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-21 09:09:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-21 09:09:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-21 09:09:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-21 09:09:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-21 09:09:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-21 09:09:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-21 09:09:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-21 09:09:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-21 09:09:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-21 09:09:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-21 09:09:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-21 09:09:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-21 09:09:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-21 09:09:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-21 09:09:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-21 09:09:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-21 09:09:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-21 09:09:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-21 09:09:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-21 09:09:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-21 09:09:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-21 09:09:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-21 09:09:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-21 09:09:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-21 09:09:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-21 09:09:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-21 09:09:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-21 09:09:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-21 09:09:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-21 09:09:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-21 09:09:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-21 09:09:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-21 09:09:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-21 09:09:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-21 09:09:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-21 09:09:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-21 09:09:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-21 09:09:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-21 09:09:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-21 09:09:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-21 09:09:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-21 09:09:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-21 09:09:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-21 09:09:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-21 09:09:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-21 09:09:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-21 09:09:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-21 09:09:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-21 09:09:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-21 09:09:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-21 09:09:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-21 09:09:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-21 09:09:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-21 09:09:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-21 09:09:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-21 09:09:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-21 09:09:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-21 09:09:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-21 09:09:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-04-21 09:10:00 --> CodeIgniter\HTTP\Exceptions\BadRequestException: The URI you submitted has disallowed characters: "'"
+[Method: GET, Route: %27]
+in SYSTEMPATH\Router\Router.php on line 736.
+ 1 SYSTEMPATH\Router\Router.php(203): CodeIgniter\Router\Router->checkDisallowedChars('\'')
+ 2 SYSTEMPATH\CodeIgniter.php(834): CodeIgniter\Router\Router->handle('\'')
+ 3 SYSTEMPATH\CodeIgniter.php(457): CodeIgniter\CodeIgniter->tryToRouteIt(Object(CodeIgniter\Router\RouteCollection))
+ 4 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 8 SYSTEMPATH\Commands\Server\rewrite.php(49): require_once('E:\\Project\\PHP Project\\freelance\\absence\\public\\index.php')
+INFO - 2024-04-21 09:10:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-21 09:10:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-21 09:10:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-21 09:10:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-21 09:10:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-21 09:10:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-21 09:10:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-21 09:10:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-21 09:10:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-21 09:10:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-21 09:10:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-21 09:10:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-21 09:10:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-21 09:10:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-21 09:10:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-21 09:10:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-21 09:10:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-21 09:10:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-21 09:10:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-21 09:10:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-21 09:10:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-21 09:10:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-21 09:10:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-21 09:10:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-21 09:10:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-21 09:10:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-21 09:10:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-21 09:10:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-21 09:10:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-21 09:10:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-21 09:10:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-21 09:10:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-21 09:10:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-21 09:10:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-21 09:10:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-21 09:10:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-21 09:10:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-21 09:11:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-21 09:11:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-21 09:11:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-21 09:11:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-21 09:11:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-21 09:12:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-21 09:12:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-21 09:13:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-21 09:13:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-21 09:14:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-21 09:14:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-21 09:15:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-21 09:15:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-21 09:15:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-21 09:15:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-21 09:15:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-21 09:15:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-21 09:15:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-21 09:15:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-21 09:16:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-21 09:16:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-21 09:16:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-21 09:16:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-21 09:16:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-21 09:16:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-21 09:16:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-21 09:16:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-21 09:16:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-21 09:17:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-21 09:17:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-21 09:17:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-21 09:17:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-21 09:18:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-21 09:18:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-21 09:18:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-21 09:18:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-21 09:18:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-21 09:18:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-21 09:18:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-21 09:19:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-21 09:19:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-21 09:19:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-21 09:19:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-21 09:19:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-21 09:19:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-21 09:19:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-21 09:19:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-21 09:19:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-21 09:19:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-21 09:20:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-21 09:20:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-21 09:20:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-21 09:20:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-21 09:20:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-21 09:20:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-21 09:21:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-21 09:21:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-21 09:21:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-21 09:21:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-21 09:21:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-21 09:21:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-21 09:24:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-21 09:24:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-21 09:24:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-21 09:24:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-21 09:24:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-21 09:24:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-21 09:24:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-21 09:24:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-21 09:35:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-21 09:35:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-21 09:35:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-21 09:35:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-21 09:35:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-21 09:35:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-21 09:35:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-21 09:36:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-21 09:36:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-21 09:40:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-21 09:40:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-21 09:40:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-21 09:40:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-21 09:40:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2024-04-21 09:45:34 --> mysqli_sql_exception: Cannot truncate a table referenced in a foreign key constraint (`absence`.`absence`, CONSTRAINT `absence_user_id_foreign` FOREIGN KEY (`user_id`) REFERENCES `absence`.`users` (`id`)) in E:\Project\PHP Project\freelance\absence\system\Database\MySQLi\Connection.php:308
+Stack trace:
+#0 E:\Project\PHP Project\freelance\absence\system\Database\MySQLi\Connection.php(308): mysqli->query('TRUNCATE `users...', 0)
+#1 E:\Project\PHP Project\freelance\absence\system\Database\BaseConnection.php(722): CodeIgniter\Database\MySQLi\Connection->execute('TRUNCATE `users...')
+#2 E:\Project\PHP Project\freelance\absence\system\Database\BaseConnection.php(636): CodeIgniter\Database\BaseConnection->simpleQuery('TRUNCATE `users...')
+#3 E:\Project\PHP Project\freelance\absence\system\Database\BaseBuilder.php(2748): CodeIgniter\Database\BaseConnection->query('TRUNCATE `users...', NULL, false)
+#4 E:\Project\PHP Project\freelance\absence\app\Database\Seeds\DataSeeder.php(12): CodeIgniter\Database\BaseBuilder->truncate()
+#5 E:\Project\PHP Project\freelance\absence\system\Database\Seeder.php(147): App\Database\Seeds\DataSeeder->run()
+#6 E:\Project\PHP Project\freelance\absence\system\Commands\Database\Seed.php(79): CodeIgniter\Database\Seeder->call('App\\Database\\Se...')
+#7 E:\Project\PHP Project\freelance\absence\system\CLI\Commands.php(70): CodeIgniter\Commands\Database\Seed->run(Array)
+#8 E:\Project\PHP Project\freelance\absence\system\CLI\Console.php(48): CodeIgniter\CLI\Commands->run('db:seed', Array)
+#9 E:\Project\PHP Project\freelance\absence\system\Boot.php(338): CodeIgniter\CLI\Console->run()
+#10 E:\Project\PHP Project\freelance\absence\system\Boot.php(104): CodeIgniter\Boot::runCommand(Object(CodeIgniter\CLI\Console))
+#11 E:\Project\PHP Project\freelance\absence\spark(84): CodeIgniter\Boot::bootSpark(Object(Config\Paths))
+#12 {main}
+ERROR - 2024-04-21 09:46:42 --> mysqli_sql_exception: Cannot truncate a table referenced in a foreign key constraint (`absence`.`absence`, CONSTRAINT `absence_user_id_foreign` FOREIGN KEY (`user_id`) REFERENCES `absence`.`users` (`id`)) in E:\Project\PHP Project\freelance\absence\system\Database\MySQLi\Connection.php:308
+Stack trace:
+#0 E:\Project\PHP Project\freelance\absence\system\Database\MySQLi\Connection.php(308): mysqli->query('TRUNCATE `users...', 0)
+#1 E:\Project\PHP Project\freelance\absence\system\Database\BaseConnection.php(722): CodeIgniter\Database\MySQLi\Connection->execute('TRUNCATE `users...')
+#2 E:\Project\PHP Project\freelance\absence\system\Database\BaseConnection.php(636): CodeIgniter\Database\BaseConnection->simpleQuery('TRUNCATE `users...')
+#3 E:\Project\PHP Project\freelance\absence\system\Database\BaseBuilder.php(2748): CodeIgniter\Database\BaseConnection->query('TRUNCATE `users...', NULL, false)
+#4 E:\Project\PHP Project\freelance\absence\app\Database\Seeds\DataSeeder.php(12): CodeIgniter\Database\BaseBuilder->truncate()
+#5 E:\Project\PHP Project\freelance\absence\system\Database\Seeder.php(147): App\Database\Seeds\DataSeeder->run()
+#6 E:\Project\PHP Project\freelance\absence\system\Commands\Database\Seed.php(79): CodeIgniter\Database\Seeder->call('App\\Database\\Se...')
+#7 E:\Project\PHP Project\freelance\absence\system\CLI\Commands.php(70): CodeIgniter\Commands\Database\Seed->run(Array)
+#8 E:\Project\PHP Project\freelance\absence\system\CLI\Console.php(48): CodeIgniter\CLI\Commands->run('db:seed', Array)
+#9 E:\Project\PHP Project\freelance\absence\system\Boot.php(338): CodeIgniter\CLI\Console->run()
+#10 E:\Project\PHP Project\freelance\absence\system\Boot.php(104): CodeIgniter\Boot::runCommand(Object(CodeIgniter\CLI\Console))
+#11 E:\Project\PHP Project\freelance\absence\spark(84): CodeIgniter\Boot::bootSpark(Object(Config\Paths))
+#12 {main}
+INFO - 2024-04-21 09:47:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-21 09:47:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-21 09:47:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-21 09:47:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-21 09:47:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-21 09:47:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-21 09:47:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-21 09:49:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-21 09:49:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-04-21 09:49:47 --> Error: Call to undefined function App\Controllers\Member\convertDatetime()
+[Method: GET, Route: member/course/get_courses]
+in APPPATH\Controllers\Member\Course.php on line 45.
+ 1 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Member\Course->get_courses()
+ 2 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Member\Course))
+ 3 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 7 SYSTEMPATH\Commands\Server\rewrite.php(49): require_once('E:\\Project\\PHP Project\\freelance\\absence\\public\\index.php')
+INFO - 2024-04-21 09:49:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-21 09:49:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-04-21 09:49:54 --> Error: Call to undefined function App\Controllers\Member\convertDatetime()
+[Method: GET, Route: member/course/get_courses]
+in APPPATH\Controllers\Member\Course.php on line 45.
+ 1 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Member\Course->get_courses()
+ 2 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Member\Course))
+ 3 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 7 SYSTEMPATH\Commands\Server\rewrite.php(49): require_once('E:\\Project\\PHP Project\\freelance\\absence\\public\\index.php')
+INFO - 2024-04-21 09:54:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-21 09:54:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-21 09:54:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-21 09:54:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-21 09:55:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-21 09:55:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-21 09:55:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-21 09:55:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-21 09:55:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-21 09:55:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-21 09:55:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-21 09:55:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-21 09:57:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-21 09:57:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-21 09:57:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-21 09:57:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-21 09:58:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-21 09:58:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-21 09:58:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-21 09:58:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-21 09:59:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-21 09:59:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-21 10:00:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-21 10:00:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-21 10:01:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-21 10:01:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-21 10:01:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-21 10:01:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-21 10:01:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-21 10:01:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-21 10:02:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-21 10:02:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-21 10:02:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-21 10:02:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-21 10:02:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-21 10:02:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-21 10:02:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-21 10:03:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-21 10:03:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-21 10:04:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-21 10:04:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-21 10:04:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-21 10:04:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-21 10:05:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-21 10:05:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-21 10:05:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-21 10:05:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-21 10:05:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-21 10:05:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-21 10:09:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-21 10:09:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-21 10:09:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-21 10:09:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-21 10:10:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-21 10:10:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-21 10:12:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-21 10:12:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-21 10:14:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-21 10:15:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-21 10:15:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-21 10:15:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-21 10:15:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-21 10:15:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-21 10:15:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-21 10:15:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-21 10:15:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-21 10:15:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-21 10:15:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-21 10:15:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-21 10:16:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-21 10:16:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-21 10:16:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-21 10:16:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-21 10:16:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-21 10:16:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-21 10:17:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-21 10:17:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-21 10:17:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-21 10:17:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-21 10:17:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-21 10:17:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-21 10:19:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-21 10:19:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-21 10:19:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-21 10:19:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-21 10:19:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-21 10:19:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-21 10:19:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-21 10:19:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-21 10:19:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-21 10:19:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-21 10:20:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-21 10:20:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-21 10:20:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-21 10:21:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-21 10:21:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-21 10:21:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-21 10:21:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-21 10:21:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-21 10:21:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-21 10:21:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-21 10:21:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-21 10:21:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-21 10:21:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-21 10:21:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-21 10:21:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-21 10:22:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-21 10:22:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-21 10:22:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-21 10:22:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-21 10:22:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-21 10:22:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-21 10:24:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-21 10:24:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2024-04-21 10:24:16 --> mysqli_sql_exception: Column 'id' in field list is ambiguous in E:\Project\PHP Project\freelance\absence\system\Database\MySQLi\Connection.php:308
+Stack trace:
+#0 E:\Project\PHP Project\freelance\absence\system\Database\MySQLi\Connection.php(308): mysqli->query('SELECT COUNT(*)...', 0)
+#1 E:\Project\PHP Project\freelance\absence\system\Database\BaseConnection.php(722): CodeIgniter\Database\MySQLi\Connection->execute('SELECT COUNT(*)...')
+#2 E:\Project\PHP Project\freelance\absence\system\Database\BaseConnection.php(636): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT COUNT(*)...')
+#3 E:\Project\PHP Project\freelance\absence\app\Libraries\DataTable.php(104): CodeIgniter\Database\BaseConnection->query('SELECT COUNT(*)...', Array)
+#4 E:\Project\PHP Project\freelance\absence\app\Libraries\DataTable.php(48): App\Libraries\DataTable->getListDataDataTable('id', 'DESC', Array)
+#5 E:\Project\PHP Project\freelance\absence\app\Controllers\Member\Course.php(44): App\Libraries\DataTable->getListDataTable(Object(CodeIgniter\HTTP\IncomingRequest), 'courses', Array, '\r\n        JOIN ...', '', '')
+#6 E:\Project\PHP Project\freelance\absence\system\CodeIgniter.php(933): App\Controllers\Member\Course->get_courses()
+#7 E:\Project\PHP Project\freelance\absence\system\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Member\Course))
+#8 E:\Project\PHP Project\freelance\absence\system\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 E:\Project\PHP Project\freelance\absence\system\Boot.php(312): CodeIgniter\CodeIgniter->run()
+#10 E:\Project\PHP Project\freelance\absence\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#11 E:\Project\PHP Project\freelance\absence\public\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#12 E:\Project\PHP Project\freelance\absence\system\Commands\Server\rewrite.php(49): require_once('E:\\Project\\PHP ...')
+#13 {main}
+CRITICAL - 2024-04-21 10:24:16 --> CodeIgniter\Database\Exceptions\DatabaseException: Column 'id' in field list is ambiguous
+[Method: GET, Route: member/course/get_courses]
+in SYSTEMPATH\Database\BaseConnection.php on line 676.
+ 1 APPPATH\Libraries\DataTable.php(104): CodeIgniter\Database\BaseConnection->query('SELECT COUNT(*) as total FROM (SELECT id FROM courses 
+        JOIN courses_users ON courses.id = courses_users.course_id
+        JOIN users ON courses_users.user_id = users.id
+         WHERE 1   ) sqlCount', [])
+ 2 APPPATH\Libraries\DataTable.php(48): App\Libraries\DataTable->getListDataDataTable('id', 'DESC', [])
+ 3 APPPATH\Controllers\Member\Course.php(44): App\Libraries\DataTable->getListDataTable(Object(CodeIgniter\HTTP\IncomingRequest), 'courses', [...], '
+        JOIN courses_users ON courses.id = courses_users.course_id
+        JOIN users ON courses_users.user_id = users.id
+        ', '', '')
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Member\Course->get_courses()
+ 5 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Member\Course))
+ 6 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+10 SYSTEMPATH\Commands\Server\rewrite.php(49): require_once('E:\\Project\\PHP Project\\freelance\\absence\\public\\index.php')
+CRITICAL - 2024-04-21 10:24:16 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Column 'id' in field list is ambiguous
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 313.
+ 1 SYSTEMPATH\Database\BaseConnection.php(722): CodeIgniter\Database\MySQLi\Connection->execute('SELECT COUNT(*) as total FROM (SELECT id FROM courses 
+        JOIN courses_users ON courses.id = courses_users.course_id
+        JOIN users ON courses_users.user_id = users.id
+         WHERE 1   ) sqlCount')
+ 2 SYSTEMPATH\Database\BaseConnection.php(636): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT COUNT(*) as total FROM (SELECT id FROM courses 
+        JOIN courses_users ON courses.id = courses_users.course_id
+        JOIN users ON courses_users.user_id = users.id
+         WHERE 1   ) sqlCount')
+ 3 APPPATH\Libraries\DataTable.php(104): CodeIgniter\Database\BaseConnection->query('SELECT COUNT(*) as total FROM (SELECT id FROM courses 
+        JOIN courses_users ON courses.id = courses_users.course_id
+        JOIN users ON courses_users.user_id = users.id
+         WHERE 1   ) sqlCount', [])
+ 4 APPPATH\Libraries\DataTable.php(48): App\Libraries\DataTable->getListDataDataTable('id', 'DESC', [])
+ 5 APPPATH\Controllers\Member\Course.php(44): App\Libraries\DataTable->getListDataTable(Object(CodeIgniter\HTTP\IncomingRequest), 'courses', [...], '
+        JOIN courses_users ON courses.id = courses_users.course_id
+        JOIN users ON courses_users.user_id = users.id
+        ', '', '')
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Member\Course->get_courses()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Member\Course))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\Commands\Server\rewrite.php(49): require_once('E:\\Project\\PHP Project\\freelance\\absence\\public\\index.php')
+CRITICAL - 2024-04-21 10:24:16 --> [Caused by] mysqli_sql_exception: Column 'id' in field list is ambiguous
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 308.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(308): mysqli->query('SELECT COUNT(*) as total FROM (SELECT id FROM courses 
+        JOIN courses_users ON courses.id = courses_users.course_id
+        JOIN users ON courses_users.user_id = users.id
+         WHERE 1   ) sqlCount', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(722): CodeIgniter\Database\MySQLi\Connection->execute('SELECT COUNT(*) as total FROM (SELECT id FROM courses 
+        JOIN courses_users ON courses.id = courses_users.course_id
+        JOIN users ON courses_users.user_id = users.id
+         WHERE 1   ) sqlCount')
+ 3 SYSTEMPATH\Database\BaseConnection.php(636): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT COUNT(*) as total FROM (SELECT id FROM courses 
+        JOIN courses_users ON courses.id = courses_users.course_id
+        JOIN users ON courses_users.user_id = users.id
+         WHERE 1   ) sqlCount')
+ 4 APPPATH\Libraries\DataTable.php(104): CodeIgniter\Database\BaseConnection->query('SELECT COUNT(*) as total FROM (SELECT id FROM courses 
+        JOIN courses_users ON courses.id = courses_users.course_id
+        JOIN users ON courses_users.user_id = users.id
+         WHERE 1   ) sqlCount', [])
+ 5 APPPATH\Libraries\DataTable.php(48): App\Libraries\DataTable->getListDataDataTable('id', 'DESC', [])
+ 6 APPPATH\Controllers\Member\Course.php(44): App\Libraries\DataTable->getListDataTable(Object(CodeIgniter\HTTP\IncomingRequest), 'courses', [...], '
+        JOIN courses_users ON courses.id = courses_users.course_id
+        JOIN users ON courses_users.user_id = users.id
+        ', '', '')
+ 7 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Member\Course->get_courses()
+ 8 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Member\Course))
+ 9 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+13 SYSTEMPATH\Commands\Server\rewrite.php(49): require_once('E:\\Project\\PHP Project\\freelance\\absence\\public\\index.php')
+INFO - 2024-04-21 10:24:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-21 10:24:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-21 10:26:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-21 10:26:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-21 10:26:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-21 10:26:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-21 10:26:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-04-21 10:26:38 --> ErrorException: Attempt to read property "id" on array
+[Method: GET, Route: member/course/get_courses]
+in APPPATH\Controllers\Member\Course.php on line 42.
+ 1 APPPATH\Controllers\Member\Course.php(42): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Attempt to read property "id" on array', 'E:\\Project\\PHP Project\\freelance\\absence\\app\\Controllers\\Member\\Course.php', 42)
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Member\Course->get_courses()
+ 3 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Member\Course))
+ 4 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 8 SYSTEMPATH\Commands\Server\rewrite.php(49): require_once('E:\\Project\\PHP Project\\freelance\\absence\\public\\index.php')
+INFO - 2024-04-21 10:27:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-21 10:27:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-04-21 10:27:11 --> Error: Call to a member function get() on array
+[Method: GET, Route: member/course/get_courses]
+in APPPATH\Controllers\Member\Course.php on line 42.
+ 1 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Member\Course->get_courses()
+ 2 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Member\Course))
+ 3 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 7 SYSTEMPATH\Commands\Server\rewrite.php(49): require_once('E:\\Project\\PHP Project\\freelance\\absence\\public\\index.php')
+INFO - 2024-04-21 10:27:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-21 10:27:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-21 10:27:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-21 10:27:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-21 10:27:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-21 10:27:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-21 10:27:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-21 10:28:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-21 10:28:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-21 10:28:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-21 10:28:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-21 10:31:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-21 10:31:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-21 10:31:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-21 10:31:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-21 10:31:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-21 10:31:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2024-04-21 10:31:39 --> mysqli_sql_exception: Unknown column 'courses.name' in 'field list' in E:\Project\PHP Project\freelance\absence\system\Database\MySQLi\Connection.php:308
+Stack trace:
+#0 E:\Project\PHP Project\freelance\absence\system\Database\MySQLi\Connection.php(308): mysqli->query('SELECT absence....', 0)
+#1 E:\Project\PHP Project\freelance\absence\system\Database\BaseConnection.php(722): CodeIgniter\Database\MySQLi\Connection->execute('SELECT absence....')
+#2 E:\Project\PHP Project\freelance\absence\system\Database\BaseConnection.php(636): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT absence....')
+#3 E:\Project\PHP Project\freelance\absence\app\Libraries\DataTable.php(108): CodeIgniter\Database\BaseConnection->query('SELECT absence....', Array)
+#4 E:\Project\PHP Project\freelance\absence\app\Libraries\DataTable.php(48): App\Libraries\DataTable->getListDataDataTable('absence.id', 'DESC', Array)
+#5 E:\Project\PHP Project\freelance\absence\app\Controllers\Member\Absence.php(66): App\Libraries\DataTable->getListDataTable(Object(CodeIgniter\HTTP\IncomingRequest), 'absence', Array, '\r\n        JOIN ...', 'users.id = 1', '')
+#6 E:\Project\PHP Project\freelance\absence\system\CodeIgniter.php(933): App\Controllers\Member\Absence->get_absence()
+#7 E:\Project\PHP Project\freelance\absence\system\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Member\Absence))
+#8 E:\Project\PHP Project\freelance\absence\system\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 E:\Project\PHP Project\freelance\absence\system\Boot.php(312): CodeIgniter\CodeIgniter->run()
+#10 E:\Project\PHP Project\freelance\absence\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#11 E:\Project\PHP Project\freelance\absence\public\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#12 E:\Project\PHP Project\freelance\absence\system\Commands\Server\rewrite.php(49): require_once('E:\\Project\\PHP ...')
+#13 {main}
+CRITICAL - 2024-04-21 10:31:39 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'courses.name' in 'field list'
+[Method: GET, Route: member/absence/get_absence]
+in SYSTEMPATH\Database\BaseConnection.php on line 676.
+ 1 APPPATH\Libraries\DataTable.php(108): CodeIgniter\Database\BaseConnection->query('SELECT absence.id AS id, absence.user_id AS user_id, absence.course_id AS course_id, courses.name AS course_name, absence.date AS date, absence.reason AS reason, absence.created_at AS created_at, absence.updated_at AS updated_at FROM absence 
+        JOIN courses_users ON absence.course_id = courses_users.course_id
+        JOIN users ON absence.user_id = users.id
+         WHERE 1  AND users.id = 1  ORDER BY absence.id DESC LIMIT 0, 10', [])
+ 2 APPPATH\Libraries\DataTable.php(48): App\Libraries\DataTable->getListDataDataTable('absence.id', 'DESC', [])
+ 3 APPPATH\Controllers\Member\Absence.php(66): App\Libraries\DataTable->getListDataTable(Object(CodeIgniter\HTTP\IncomingRequest), 'absence', [...], '
+        JOIN courses_users ON absence.course_id = courses_users.course_id
+        JOIN users ON absence.user_id = users.id
+        ', 'users.id = 1', '')
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Member\Absence->get_absence()
+ 5 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Member\Absence))
+ 6 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+10 SYSTEMPATH\Commands\Server\rewrite.php(49): require_once('E:\\Project\\PHP Project\\freelance\\absence\\public\\index.php')
+CRITICAL - 2024-04-21 10:31:39 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'courses.name' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 313.
+ 1 SYSTEMPATH\Database\BaseConnection.php(722): CodeIgniter\Database\MySQLi\Connection->execute('SELECT absence.id AS id, absence.user_id AS user_id, absence.course_id AS course_id, courses.name AS course_name, absence.date AS date, absence.reason AS reason, absence.created_at AS created_at, absence.updated_at AS updated_at FROM absence 
+        JOIN courses_users ON absence.course_id = courses_users.course_id
+        JOIN users ON absence.user_id = users.id
+         WHERE 1  AND users.id = 1  ORDER BY absence.id DESC LIMIT 0, 10')
+ 2 SYSTEMPATH\Database\BaseConnection.php(636): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT absence.id AS id, absence.user_id AS user_id, absence.course_id AS course_id, courses.name AS course_name, absence.date AS date, absence.reason AS reason, absence.created_at AS created_at, absence.updated_at AS updated_at FROM absence 
+        JOIN courses_users ON absence.course_id = courses_users.course_id
+        JOIN users ON absence.user_id = users.id
+         WHERE 1  AND users.id = 1  ORDER BY absence.id DESC LIMIT 0, 10')
+ 3 APPPATH\Libraries\DataTable.php(108): CodeIgniter\Database\BaseConnection->query('SELECT absence.id AS id, absence.user_id AS user_id, absence.course_id AS course_id, courses.name AS course_name, absence.date AS date, absence.reason AS reason, absence.created_at AS created_at, absence.updated_at AS updated_at FROM absence 
+        JOIN courses_users ON absence.course_id = courses_users.course_id
+        JOIN users ON absence.user_id = users.id
+         WHERE 1  AND users.id = 1  ORDER BY absence.id DESC LIMIT 0, 10', [])
+ 4 APPPATH\Libraries\DataTable.php(48): App\Libraries\DataTable->getListDataDataTable('absence.id', 'DESC', [])
+ 5 APPPATH\Controllers\Member\Absence.php(66): App\Libraries\DataTable->getListDataTable(Object(CodeIgniter\HTTP\IncomingRequest), 'absence', [...], '
+        JOIN courses_users ON absence.course_id = courses_users.course_id
+        JOIN users ON absence.user_id = users.id
+        ', 'users.id = 1', '')
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Member\Absence->get_absence()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Member\Absence))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\Commands\Server\rewrite.php(49): require_once('E:\\Project\\PHP Project\\freelance\\absence\\public\\index.php')
+CRITICAL - 2024-04-21 10:31:39 --> [Caused by] mysqli_sql_exception: Unknown column 'courses.name' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 308.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(308): mysqli->query('SELECT absence.id AS id, absence.user_id AS user_id, absence.course_id AS course_id, courses.name AS course_name, absence.date AS date, absence.reason AS reason, absence.created_at AS created_at, absence.updated_at AS updated_at FROM absence 
+        JOIN courses_users ON absence.course_id = courses_users.course_id
+        JOIN users ON absence.user_id = users.id
+         WHERE 1  AND users.id = 1  ORDER BY absence.id DESC LIMIT 0, 10', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(722): CodeIgniter\Database\MySQLi\Connection->execute('SELECT absence.id AS id, absence.user_id AS user_id, absence.course_id AS course_id, courses.name AS course_name, absence.date AS date, absence.reason AS reason, absence.created_at AS created_at, absence.updated_at AS updated_at FROM absence 
+        JOIN courses_users ON absence.course_id = courses_users.course_id
+        JOIN users ON absence.user_id = users.id
+         WHERE 1  AND users.id = 1  ORDER BY absence.id DESC LIMIT 0, 10')
+ 3 SYSTEMPATH\Database\BaseConnection.php(636): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT absence.id AS id, absence.user_id AS user_id, absence.course_id AS course_id, courses.name AS course_name, absence.date AS date, absence.reason AS reason, absence.created_at AS created_at, absence.updated_at AS updated_at FROM absence 
+        JOIN courses_users ON absence.course_id = courses_users.course_id
+        JOIN users ON absence.user_id = users.id
+         WHERE 1  AND users.id = 1  ORDER BY absence.id DESC LIMIT 0, 10')
+ 4 APPPATH\Libraries\DataTable.php(108): CodeIgniter\Database\BaseConnection->query('SELECT absence.id AS id, absence.user_id AS user_id, absence.course_id AS course_id, courses.name AS course_name, absence.date AS date, absence.reason AS reason, absence.created_at AS created_at, absence.updated_at AS updated_at FROM absence 
+        JOIN courses_users ON absence.course_id = courses_users.course_id
+        JOIN users ON absence.user_id = users.id
+         WHERE 1  AND users.id = 1  ORDER BY absence.id DESC LIMIT 0, 10', [])
+ 5 APPPATH\Libraries\DataTable.php(48): App\Libraries\DataTable->getListDataDataTable('absence.id', 'DESC', [])
+ 6 APPPATH\Controllers\Member\Absence.php(66): App\Libraries\DataTable->getListDataTable(Object(CodeIgniter\HTTP\IncomingRequest), 'absence', [...], '
+        JOIN courses_users ON absence.course_id = courses_users.course_id
+        JOIN users ON absence.user_id = users.id
+        ', 'users.id = 1', '')
+ 7 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Member\Absence->get_absence()
+ 8 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Member\Absence))
+ 9 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+13 SYSTEMPATH\Commands\Server\rewrite.php(49): require_once('E:\\Project\\PHP Project\\freelance\\absence\\public\\index.php')
+INFO - 2024-04-21 10:31:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-21 10:31:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2024-04-21 10:31:49 --> mysqli_sql_exception: Unknown column 'courses.name' in 'field list' in E:\Project\PHP Project\freelance\absence\system\Database\MySQLi\Connection.php:308
+Stack trace:
+#0 E:\Project\PHP Project\freelance\absence\system\Database\MySQLi\Connection.php(308): mysqli->query('SELECT absence....', 0)
+#1 E:\Project\PHP Project\freelance\absence\system\Database\BaseConnection.php(722): CodeIgniter\Database\MySQLi\Connection->execute('SELECT absence....')
+#2 E:\Project\PHP Project\freelance\absence\system\Database\BaseConnection.php(636): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT absence....')
+#3 E:\Project\PHP Project\freelance\absence\app\Libraries\DataTable.php(108): CodeIgniter\Database\BaseConnection->query('SELECT absence....', Array)
+#4 E:\Project\PHP Project\freelance\absence\app\Libraries\DataTable.php(48): App\Libraries\DataTable->getListDataDataTable('absence.id', 'DESC', Array)
+#5 E:\Project\PHP Project\freelance\absence\app\Controllers\Member\Absence.php(66): App\Libraries\DataTable->getListDataTable(Object(CodeIgniter\HTTP\IncomingRequest), 'absence', Array, '\r\n        JOIN ...', 'users.id = 1', '')
+#6 E:\Project\PHP Project\freelance\absence\system\CodeIgniter.php(933): App\Controllers\Member\Absence->get_absence()
+#7 E:\Project\PHP Project\freelance\absence\system\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Member\Absence))
+#8 E:\Project\PHP Project\freelance\absence\system\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 E:\Project\PHP Project\freelance\absence\system\Boot.php(312): CodeIgniter\CodeIgniter->run()
+#10 E:\Project\PHP Project\freelance\absence\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#11 E:\Project\PHP Project\freelance\absence\public\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#12 E:\Project\PHP Project\freelance\absence\system\Commands\Server\rewrite.php(49): require_once('E:\\Project\\PHP ...')
+#13 {main}
+CRITICAL - 2024-04-21 10:31:49 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'courses.name' in 'field list'
+[Method: GET, Route: member/absence/get_absence]
+in SYSTEMPATH\Database\BaseConnection.php on line 676.
+ 1 APPPATH\Libraries\DataTable.php(108): CodeIgniter\Database\BaseConnection->query('SELECT absence.id AS id, absence.user_id AS user_id, absence.course_id AS course_id, courses.name AS course_name, absence.date AS date, absence.reason AS reason, absence.created_at AS created_at, absence.updated_at AS updated_at FROM absence 
+        JOIN courses_users ON absence.course_id = courses_users.course_id
+        JOIN users ON absence.user_id = users.id
+         WHERE 1  AND users.id = 1  ORDER BY absence.id DESC LIMIT 0, 10', [])
+ 2 APPPATH\Libraries\DataTable.php(48): App\Libraries\DataTable->getListDataDataTable('absence.id', 'DESC', [])
+ 3 APPPATH\Controllers\Member\Absence.php(66): App\Libraries\DataTable->getListDataTable(Object(CodeIgniter\HTTP\IncomingRequest), 'absence', [...], '
+        JOIN courses_users ON absence.course_id = courses_users.course_id
+        JOIN users ON absence.user_id = users.id
+        ', 'users.id = 1', '')
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Member\Absence->get_absence()
+ 5 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Member\Absence))
+ 6 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+10 SYSTEMPATH\Commands\Server\rewrite.php(49): require_once('E:\\Project\\PHP Project\\freelance\\absence\\public\\index.php')
+CRITICAL - 2024-04-21 10:31:49 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'courses.name' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 313.
+ 1 SYSTEMPATH\Database\BaseConnection.php(722): CodeIgniter\Database\MySQLi\Connection->execute('SELECT absence.id AS id, absence.user_id AS user_id, absence.course_id AS course_id, courses.name AS course_name, absence.date AS date, absence.reason AS reason, absence.created_at AS created_at, absence.updated_at AS updated_at FROM absence 
+        JOIN courses_users ON absence.course_id = courses_users.course_id
+        JOIN users ON absence.user_id = users.id
+         WHERE 1  AND users.id = 1  ORDER BY absence.id DESC LIMIT 0, 10')
+ 2 SYSTEMPATH\Database\BaseConnection.php(636): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT absence.id AS id, absence.user_id AS user_id, absence.course_id AS course_id, courses.name AS course_name, absence.date AS date, absence.reason AS reason, absence.created_at AS created_at, absence.updated_at AS updated_at FROM absence 
+        JOIN courses_users ON absence.course_id = courses_users.course_id
+        JOIN users ON absence.user_id = users.id
+         WHERE 1  AND users.id = 1  ORDER BY absence.id DESC LIMIT 0, 10')
+ 3 APPPATH\Libraries\DataTable.php(108): CodeIgniter\Database\BaseConnection->query('SELECT absence.id AS id, absence.user_id AS user_id, absence.course_id AS course_id, courses.name AS course_name, absence.date AS date, absence.reason AS reason, absence.created_at AS created_at, absence.updated_at AS updated_at FROM absence 
+        JOIN courses_users ON absence.course_id = courses_users.course_id
+        JOIN users ON absence.user_id = users.id
+         WHERE 1  AND users.id = 1  ORDER BY absence.id DESC LIMIT 0, 10', [])
+ 4 APPPATH\Libraries\DataTable.php(48): App\Libraries\DataTable->getListDataDataTable('absence.id', 'DESC', [])
+ 5 APPPATH\Controllers\Member\Absence.php(66): App\Libraries\DataTable->getListDataTable(Object(CodeIgniter\HTTP\IncomingRequest), 'absence', [...], '
+        JOIN courses_users ON absence.course_id = courses_users.course_id
+        JOIN users ON absence.user_id = users.id
+        ', 'users.id = 1', '')
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Member\Absence->get_absence()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Member\Absence))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\Commands\Server\rewrite.php(49): require_once('E:\\Project\\PHP Project\\freelance\\absence\\public\\index.php')
+CRITICAL - 2024-04-21 10:31:49 --> [Caused by] mysqli_sql_exception: Unknown column 'courses.name' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 308.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(308): mysqli->query('SELECT absence.id AS id, absence.user_id AS user_id, absence.course_id AS course_id, courses.name AS course_name, absence.date AS date, absence.reason AS reason, absence.created_at AS created_at, absence.updated_at AS updated_at FROM absence 
+        JOIN courses_users ON absence.course_id = courses_users.course_id
+        JOIN users ON absence.user_id = users.id
+         WHERE 1  AND users.id = 1  ORDER BY absence.id DESC LIMIT 0, 10', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(722): CodeIgniter\Database\MySQLi\Connection->execute('SELECT absence.id AS id, absence.user_id AS user_id, absence.course_id AS course_id, courses.name AS course_name, absence.date AS date, absence.reason AS reason, absence.created_at AS created_at, absence.updated_at AS updated_at FROM absence 
+        JOIN courses_users ON absence.course_id = courses_users.course_id
+        JOIN users ON absence.user_id = users.id
+         WHERE 1  AND users.id = 1  ORDER BY absence.id DESC LIMIT 0, 10')
+ 3 SYSTEMPATH\Database\BaseConnection.php(636): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT absence.id AS id, absence.user_id AS user_id, absence.course_id AS course_id, courses.name AS course_name, absence.date AS date, absence.reason AS reason, absence.created_at AS created_at, absence.updated_at AS updated_at FROM absence 
+        JOIN courses_users ON absence.course_id = courses_users.course_id
+        JOIN users ON absence.user_id = users.id
+         WHERE 1  AND users.id = 1  ORDER BY absence.id DESC LIMIT 0, 10')
+ 4 APPPATH\Libraries\DataTable.php(108): CodeIgniter\Database\BaseConnection->query('SELECT absence.id AS id, absence.user_id AS user_id, absence.course_id AS course_id, courses.name AS course_name, absence.date AS date, absence.reason AS reason, absence.created_at AS created_at, absence.updated_at AS updated_at FROM absence 
+        JOIN courses_users ON absence.course_id = courses_users.course_id
+        JOIN users ON absence.user_id = users.id
+         WHERE 1  AND users.id = 1  ORDER BY absence.id DESC LIMIT 0, 10', [])
+ 5 APPPATH\Libraries\DataTable.php(48): App\Libraries\DataTable->getListDataDataTable('absence.id', 'DESC', [])
+ 6 APPPATH\Controllers\Member\Absence.php(66): App\Libraries\DataTable->getListDataTable(Object(CodeIgniter\HTTP\IncomingRequest), 'absence', [...], '
+        JOIN courses_users ON absence.course_id = courses_users.course_id
+        JOIN users ON absence.user_id = users.id
+        ', 'users.id = 1', '')
+ 7 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Member\Absence->get_absence()
+ 8 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Member\Absence))
+ 9 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+13 SYSTEMPATH\Commands\Server\rewrite.php(49): require_once('E:\\Project\\PHP Project\\freelance\\absence\\public\\index.php')
+INFO - 2024-04-21 10:32:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-21 10:32:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2024-04-21 10:32:14 --> mysqli_sql_exception: Unknown column 'courses.name' in 'field list' in E:\Project\PHP Project\freelance\absence\system\Database\MySQLi\Connection.php:308
+Stack trace:
+#0 E:\Project\PHP Project\freelance\absence\system\Database\MySQLi\Connection.php(308): mysqli->query('SELECT absence....', 0)
+#1 E:\Project\PHP Project\freelance\absence\system\Database\BaseConnection.php(722): CodeIgniter\Database\MySQLi\Connection->execute('SELECT absence....')
+#2 E:\Project\PHP Project\freelance\absence\system\Database\BaseConnection.php(636): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT absence....')
+#3 E:\Project\PHP Project\freelance\absence\app\Libraries\DataTable.php(108): CodeIgniter\Database\BaseConnection->query('SELECT absence....', Array)
+#4 E:\Project\PHP Project\freelance\absence\app\Libraries\DataTable.php(48): App\Libraries\DataTable->getListDataDataTable('absence.id', 'DESC', Array)
+#5 E:\Project\PHP Project\freelance\absence\app\Controllers\Member\Absence.php(66): App\Libraries\DataTable->getListDataTable(Object(CodeIgniter\HTTP\IncomingRequest), 'absence', Array, '\r\n        JOIN ...', 'users.id = 1', '')
+#6 E:\Project\PHP Project\freelance\absence\system\CodeIgniter.php(933): App\Controllers\Member\Absence->get_absence()
+#7 E:\Project\PHP Project\freelance\absence\system\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Member\Absence))
+#8 E:\Project\PHP Project\freelance\absence\system\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 E:\Project\PHP Project\freelance\absence\system\Boot.php(312): CodeIgniter\CodeIgniter->run()
+#10 E:\Project\PHP Project\freelance\absence\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#11 E:\Project\PHP Project\freelance\absence\public\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#12 E:\Project\PHP Project\freelance\absence\system\Commands\Server\rewrite.php(49): require_once('E:\\Project\\PHP ...')
+#13 {main}
+CRITICAL - 2024-04-21 10:32:14 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'courses.name' in 'field list'
+[Method: GET, Route: member/absence/get_absence]
+in SYSTEMPATH\Database\BaseConnection.php on line 676.
+ 1 APPPATH\Libraries\DataTable.php(108): CodeIgniter\Database\BaseConnection->query('SELECT absence.id AS id, absence.user_id AS user_id, absence.course_id AS course_id, courses.name AS course_name, absence.date AS date, absence.reason AS reason, absence.created_at AS created_at, absence.updated_at AS updated_at FROM absence 
+        JOIN courses_users ON absence.course_id = courses_users.course_id
+        JOIN users ON absence.user_id = users.id
+         WHERE 1  AND users.id = 1  ORDER BY absence.id DESC LIMIT 0, 10', [])
+ 2 APPPATH\Libraries\DataTable.php(48): App\Libraries\DataTable->getListDataDataTable('absence.id', 'DESC', [])
+ 3 APPPATH\Controllers\Member\Absence.php(66): App\Libraries\DataTable->getListDataTable(Object(CodeIgniter\HTTP\IncomingRequest), 'absence', [...], '
+        JOIN courses_users ON absence.course_id = courses_users.course_id
+        JOIN users ON absence.user_id = users.id
+        ', 'users.id = 1', '')
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Member\Absence->get_absence()
+ 5 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Member\Absence))
+ 6 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+10 SYSTEMPATH\Commands\Server\rewrite.php(49): require_once('E:\\Project\\PHP Project\\freelance\\absence\\public\\index.php')
+CRITICAL - 2024-04-21 10:32:14 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'courses.name' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 313.
+ 1 SYSTEMPATH\Database\BaseConnection.php(722): CodeIgniter\Database\MySQLi\Connection->execute('SELECT absence.id AS id, absence.user_id AS user_id, absence.course_id AS course_id, courses.name AS course_name, absence.date AS date, absence.reason AS reason, absence.created_at AS created_at, absence.updated_at AS updated_at FROM absence 
+        JOIN courses_users ON absence.course_id = courses_users.course_id
+        JOIN users ON absence.user_id = users.id
+         WHERE 1  AND users.id = 1  ORDER BY absence.id DESC LIMIT 0, 10')
+ 2 SYSTEMPATH\Database\BaseConnection.php(636): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT absence.id AS id, absence.user_id AS user_id, absence.course_id AS course_id, courses.name AS course_name, absence.date AS date, absence.reason AS reason, absence.created_at AS created_at, absence.updated_at AS updated_at FROM absence 
+        JOIN courses_users ON absence.course_id = courses_users.course_id
+        JOIN users ON absence.user_id = users.id
+         WHERE 1  AND users.id = 1  ORDER BY absence.id DESC LIMIT 0, 10')
+ 3 APPPATH\Libraries\DataTable.php(108): CodeIgniter\Database\BaseConnection->query('SELECT absence.id AS id, absence.user_id AS user_id, absence.course_id AS course_id, courses.name AS course_name, absence.date AS date, absence.reason AS reason, absence.created_at AS created_at, absence.updated_at AS updated_at FROM absence 
+        JOIN courses_users ON absence.course_id = courses_users.course_id
+        JOIN users ON absence.user_id = users.id
+         WHERE 1  AND users.id = 1  ORDER BY absence.id DESC LIMIT 0, 10', [])
+ 4 APPPATH\Libraries\DataTable.php(48): App\Libraries\DataTable->getListDataDataTable('absence.id', 'DESC', [])
+ 5 APPPATH\Controllers\Member\Absence.php(66): App\Libraries\DataTable->getListDataTable(Object(CodeIgniter\HTTP\IncomingRequest), 'absence', [...], '
+        JOIN courses_users ON absence.course_id = courses_users.course_id
+        JOIN users ON absence.user_id = users.id
+        ', 'users.id = 1', '')
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Member\Absence->get_absence()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Member\Absence))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\Commands\Server\rewrite.php(49): require_once('E:\\Project\\PHP Project\\freelance\\absence\\public\\index.php')
+CRITICAL - 2024-04-21 10:32:14 --> [Caused by] mysqli_sql_exception: Unknown column 'courses.name' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 308.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(308): mysqli->query('SELECT absence.id AS id, absence.user_id AS user_id, absence.course_id AS course_id, courses.name AS course_name, absence.date AS date, absence.reason AS reason, absence.created_at AS created_at, absence.updated_at AS updated_at FROM absence 
+        JOIN courses_users ON absence.course_id = courses_users.course_id
+        JOIN users ON absence.user_id = users.id
+         WHERE 1  AND users.id = 1  ORDER BY absence.id DESC LIMIT 0, 10', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(722): CodeIgniter\Database\MySQLi\Connection->execute('SELECT absence.id AS id, absence.user_id AS user_id, absence.course_id AS course_id, courses.name AS course_name, absence.date AS date, absence.reason AS reason, absence.created_at AS created_at, absence.updated_at AS updated_at FROM absence 
+        JOIN courses_users ON absence.course_id = courses_users.course_id
+        JOIN users ON absence.user_id = users.id
+         WHERE 1  AND users.id = 1  ORDER BY absence.id DESC LIMIT 0, 10')
+ 3 SYSTEMPATH\Database\BaseConnection.php(636): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT absence.id AS id, absence.user_id AS user_id, absence.course_id AS course_id, courses.name AS course_name, absence.date AS date, absence.reason AS reason, absence.created_at AS created_at, absence.updated_at AS updated_at FROM absence 
+        JOIN courses_users ON absence.course_id = courses_users.course_id
+        JOIN users ON absence.user_id = users.id
+         WHERE 1  AND users.id = 1  ORDER BY absence.id DESC LIMIT 0, 10')
+ 4 APPPATH\Libraries\DataTable.php(108): CodeIgniter\Database\BaseConnection->query('SELECT absence.id AS id, absence.user_id AS user_id, absence.course_id AS course_id, courses.name AS course_name, absence.date AS date, absence.reason AS reason, absence.created_at AS created_at, absence.updated_at AS updated_at FROM absence 
+        JOIN courses_users ON absence.course_id = courses_users.course_id
+        JOIN users ON absence.user_id = users.id
+         WHERE 1  AND users.id = 1  ORDER BY absence.id DESC LIMIT 0, 10', [])
+ 5 APPPATH\Libraries\DataTable.php(48): App\Libraries\DataTable->getListDataDataTable('absence.id', 'DESC', [])
+ 6 APPPATH\Controllers\Member\Absence.php(66): App\Libraries\DataTable->getListDataTable(Object(CodeIgniter\HTTP\IncomingRequest), 'absence', [...], '
+        JOIN courses_users ON absence.course_id = courses_users.course_id
+        JOIN users ON absence.user_id = users.id
+        ', 'users.id = 1', '')
+ 7 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Member\Absence->get_absence()
+ 8 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Member\Absence))
+ 9 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+13 SYSTEMPATH\Commands\Server\rewrite.php(49): require_once('E:\\Project\\PHP Project\\freelance\\absence\\public\\index.php')
+INFO - 2024-04-21 10:33:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-21 10:33:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2024-04-21 10:33:14 --> mysqli_sql_exception: Unknown column 'courses.name' in 'field list' in E:\Project\PHP Project\freelance\absence\system\Database\MySQLi\Connection.php:308
+Stack trace:
+#0 E:\Project\PHP Project\freelance\absence\system\Database\MySQLi\Connection.php(308): mysqli->query('SELECT absence....', 0)
+#1 E:\Project\PHP Project\freelance\absence\system\Database\BaseConnection.php(722): CodeIgniter\Database\MySQLi\Connection->execute('SELECT absence....')
+#2 E:\Project\PHP Project\freelance\absence\system\Database\BaseConnection.php(636): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT absence....')
+#3 E:\Project\PHP Project\freelance\absence\app\Libraries\DataTable.php(108): CodeIgniter\Database\BaseConnection->query('SELECT absence....', Array)
+#4 E:\Project\PHP Project\freelance\absence\app\Libraries\DataTable.php(48): App\Libraries\DataTable->getListDataDataTable('absence.id', 'DESC', Array)
+#5 E:\Project\PHP Project\freelance\absence\app\Controllers\Member\Absence.php(66): App\Libraries\DataTable->getListDataTable(Object(CodeIgniter\HTTP\IncomingRequest), 'absence', Array, '\r\n        JOIN ...', 'users.id = 1', '')
+#6 E:\Project\PHP Project\freelance\absence\system\CodeIgniter.php(933): App\Controllers\Member\Absence->get_absence()
+#7 E:\Project\PHP Project\freelance\absence\system\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Member\Absence))
+#8 E:\Project\PHP Project\freelance\absence\system\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 E:\Project\PHP Project\freelance\absence\system\Boot.php(312): CodeIgniter\CodeIgniter->run()
+#10 E:\Project\PHP Project\freelance\absence\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#11 E:\Project\PHP Project\freelance\absence\public\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#12 E:\Project\PHP Project\freelance\absence\system\Commands\Server\rewrite.php(49): require_once('E:\\Project\\PHP ...')
+#13 {main}
+CRITICAL - 2024-04-21 10:33:14 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'courses.name' in 'field list'
+[Method: GET, Route: member/absence/get_absence]
+in SYSTEMPATH\Database\BaseConnection.php on line 676.
+ 1 APPPATH\Libraries\DataTable.php(108): CodeIgniter\Database\BaseConnection->query('SELECT absence.id AS id, absence.user_id AS user_id, absence.course_id AS course_id, courses.name AS course_name, absence.date AS date, absence.reason AS reason, absence.created_at AS created_at, absence.updated_at AS updated_at FROM absence 
+        JOIN courses_users ON absence.course_id = courses_users.course_id
+        JOIN users ON absence.user_id = users.id
+         WHERE 1  AND users.id = 1  ORDER BY absence.id DESC LIMIT 0, 10', [])
+ 2 APPPATH\Libraries\DataTable.php(48): App\Libraries\DataTable->getListDataDataTable('absence.id', 'DESC', [])
+ 3 APPPATH\Controllers\Member\Absence.php(66): App\Libraries\DataTable->getListDataTable(Object(CodeIgniter\HTTP\IncomingRequest), 'absence', [...], '
+        JOIN courses_users ON absence.course_id = courses_users.course_id
+        JOIN users ON absence.user_id = users.id
+        ', 'users.id = 1', '')
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Member\Absence->get_absence()
+ 5 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Member\Absence))
+ 6 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+10 SYSTEMPATH\Commands\Server\rewrite.php(49): require_once('E:\\Project\\PHP Project\\freelance\\absence\\public\\index.php')
+CRITICAL - 2024-04-21 10:33:14 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'courses.name' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 313.
+ 1 SYSTEMPATH\Database\BaseConnection.php(722): CodeIgniter\Database\MySQLi\Connection->execute('SELECT absence.id AS id, absence.user_id AS user_id, absence.course_id AS course_id, courses.name AS course_name, absence.date AS date, absence.reason AS reason, absence.created_at AS created_at, absence.updated_at AS updated_at FROM absence 
+        JOIN courses_users ON absence.course_id = courses_users.course_id
+        JOIN users ON absence.user_id = users.id
+         WHERE 1  AND users.id = 1  ORDER BY absence.id DESC LIMIT 0, 10')
+ 2 SYSTEMPATH\Database\BaseConnection.php(636): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT absence.id AS id, absence.user_id AS user_id, absence.course_id AS course_id, courses.name AS course_name, absence.date AS date, absence.reason AS reason, absence.created_at AS created_at, absence.updated_at AS updated_at FROM absence 
+        JOIN courses_users ON absence.course_id = courses_users.course_id
+        JOIN users ON absence.user_id = users.id
+         WHERE 1  AND users.id = 1  ORDER BY absence.id DESC LIMIT 0, 10')
+ 3 APPPATH\Libraries\DataTable.php(108): CodeIgniter\Database\BaseConnection->query('SELECT absence.id AS id, absence.user_id AS user_id, absence.course_id AS course_id, courses.name AS course_name, absence.date AS date, absence.reason AS reason, absence.created_at AS created_at, absence.updated_at AS updated_at FROM absence 
+        JOIN courses_users ON absence.course_id = courses_users.course_id
+        JOIN users ON absence.user_id = users.id
+         WHERE 1  AND users.id = 1  ORDER BY absence.id DESC LIMIT 0, 10', [])
+ 4 APPPATH\Libraries\DataTable.php(48): App\Libraries\DataTable->getListDataDataTable('absence.id', 'DESC', [])
+ 5 APPPATH\Controllers\Member\Absence.php(66): App\Libraries\DataTable->getListDataTable(Object(CodeIgniter\HTTP\IncomingRequest), 'absence', [...], '
+        JOIN courses_users ON absence.course_id = courses_users.course_id
+        JOIN users ON absence.user_id = users.id
+        ', 'users.id = 1', '')
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Member\Absence->get_absence()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Member\Absence))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\Commands\Server\rewrite.php(49): require_once('E:\\Project\\PHP Project\\freelance\\absence\\public\\index.php')
+CRITICAL - 2024-04-21 10:33:14 --> [Caused by] mysqli_sql_exception: Unknown column 'courses.name' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 308.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(308): mysqli->query('SELECT absence.id AS id, absence.user_id AS user_id, absence.course_id AS course_id, courses.name AS course_name, absence.date AS date, absence.reason AS reason, absence.created_at AS created_at, absence.updated_at AS updated_at FROM absence 
+        JOIN courses_users ON absence.course_id = courses_users.course_id
+        JOIN users ON absence.user_id = users.id
+         WHERE 1  AND users.id = 1  ORDER BY absence.id DESC LIMIT 0, 10', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(722): CodeIgniter\Database\MySQLi\Connection->execute('SELECT absence.id AS id, absence.user_id AS user_id, absence.course_id AS course_id, courses.name AS course_name, absence.date AS date, absence.reason AS reason, absence.created_at AS created_at, absence.updated_at AS updated_at FROM absence 
+        JOIN courses_users ON absence.course_id = courses_users.course_id
+        JOIN users ON absence.user_id = users.id
+         WHERE 1  AND users.id = 1  ORDER BY absence.id DESC LIMIT 0, 10')
+ 3 SYSTEMPATH\Database\BaseConnection.php(636): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT absence.id AS id, absence.user_id AS user_id, absence.course_id AS course_id, courses.name AS course_name, absence.date AS date, absence.reason AS reason, absence.created_at AS created_at, absence.updated_at AS updated_at FROM absence 
+        JOIN courses_users ON absence.course_id = courses_users.course_id
+        JOIN users ON absence.user_id = users.id
+         WHERE 1  AND users.id = 1  ORDER BY absence.id DESC LIMIT 0, 10')
+ 4 APPPATH\Libraries\DataTable.php(108): CodeIgniter\Database\BaseConnection->query('SELECT absence.id AS id, absence.user_id AS user_id, absence.course_id AS course_id, courses.name AS course_name, absence.date AS date, absence.reason AS reason, absence.created_at AS created_at, absence.updated_at AS updated_at FROM absence 
+        JOIN courses_users ON absence.course_id = courses_users.course_id
+        JOIN users ON absence.user_id = users.id
+         WHERE 1  AND users.id = 1  ORDER BY absence.id DESC LIMIT 0, 10', [])
+ 5 APPPATH\Libraries\DataTable.php(48): App\Libraries\DataTable->getListDataDataTable('absence.id', 'DESC', [])
+ 6 APPPATH\Controllers\Member\Absence.php(66): App\Libraries\DataTable->getListDataTable(Object(CodeIgniter\HTTP\IncomingRequest), 'absence', [...], '
+        JOIN courses_users ON absence.course_id = courses_users.course_id
+        JOIN users ON absence.user_id = users.id
+        ', 'users.id = 1', '')
+ 7 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Member\Absence->get_absence()
+ 8 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Member\Absence))
+ 9 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+13 SYSTEMPATH\Commands\Server\rewrite.php(49): require_once('E:\\Project\\PHP Project\\freelance\\absence\\public\\index.php')
+INFO - 2024-04-21 10:33:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-21 10:33:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-21 10:33:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-21 10:33:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-21 10:33:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-21 10:33:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-21 10:33:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-21 10:33:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-04-21 10:33:32 --> ErrorException: Undefined array key "scheduled_at"
+[Method: GET, Route: member/absence/get_absence]
+in APPPATH\Controllers\Member\Absence.php on line 71.
+ 1 APPPATH\Controllers\Member\Absence.php(71): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "scheduled_at"', 'E:\\Project\\PHP Project\\freelance\\absence\\app\\Controllers\\Member\\Absence.php', 71)
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Member\Absence->get_absence()
+ 3 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Member\Absence))
+ 4 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 8 SYSTEMPATH\Commands\Server\rewrite.php(49): require_once('E:\\Project\\PHP Project\\freelance\\absence\\public\\index.php')
+INFO - 2024-04-21 10:34:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-21 10:34:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-04-21 10:34:02 --> ErrorException: Undefined array key "scheduled_at"
+[Method: GET, Route: member/absence/get_absence]
+in APPPATH\Controllers\Member\Absence.php on line 71.
+ 1 APPPATH\Controllers\Member\Absence.php(71): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "scheduled_at"', 'E:\\Project\\PHP Project\\freelance\\absence\\app\\Controllers\\Member\\Absence.php', 71)
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Member\Absence->get_absence()
+ 3 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Member\Absence))
+ 4 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 8 SYSTEMPATH\Commands\Server\rewrite.php(49): require_once('E:\\Project\\PHP Project\\freelance\\absence\\public\\index.php')
+INFO - 2024-04-21 10:34:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-21 10:34:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-04-21 10:34:39 --> ErrorException: Undefined array key "scheduled_at"
+[Method: GET, Route: member/absence/get_absence]
+in APPPATH\Controllers\Member\Absence.php on line 71.
+ 1 APPPATH\Controllers\Member\Absence.php(71): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "scheduled_at"', 'E:\\Project\\PHP Project\\freelance\\absence\\app\\Controllers\\Member\\Absence.php', 71)
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Member\Absence->get_absence()
+ 3 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Member\Absence))
+ 4 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 8 SYSTEMPATH\Commands\Server\rewrite.php(49): require_once('E:\\Project\\PHP Project\\freelance\\absence\\public\\index.php')
+INFO - 2024-04-21 10:34:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-21 10:34:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-04-21 10:34:56 --> ErrorException: Undefined array key "scheduled_at"
+[Method: GET, Route: member/absence/get_absence]
+in APPPATH\Controllers\Member\Absence.php on line 71.
+ 1 APPPATH\Controllers\Member\Absence.php(71): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "scheduled_at"', 'E:\\Project\\PHP Project\\freelance\\absence\\app\\Controllers\\Member\\Absence.php', 71)
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Member\Absence->get_absence()
+ 3 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Member\Absence))
+ 4 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 8 SYSTEMPATH\Commands\Server\rewrite.php(49): require_once('E:\\Project\\PHP Project\\freelance\\absence\\public\\index.php')
+INFO - 2024-04-21 10:34:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-21 10:34:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-04-21 10:34:58 --> ErrorException: Undefined array key "scheduled_at"
+[Method: GET, Route: member/absence/get_absence]
+in APPPATH\Controllers\Member\Absence.php on line 71.
+ 1 APPPATH\Controllers\Member\Absence.php(71): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "scheduled_at"', 'E:\\Project\\PHP Project\\freelance\\absence\\app\\Controllers\\Member\\Absence.php', 71)
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Member\Absence->get_absence()
+ 3 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Member\Absence))
+ 4 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 8 SYSTEMPATH\Commands\Server\rewrite.php(49): require_once('E:\\Project\\PHP Project\\freelance\\absence\\public\\index.php')
+INFO - 2024-04-21 10:35:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-21 10:35:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-21 10:35:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-21 10:35:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-04-21 10:35:16 --> ErrorException: Undefined array key "scheduled_at"
+[Method: GET, Route: member/absence/get_absence]
+in APPPATH\Controllers\Member\Absence.php on line 71.
+ 1 APPPATH\Controllers\Member\Absence.php(71): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "scheduled_at"', 'E:\\Project\\PHP Project\\freelance\\absence\\app\\Controllers\\Member\\Absence.php', 71)
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Member\Absence->get_absence()
+ 3 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Member\Absence))
+ 4 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 8 SYSTEMPATH\Commands\Server\rewrite.php(49): require_once('E:\\Project\\PHP Project\\freelance\\absence\\public\\index.php')
+INFO - 2024-04-21 10:35:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-21 10:35:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-04-21 10:35:23 --> ErrorException: Undefined array key "scheduled_at"
+[Method: GET, Route: member/absence/get_absence]
+in APPPATH\Controllers\Member\Absence.php on line 71.
+ 1 APPPATH\Controllers\Member\Absence.php(71): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "scheduled_at"', 'E:\\Project\\PHP Project\\freelance\\absence\\app\\Controllers\\Member\\Absence.php', 71)
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Member\Absence->get_absence()
+ 3 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Member\Absence))
+ 4 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 8 SYSTEMPATH\Commands\Server\rewrite.php(49): require_once('E:\\Project\\PHP Project\\freelance\\absence\\public\\index.php')
+INFO - 2024-04-21 10:35:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-21 10:35:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-21 10:36:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-21 10:36:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-21 10:36:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-21 10:36:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-21 10:36:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-21 10:36:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-21 10:36:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-21 10:36:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-21 10:36:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-21 10:36:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-21 10:36:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-21 10:36:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-21 10:36:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-21 10:36:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-21 10:36:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-21 10:36:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-21 10:36:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-21 10:36:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-21 10:37:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-21 10:37:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-21 10:38:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-21 10:38:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-21 10:38:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-21 10:38:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-21 10:38:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-21 10:38:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-21 10:38:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-21 10:38:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-21 10:38:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-21 10:38:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-21 10:38:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-21 10:39:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-21 10:39:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-21 10:39:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-21 10:39:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-21 10:40:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-21 10:40:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-21 10:40:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-21 10:40:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-21 10:40:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-21 10:40:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-21 10:40:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-21 10:41:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-21 10:41:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-21 10:41:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-21 10:41:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-21 10:41:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-21 10:41:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-21 10:41:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-21 10:41:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-21 10:41:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-21 10:41:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-21 10:42:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-21 10:42:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-21 10:42:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-21 10:42:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-21 10:42:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-21 10:42:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-21 10:42:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-21 10:42:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-21 10:43:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-21 10:43:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-21 10:46:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-21 10:46:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-21 10:46:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-21 10:46:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-21 10:46:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-21 10:46:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-21 10:46:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-21 10:46:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-21 10:46:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-21 10:46:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-21 10:46:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-21 10:46:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-21 10:46:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-21 10:46:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-21 10:46:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-21 11:08:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-21 11:08:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-21 11:08:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-21 11:08:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-21 11:08:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.

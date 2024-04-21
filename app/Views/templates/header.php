@@ -36,7 +36,7 @@
                                 <p class="mb-0 fs-3">My Profile</p>
                             </a>
 
-                            <a href="<?= base_url('/member/logout') ?>" class="btn btn-outline-primary mx-3 mt-2 d-block">Logout</a>
+                            <a href="<?= base_url('/auth/logout') ?>" class="btn btn-outline-primary mx-3 mt-2 d-block">Logout</a>
                         </div>
                     </div>
                 </li>

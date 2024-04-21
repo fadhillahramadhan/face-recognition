@@ -12,6 +12,7 @@ use CodeIgniter\Filters\InvalidChars;
 use CodeIgniter\Filters\PageCache;
 use CodeIgniter\Filters\PerformanceMetrics;
 use CodeIgniter\Filters\SecureHeaders;
+use App\Filters\AuthMember;
 
 class Filters extends BaseFilters
 {
@@ -34,6 +35,7 @@ class Filters extends BaseFilters
         'forcehttps'    => ForceHTTPS::class,
         'pagecache'     => PageCache::class,
         'performance'   => PerformanceMetrics::class,
+        'auth_member'   => AuthMember::class,
     ];
 
     /**
@@ -103,5 +105,8 @@ class Filters extends BaseFilters
      *
      * @var array<string, array<string, list<string>>>
      */
-    public array $filters = [];
+    // public array $filters = ['auth_member' => ['before' => ['member/*']]];
+
+    // filters /except member/auth & member/logout
+    public array $filters = ['auth_member' => ['before' => ['member/*'], 'except' => ['member/auth', 'member/logout']]];
 }

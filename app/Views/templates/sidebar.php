@@ -57,7 +57,7 @@
                 <div class="d-flex">
                     <div class="unlimited-access-title me-3">
                         <h6 class="fw-semibold fs-4 mb-6 text-dark w-85">Ingin Keluar ? &nbsp; &nbsp; &nbsp;&nbsp;&nbsp;</h6>
-                        <a href="<?= base_url('/member/logout') ?>" target="_blank" class="btn btn-primary fs-2 fw-semibold lh-sm">Logout</a>
+                        <a href="<?= base_url('/auth/logout') ?>" target="_blank" class="btn btn-primary fs-2 fw-semibold lh-sm">Logout</a>
                     </div>
                     <div class="unlimited-access-img">
                         <img src="<?= base_url() ?>/assets/images/backgrounds/rocket.png" alt="" class="img-fluid">

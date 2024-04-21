@@ -1,4 +1,18 @@
 <?php
+$PORT = array_key_exists("argv", $_SERVER) && array_search("--port", $_SERVER["argv"]) !== FALSE ? $_SERVER["argv"][array_search("--port", $_SERVER["argv"]) + 1] : 8080;
+
+defined('URL_PRODUCTION')   || define('URL_PRODUCTION', "desintku.com");
+defined('URL_DEVELOPMENT')  || define('URL_DEVELOPMENT', "desint.esoftdream.co.id");
+defined('URL_STAGING')      || define('URL_STAGING', "http://localhost:{$PORT}");
+
+if (isset($_SERVER['HTTPS']) && ($_SERVER['HTTPS'] == 'on' || $_SERVER['HTTPS'] == 1) || isset($_SERVER['HTTP_X_FORWARDED_PROTO']) && $_SERVER['HTTP_X_FORWARDED_PROTO'] == 'https') {
+    $BASEURL = 'https://' . $_SERVER['HTTP_HOST'];
+} else {
+    $BASEURL = URL_STAGING;
+}
+
+defined('BASEURL') || define('BASEURL', $BASEURL);
+
 
 /*
  | --------------------------------------------------------------------

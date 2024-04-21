@@ -22,14 +22,25 @@
                                     <img src="../assets/images/logos/dark-logo.svg" width="180" alt="">
                                 </a>
                                 <p class="text-center">Assistant presensi dan absensi</p>
-                                <form>
+                                <form class="mt-4" action="<?= base_url() ?>/auth/login" method="post">
                                     <div class="mb-3">
-                                        <label for="exampleInputEmail1" class="form-label">Username</label>
-                                        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                                        <label for="email" class="form-label">Email</label>
+                                        <input type="email" name="email" class="form-control" aria-describedby="email">
+                                        <?php if (isset(session()->getFlashdata('errors')['email'])) : ?>
+                                            <div class="alert alert-danger mt-2" role="alert">
+                                                <?= session()->getFlashdata('errors')['email'] ?>
+                                            </div>
+                                        <?php endif; ?>
+
                                     </div>
                                     <div class="mb-4">
-                                        <label for="exampleInputPassword1" class="form-label">Password</label>
-                                        <input type="password" class="form-control" id="exampleInputPassword1">
+                                        <label for="password" class="form-label">Password</label>
+                                        <input type="password" name="password" class="form-control">
+                                        <?php if (isset(session()->getFlashdata('errors')['password'])) : ?>
+                                            <div class="alert alert-danger mt-2" role="alert">
+                                                <?= session()->getFlashdata('errors')['password'] ?>
+                                            </div>
+                                        <?php endif; ?>
                                     </div>
                                     <div class="d-flex align-items-center justify-content-between mb-4">
                                         <div class="form-check">
@@ -39,7 +50,7 @@
                                             </label>
                                         </div>
                                     </div>
-                                    <a href="./index.html" class="btn btn-primary w-100 py-8 fs-4 mb-4 rounded-2">Sign In</a>
+                                    <button type="submit" class="btn btn-primary w-100 py-8 fs-4 mb-4 rounded-2">Sign In</button>
 
                                 </form>
                             </div>
