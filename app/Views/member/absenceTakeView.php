@@ -43,6 +43,15 @@
 <?= $this->section('content') ?>
 
 
+<!-- LOADING -->
+<div class="loading" id="loading">
+    <div class="spinner-border text-primary" role="status">
+        <span class="visually-hidden">Loading...</span>
+    </div>
+    <p class="mt-2">Loading...</p>
+</div>
+
+
 <div class="card">
     <div class="card-body ">
         <h5 class="card-title align-self-start">Presensi</h5>
@@ -111,7 +120,7 @@
     }
 
     function captureAndCompare() {
-        showLoading(); // Show loading indicator
+        showLoading();
 
         // Draw video frame on canvas
         const ctx = canvas.getContext('2d');
@@ -119,19 +128,21 @@
         canvas.toBlob(blob => {
             const formData = new FormData();
             formData.append('webcam_image', blob, 'webcam_image.jpg');
+            let url = "http://127.0.0.1:5000/compare";
 
-            fetch('http://127.0.0.1:5000    /compare', {
+
+            fetch(url, {
                     method: 'POST',
                     body: formData
                 })
                 .then(response => response.json())
                 .then(data => {
                     resultElement.innerText = `Person: ${data.person}`;
-                    hideLoading(); // Hide loading indicator
                 })
                 .catch(error => {
                     console.error('Error:', error);
-                    hideLoading(); // Hide loading indicator on error
+                }).finally(() => {
+                    hideLoading();
                 });
         }, 'image/jpeg');
     }

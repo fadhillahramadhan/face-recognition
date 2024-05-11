@@ -531,12 +531,12 @@ $.setTable = function (t, property, dtTablePage) {
 	let actionButton = '';
 
 	$.each(property.buttonAction, function (i, value) {
+		let act = value.action;
 		actionButton =
 			actionButton +
 			`
-        <button class="btn btn-icon mr-25 dtale-action ${$(t).attr(
-			'id'
-		)}-action ${
+        <button 
+		class="btn btn-outline-primary m-2 dtale-action ${$(t).attr('id')}-action ${
 				value.style == undefined ? 'btn-default' : value.style
 			}" type="button" id="${$(t).attr('id')}${value.action}" title="${
 				value.display
@@ -567,7 +567,7 @@ $.setTable = function (t, property, dtTablePage) {
 				if (value.type == 'text') {
 					modalSearchBody =
 						modalSearchBody +
-						`<input type="text" placeholder="${value.display}" name="${value.name}" class="form-control" id="${id}-form-data-${value.name}" />`;
+						`<input type="text" placeholder="${value.display}" name="${value.name}" class="form-control mb-2" id="${id}-form-data-${value.name}" />`;
 				} else if (value.type == 'number') {
 					let mdMin = '';
 					let mdMax = '';
@@ -581,7 +581,7 @@ $.setTable = function (t, property, dtTablePage) {
 						modalSearchBody +
 						'<input type="number" name="' +
 						value.name +
-						'" class="form-control" ' +
+						'" class="form-control mb-2" ' +
 						mdMin +
 						' ' +
 						mdMax +
@@ -608,7 +608,7 @@ $.setTable = function (t, property, dtTablePage) {
 						modalSearchBody +
 						'<select name="' +
 						value.name +
-						'" class="form-control" id="' +
+						'" class="form-control mb-2" id="' +
 						$(t).attr('id') +
 						'-form-data-' +
 						value.name +
@@ -621,7 +621,7 @@ $.setTable = function (t, property, dtTablePage) {
 						modalSearchBody +
 						'<div class="col-md-6"><label>Tanggal Mulai</label><input type="date" name="' +
 						value.name +
-						'[start]" class="form-control" id="' +
+						'[start]" class="form-control mb-2" id="' +
 						$(t).attr('id') +
 						'-form-data-' +
 						value.name +
@@ -630,7 +630,7 @@ $.setTable = function (t, property, dtTablePage) {
 						modalSearchBody +
 						'<div class="col-md-6"><label>Tanggal Berakhir</label><input type="date" name="' +
 						value.name +
-						'[end]" class="form-control" id="' +
+						'[end]" class="form-control mb-2" id="' +
 						$(t).attr('id') +
 						'-form-data-' +
 						value.name +
@@ -642,11 +642,11 @@ $.setTable = function (t, property, dtTablePage) {
 		}
 		searchButton = `
         <div class="row">
-            <div class="col-sm-12 col-md-6 col-lg-8" id="${$(t).attr(
+            <div class="col-sm-12 col-md-12 col-lg-12" id="${$(t).attr(
 				'id'
 			)}-search-result">
         </div>
-        <div class="col-sm-12 col-md-6 col-lg-4 d-flex justify-content-end align-items-center pb-1">
+        <div class="col-sm-12 col-md-12 col-lg-12 d-flex justify-content-end align-items-center pb-1 flex-wrap">
             ${actionButton}
             <button class="ml-1 btn btn-primary" data-bs-toggle="modal" data-bs-target="#${$(
 				t
@@ -657,7 +657,7 @@ $.setTable = function (t, property, dtTablePage) {
 			modalSearch +
 			'<div class="modal text-left" id="' +
 			$(t).attr('id') +
-			'-searchModal" style="z-index:999999999999999;">';
+			'-searchModal">';
 		modalSearch = modalSearch + '<div class="modal-dialog">';
 		modalSearch = modalSearch + '<div class="modal-content">';
 		modalSearch = modalSearch + '<div class="modal-header">';
@@ -670,9 +670,9 @@ $.setTable = function (t, property, dtTablePage) {
 			'</h4>';
 		modalSearch =
 			modalSearch +
-			`<span type="button" class="close" onclick="closeModal('#${$(
-				t
-			).attr('id')}-searchModal')"  >&times;</span>`;
+			`
+			<button type="button" data-bs-dismiss="modal" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+			`;
 		modalSearch = modalSearch + '</div>';
 		modalSearch =
 			modalSearch +
@@ -687,11 +687,12 @@ $.setTable = function (t, property, dtTablePage) {
 			`<button type="submit" class="btn btn-primary" style="margin-left:2px;">Cari</button>`;
 		modalSearch =
 			modalSearch +
-			`<button type="button" class="btn btn-light-secondary" onclick="closeModal('#${$(
+			`<button type="button" data-bs-dismiss="modal" class="btn btn-light-secondary" onclick="closeModal('#${$(
 				t
 			).attr(
 				'id'
-			)}-searchModal')" style="border:margin-right:2px;">Tutup</button>`;
+			)}-searchModal')" style="border:margin-right:2px;">Tutup</button>
+			`;
 		modalSearch = modalSearch + '</div></form>';
 		modalSearch = modalSearch + '</div>';
 		modalSearch = modalSearch + '</div>';
@@ -843,7 +844,7 @@ $.setTable = function (t, property, dtTablePage) {
 
 
 		.cstm-table thead {
-			visibility: hidden;
+			display: none;
 			height: 0;
 			position: absolute;
 		}
@@ -854,7 +855,6 @@ $.setTable = function (t, property, dtTablePage) {
 		}
 
 		.cstm-table td {
-			border: 1px solid;
 			border-bottom: none;
 			display: block;
 			font-size: .8em;
@@ -871,8 +871,9 @@ $.setTable = function (t, property, dtTablePage) {
 			text-transform: uppercase;
 		}
 
+		
 		.cstm-table td:last-child {
-			border-bottom: 1px solid;
+			border-bottom: 5px solid;
 		}
 		
 		.table-responsive {
@@ -1060,7 +1061,7 @@ $.getData = function (
 							}
 							tbody =
 								tbody +
-								`<td data-label="${label}" style="vertical-align: middle; text-align: ` +
+								`<td data-label="${label}" style="vertical-align: top; text-align: ` +
 								(field.align == undefined
 									? 'left'
 									: field.align) +
@@ -1136,7 +1137,7 @@ $.getData = function (
 						}
 						tbody =
 							tbody +
-							`<td data-label="${label}" style="vertical-align: middle; text-align: ` +
+							`<td data-label="${label}" style="vertical-align: top; text-align: ` +
 							(field.align == undefined ? 'left' : field.align) +
 							';' +
 							(property.colModel[irWidth].width == undefined
@@ -1176,7 +1177,7 @@ $.setLimit = function (t, limitOptions, currentLimit) {
 	limit += `<div class="col-md-3 col-6 text-right">`;
 	limit += `<fieldset class="form-group mb-0">`;
 	limit +=
-		'<select class="form-control ' +
+		'<select class="form-control mb-2 ' +
 		$(t).attr('id') +
 		'-dtTable-limit" id="dtTable-limit">';
 	$.each(limitOptions, function (key, value) {
@@ -1357,7 +1358,7 @@ $.setFilterNav = function (t, property, form, displaySearchItems, searchItems) {
 		filterString =
 			filterString +
 			'  ' +
-			'<button type="button" class="btn btn-info ' +
+			'<button type="button" data-bs-dismiss="modal" class="btn btn-info ' +
 			$(t).attr('id') +
 			'-filter-clear">Clear All</button>';
 	}

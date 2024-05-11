@@ -1,0 +1,838 @@
+/* Genealogy styles ================= */
+.all-node {
+  /* background: transparent url('../images/genealogy/genealogy-card-bg.svg') center center repeat-y;
+  background-size: auto 100%; */
+  background: #fff;
+  position: relative;
+  min-height: 180px;
+  /* height: auto !important; */
+  margin-top: 70px !important;
+  margin-bottom: 0px !important;
+  /* box-shadow: 0px -5px 20px 0 rgb(25 42 70 / 10%); */
+}
+
+.all-node .shield {
+  height: 95px;
+  width: 90px;
+  border: 1px solid var(--shield-border-color);
+  border-radius: 50% 50% 50% 50% / 12% 12% 88% 88%;
+  z-index: 99 !important;
+  position: relative;
+  overflow: hidden;
+  margin-top: -15px;
+  padding: 5px;
+  background: #fff url('../images/genealogy/user-frame.png') center center no-repeat !important;
+  background-size: 99% auto !important;
+  display: block;
+}
+
+.all-node .shield::before {
+  height: 95px;
+  width: 90px;
+  border: 0;
+  border-radius: 50% 50% 50% 50% / 12% 12% 88% 88%;
+  z-index: 99 !important;
+  position: absolute;
+  content: '';
+  top: 0;
+  left: -1px;
+  padding: 5px;
+  background: url(../images/genealogy/user-frame.png) center center no-repeat !important;
+  background-size: 100% !important;
+}
+
+.all-node .shield img {
+  border-radius: 50% 50% 50% 50% / 12% 12% 88% 88%;
+  height: 99%;
+  width: 80px;
+  margin-top: 1px;
+  z-index: 0 !important;
+  position: sticky;
+}
+
+
+
+/* genealogy */
+.card-genealogy {
+  background: #f5f5f5;
+}
+
+.chart-genealogy {
+  transform: scale(0.8);
+  transform-origin: 40% 0% 0px;
+  overflow: visible;
+}
+
+.menu-node {
+  border: 1px solid #ddd !important;
+  border-bottom: 3px solid #028b43 !important;
+  box-shadow: 0 0.46875rem 2.1875rem rgba(4, 9, 20, 0.01), 0 0.9375rem 1.40625rem rgba(4, 9, 20, 0.01), 0 0.25rem 0.53125rem rgba(4, 9, 20, 0.04), 0 0.125rem 0.1875rem rgba(4, 9, 20, 0.01) !important;
+}
+
+.chart-genealogy table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.node {
+  height: 320px;
+  width: 130px;
+  display: inline-block;
+  margin: 0;
+  padding: 5px;
+  font-size: 9pt;
+  border-radius: 7px;
+  background-repeat: no-repeat;
+  position: relative;
+}
+
+.node-image {
+  height: 90px;
+  margin-top: -50px;
+  justify-content: center;
+}
+
+.hexa {
+  /* -webkit-clip-path: polygon(75% 10%, 100% 50%, 75% 90%, 25% 90%, 0% 50%, 25% 10%); */
+  /* clip-path: polygon(75% 10%, 100% 50%, 75% 90%, 25% 90%, 0% 50%, 25% 10%); */
+  width: 80px;
+  height: 86px;
+  overflow: hidden;
+  border-radius: 10px;
+  border: 2px solid #b1b1b1;
+}
+
+.node-image img {
+  background-color: #ffffff;
+}
+
+.hexa img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.hexa img.icon {
+  width: 100%;
+  height: 100%;
+  object-fit: scale-down;
+}
+
+.node-shadow {
+  margin: 20px auto 45px;
+  width: 70px;
+  box-shadow: 0px 5px 15px 4px #848484;
+  height: 0px;
+}
+
+.chart-genealogy td {
+  text-align: center;
+}
+
+.chart-genealogy .top {
+  border-top: 2px dashed gray;
+}
+
+.chart-genealogy .left {
+  border-right: 1px dashed gray;
+}
+
+.chart-genealogy .right {
+  border-left: 2px dashed gray;
+}
+
+.chart-line {
+  height: 20px;
+  width: 4px;
+}
+
+.genealogy-name {
+  max-width: 100%;
+  max-height: 100%;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  line-height: 1.5;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  height: 1rem;
+  font-size: 13px;
+  margin-bottom: 0.35rem;
+}
+
+.node-growth {
+  width: 100%;
+}
+
+.node-growth>div {
+  flex: 1 1 0;
+}
+
+.v-img-growth {
+  width: 16px;
+  height: 16px;
+  background-repeat: no-repeat !important;
+  margin: 0 auto;
+}
+
+
+
+/* available node class */
+/* empty-node, basic-node, premium-node, business-node, vip-node, executive-node */
+
+.all-node:after {
+  width: 100%;
+  height: 80px;
+  position: absolute;
+  bottom: -66px;
+  left: 0;
+  content: '';
+  z-index: 100;
+}
+
+.all-node.empty-node:after {
+  background: url('../images/genealogy/genealogy-card-empty.svg') center center no-repeat !important;
+}
+
+.all-node {
+  border-top: 3px solid #b1b1b1;
+}
+
+.all-node:after {
+  background: url('../images/genealogy/genealogy-card-default.svg') center center no-repeat !important;
+  cursor: pointer;
+  opacity: 0.85;
+}
+
+.all-node .point-icon {
+  width: 16px;
+  height: 16px;
+  display: block;
+  margin: 0 auto;
+  background: url('../images/genealogy/ic-node.svg') center center no-repeat !important;
+}
+
+.all-node .btn-dark {
+  display: none;
+}
+
+/* .all-node .cl-primary { color: #39752b !important; }
+.menu-node { border-bottom: 5px solid #39752b !important; }
+.menu-node .cl-primary { color: #39752b !important; } */
+
+/* Executive Plan */
+.all-node.executive-node:after {
+  background: url('../images/genealogy/genealogy-card-executive.svg') center center no-repeat !important;
+  cursor: pointer;
+  opacity: 1;
+  background-size: 100% auto !important;
+  width: 104px;
+  overflow: hidden;
+  display: none;
+}
+
+.all-node.executive-node .cl-primary {
+  color: #FFF !important;
+}
+
+.all-node.executive-node .cl-grey {
+  color: rgba(255, 255, 255, 0.75) !important;
+}
+
+.menu-node.executive-node {
+  border-bottom: 5px solid #910000 !important;
+}
+
+.menu-node.executive-node .cl-primary {
+  color: #fff !important;
+}
+
+.all-node.executive-node {
+  border-top: 0;
+  border-bottom: 0 !important;
+  background: linear-gradient(to bottom, rgba(169, 3, 41, 1) 0%, rgba(143, 2, 34, 1) 44%, rgba(109, 0, 25, 1) 100%);
+  border-radius: 7px 7px 0 0;
+  background: url('../images/genealogy/bg-node-executive.svg') bottom center no-repeat !important;
+  background-size: cover !important;
+  color: rgba(255, 255, 255, 0.75);
+}
+
+.all-node.executive-node .hexa {
+  border: 2px solid #910000;
+  background: #910000;
+}
+
+.all-node.executive-node .btn-dark {
+  background-color: #5e2121 !important;
+  color: #fff;
+}
+
+.all-node.executive-node .btn-ro {
+  border-color: #eee !important;
+  color: #fff !important;
+  font-weight: bold;
+  z-index: 999;
+}
+
+.all-node.executive-node .btn-ro:hover,
+.all-node.executive-node .btn-ro:focus {
+  background-color: #fff !important;
+  color: #6d0019 !important;
+}
+
+.all-node.executive-node .btn-cloning {
+  border-color: #eee !important;
+  color: #fff !important;
+  background: #ffffff33 !important;
+  font-weight: bold;
+  z-index: 999;
+}
+
+.all-node.executive-node .btn-cloning:hover,
+.all-node.executive-node .btn-cloning:focus {
+  background-color: #fff !important;
+  color: #6d0019 !important;
+}
+
+/* Executive Plan */
+
+
+/* Business Plan */
+.all-node.free-node:after {
+  background: url('../images/genealogy/genealogy-card-business.svg') bottom center no-repeat !important;
+  cursor: pointer;
+  opacity: 0.85;
+  display: none;
+}
+
+.all-node.free-node .cl-primary {
+  color: #fff !important;
+}
+
+.all-node.free-node .cl-grey {
+  color: rgba(255, 255, 255, 0.75) !important;
+}
+
+.menu-node.free-node {
+  border-bottom: 5px solid #2655ad !important;
+}
+
+.menu-node.free-node .cl-primary {
+  color: #fff !important;
+}
+
+.all-node.free-node {
+  /* border-top: 3px solid #2655ad; */
+  border-top: 0;
+  border-bottom: 0 !important;
+  border-radius: 7px 7px 0 0;
+  background: url('../images/genealogy/bg-node-business.svg') bottom center no-repeat !important;
+  background-size: cover !important;
+  color: rgba(255, 255, 255, 0.75);
+}
+
+.all-node.free-node .hexa {
+  border: 2px solid #004c6b;
+  background: #004c6b;
+}
+
+.all-node.free-node .btn-dark {
+  background-color: #192946 !important;
+  color: #fff;
+}
+
+.all-node.free-node .btn-ro {
+  border-color: #eee !important;
+  color: #fff !important;
+  font-weight: bold;
+  z-index: 999;
+}
+
+.all-node.free-node .btn-ro:hover,
+.all-node.free-node .btn-ro:focus {
+  background-color: #fff !important;
+  color: #004c6b !important;
+}
+
+.all-node.free-node .btn-cloning {
+  border-color: #eee !important;
+  color: #fff !important;
+  background: #ffffff33 !important;
+  font-weight: bold;
+  z-index: 999;
+}
+
+.all-node.free-node .btn-cloning:hover,
+.all-node.free-node .btn-cloning:focus {
+  background-color: #fff !important;
+  color: #004c6b !important;
+}
+
+/* Business Plan */
+
+
+/* Basic Plan */
+.all-node.tajir-node:after {
+  background: url('../images/genealogy/genealogy-card-basic.svg') bottom center no-repeat !important;
+  cursor: pointer;
+  opacity: 0.85;
+  display: none;
+}
+
+.all-node.tajir-node .cl-primary {
+  color: #fff !important;
+}
+
+.menu-node.tajir-node {
+  border-bottom: 0 !important;
+}
+
+.menu-node.tajir-node .cl-primary {
+  color: #fff !important;
+}
+
+.all-node.tajir-node .cl-grey {
+  color: rgba(255, 255, 255, 0.75) !important;
+}
+
+.all-node.tajir-node {
+  border-top: 0;
+  border-bottom: 0 !important;
+  border-radius: 7px 7px 0 0;
+  background: url('../images/genealogy/bg-node-basic.svg') bottom center no-repeat !important;
+  background-size: cover !important;
+  color: rgba(255, 255, 255, 0.75);
+}
+
+.all-node.tajir-node .hexa {
+  border: 2px solid #3E6D00;
+  background: #3E6D00;
+}
+
+.all-node.tajir-node .btn-dark {
+  background-color: #22391d !important;
+  color: #fff;
+}
+
+.all-node.tajir-node .btn-ro {
+  border-color: #eee !important;
+  color: #fff !important;
+  font-weight: bold;
+  z-index: 999;
+}
+
+.all-node.tajir-node .btn-ro:hover,
+.all-node.tajir-node .btn-ro:focus {
+  background-color: #fff !important;
+  color: #3E6D00 !important;
+}
+
+.all-node.tajir-node .btn-cloning {
+  border-color: #eee !important;
+  color: #fff !important;
+  background: #ffffff33 !important;
+  font-weight: bold;
+  z-index: 999;
+}
+
+.all-node.tajir-node .btn-cloning:hover,
+.all-node.tajir-node .btn-cloning:focus {
+  background-color: #fff !important;
+  color: #3E6D00 !important;
+}
+
+/* Basic Plan */
+
+
+/* Luxury Plan */
+.all-node.luxury-node:after {
+  background: url('../images/genealogy/genealogy-card-luxury.svg') bottom center no-repeat !important;
+  cursor: pointer;
+  opacity: 0.85;
+  display: none;
+}
+
+.all-node.luxury-node .cl-primary {
+  color: #000 !important;
+}
+
+.menu-node.luxury-node {
+  border-bottom: 5px solid #476176 !important;
+}
+
+.menu-node.luxury-node .cl-primary {
+  color: #000 !important;
+}
+
+.all-node.luxury-node .cl-grey {
+  color: rgba(0, 0, 0, 0.75) !important;
+}
+
+.all-node.luxury-node {
+  border-top: 0;
+  border-bottom: 0 !important;
+  border-radius: 7px 7px 0 0;
+  background: url('../images/genealogy/bg-node-luxury.svg') bottom center no-repeat !important;
+  background-size: cover !important;
+  color: rgba(0, 0, 0, 0.75);
+}
+
+.all-node.luxury-node .hexa {
+  border: 2px solid #9C9C9C;
+  background: #9C9C9C;
+}
+
+.all-node.luxury-node .btn-dark {
+  background-color: #1f3242 !important;
+  color: #fff;
+}
+
+.all-node.luxury-node .btn-ro {
+  border-color: #fff !important;
+  color: #fff !important;
+  font-weight: bold;
+  z-index: 999;
+}
+
+.all-node.luxury-node .btn-ro:hover,
+.all-node.luxury-node .btn-ro:focus {
+  background-color: #fff !important;
+  color: #333 !important;
+}
+
+.all-node.luxury-node .btn-cloning {
+  border-color: #eee !important;
+  color: #fff !important;
+  background: #ffffff33 !important;
+  font-weight: bold;
+  z-index: 999;
+}
+
+.all-node.luxury-node .btn-cloning:hover,
+.all-node.luxury-node .btn-cloning:focus {
+  background-color: #fff !important;
+  color: #333 !important;
+}
+
+/* Luxury Plan */
+
+
+/* Ambassador Plan */
+.all-node.sulton-node:after {
+  background: url('../images/genealogy/genealogy-card-ambassador.svg') bottom center no-repeat !important;
+  cursor: pointer;
+  opacity: 0.85;
+  display: none;
+}
+
+.all-node.sulton-node .cl-primary {
+  color: #fff !important;
+}
+
+.menu-node.sulton-node {
+  border-bottom: 0 !important;
+}
+
+.menu-node.sulton-node .cl-primary {
+  color: #fff !important;
+}
+
+.all-node.sulton-node .cl-grey {
+  color: rgba(0, 0, 0, 0.75) !important;
+}
+
+.all-node.sulton-node {
+  border-top: 0;
+  border-bottom: 0 !important;
+  border-radius: 7px 7px 0 0;
+  background: url('../images/genealogy/bg-node-ambassador.svg') bottom center no-repeat !important;
+  background-size: cover !important;
+  color: rgba(0, 0, 0, 0.75);
+}
+
+.all-node.sulton-node .hexa {
+  border: 2px solid #976A02;
+  background: #976A02;
+}
+
+.all-node.sulton-node .btn-dark {
+  background-color: #7d6008 !important;
+  color: #fff;
+}
+
+.all-node.sulton-node .btn-ro {
+  border-color: #fff !important;
+  color: #fff !important;
+  font-weight: bold;
+  z-index: 999;
+}
+
+.all-node.sulton-node .btn-ro:hover,
+.all-node.sulton-node .btn-ro:focus {
+  background-color: #fff !important;
+  color: #976A02 !important;
+}
+
+.all-node.sulton-node .btn-cloning {
+  border-color: #eee !important;
+  color: #fff !important;
+  background: #ffffff33 !important;
+  font-weight: bold;
+  z-index: 999;
+}
+
+.all-node.sulton-node .btn-cloning:hover,
+.all-node.sulton-node .btn-cloning:focus {
+  background-color: #fff !important;
+  color: #976A02 !important;
+}
+
+/* Ambassador Plan */
+
+
+.all-node .node-info {
+  position: relative;
+}
+
+/* end og genealogy style */
+
+
+.mobile-genealogy {
+  overflow: auto;
+}
+
+.mobile-genealogy table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.mobile-genealogy .node-shadow {
+  margin: 10px auto 35px;
+  width: 70px;
+}
+
+.mobile-genealogy .node {
+  height: 225px;
+  width: 68px;
+  display: inline-block;
+  margin: 0 2px;
+  padding: 5px;
+  font-size: 8pt;
+  border-radius: 7px;
+  background-repeat: no-repeat;
+  position: relative;
+}
+
+@media (min-width: 381px) and (max-width: 480px) {
+  .mobile-genealogy .node {
+    width: 85px;
+  }
+}
+
+@media (min-width: 481px) and (max-width: 600px) {
+  .mobile-genealogy .node {
+    width: 100px;
+  }
+}
+
+@media (min-width: 601px) and (max-width: 767px) {
+  .mobile-genealogy .node {
+    width: 120px;
+  }
+}
+
+
+@media (min-width: 601px) and (max-width: 767px) {
+  .mobile-genealogy .all-node {
+    background-size: 90% auto !important;
+  }
+}
+
+.mobile-genealogy .all-node {
+  height: 160px;
+  background-color: transparent;
+  border-radius: 15px;
+  background-size: contain;
+  background-position: bottom;
+  background-size: 102% auto !important;
+}
+
+.mobile-genealogy .all-node .node-growth>div {
+  font-size: 6.5pt !important;
+}
+
+.mobile-genealogy .all-node .node-growth>div.px-3 {
+  padding: 0 5px !important;
+}
+
+.mobile-genealogy .all-node .node-info {
+  font-size: 7pt !important;
+  padding: 5px 0 !important;
+  position: relative;
+}
+
+.mobile-genealogy .all-node .node-info>div {
+  font-size: 7pt !important;
+}
+
+.mobile-genealogy .all-node .node-image {
+  height: 60px;
+  margin-top: -2px;
+  margin-bottom: 18px;
+}
+
+.mobile-genealogy .all-node .node-image::before {
+  top: 0px;
+  left: 2px;
+  height: 66px;
+  width: 64px;
+}
+
+.mobile-genealogy .all-node .node-image .hexa {
+  width: 60px;
+}
+
+.action-filter-genealogy {
+  gap: 20px;
+}
+
+@media (min-width: 381px) and (max-width: 480px) {
+  .mobile-genealogy .all-node .node-image {
+    margin-bottom: 0px;
+    margin-top: 5px;
+  }
+
+  .mobile-genealogy .all-node .node-image::before {
+    top: 7px;
+    left: 10px;
+    height: 66px;
+    width: 64px;
+  }
+}
+
+@media (min-width: 481px) and (max-width: 600px) {
+  .mobile-genealogy .all-node .node-image {
+    margin-bottom: 0px;
+  }
+
+  .mobile-genealogy .all-node .node-image::before {
+    top: 0px;
+    left: 18px;
+    height: 66px;
+    width: 64px;
+  }
+}
+
+@media (min-width: 601px) and (max-width: 767px) {
+  .mobile-genealogy .all-node .node-image {
+    margin-top: 0px;
+    margin-bottom: 0px;
+  }
+
+  .mobile-genealogy .all-node .node-image::before {
+    top: 2px;
+    left: 28px;
+    height: 66px;
+    width: 64px;
+  }
+}
+
+/* Genealogy styles ================= */
+
+.accordion>.card:last-of-type {
+  margin-bottom: 0px !important;
+}
+
+
+/* ============================================== */
+/* Responsive style                               */
+/* ============================================== */
+@media (max-width: 767px) {
+  #auth-login>.col-12 {
+    padding-left: 25px !important;
+    padding-right: 25px !important;
+  }
+
+  .card-form-content {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+  .action-filter-genealogy {
+    gap: 20px;
+    justify-content: space-between !important;
+  }
+}
+
+@media (max-width: 1199.98px) {
+  html body.navbar-sticky .app-content .content-wrapper {
+    padding: 1rem;
+  }
+
+  .action-filter-genealogy {
+    gap: 20px;
+    justify-content: space-between !important;
+  }
+
+  .breadcrumbs-top {
+    margin-top: 1.5rem;
+  }
+
+  .breadcrumbs-top>.col-12 {
+    display: flex;
+    flex-direction: column;
+  }
+
+  html body .content .content-wrapper .content-header-title {
+    border: 0;
+  }
+
+  .breadcrumbs-top .breadcrumb-wrapper {
+    padding: 0;
+    margin-top: 0.5rem;
+  }
+
+  /* geneaology */
+  .card-genealogy .card-header {
+    padding: 10px;
+  }
+
+  .card-genealogy .card-header>.card>.row {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start !important;
+  }
+
+  .card-genealogy .card-header>.card>.row>div {
+    width: 100%;
+    flex: 0 0 100%;
+    max-width: 100%;
+    margin-bottom: 0.5rem;
+  }
+
+  .card-genealogy .card-header>.card>.row>div .btn {
+    width: 100%;
+    margin-top: 1rem;
+  }
+
+  .card-genealogy .card-header>.card>.row>div.col-6 {
+    display: flex;
+    flex-direction: column !important;
+    margin-left: 0px !important;
+    margin-right: 0px !important;
+  }
+
+  #genealogy {
+    overflow-x: auto;
+    margin-right: 2rem;
+  }
+}
+
+.all-node.empty-node,
+.all-node.clear-node {
+  margin-bottom: 50px !important;
+  height: 270px;
+}
+
+.all-node.clear-node {
+  margin-top: 74px !important;
+}

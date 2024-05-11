@@ -1,0 +1,13 @@
+<svg version="1.2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 55" width="128" height="55">
+	<title>genealogy-card-diamond-svg</title>
+	<defs>
+		<image  width="32" height="9" id="img1" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAJCAMAAABkB944AAAAAXNSR0IB2cksfwAAAGlQTFRF////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////bQHtcQAAACN0Uk5Ta/T/0jMAF6jybEnoux0Rufhu1S8jt/Z3ZPfIIKyAK6LW86QTqI3YAAAAYUlEQVR4nH3K6RJDMABF4VhOLbXThVjC+z+kMWhiqPvzfkcIy76Z4woe3l/2AxBA+Lz2KGYNSNILzvKF1gCCkxclZkD1OvD7s/2/AL619kZyDpDt7p0+zQD6QY2+mnrzmwGVBAXvrtLl9AAAAABJRU5ErkJggg=="/>
+	</defs>
+	<style>
+		.s0 { fill: #2a4fd6 } 
+		.s1 { fill: #c69d27 } 
+	</style>
+	<path id="Polygon_3" class="s0" d="m128 5.2c0 2.6-1.4 5.2-3.6 6.6l-56 36.9c-2.7 1.8-6.1 1.8-8.8 0l-56-36.9c-2.2-1.4-3.6-4-3.6-6.6v-75.7c0-2.7 1.4-5.2 3.6-6.7l56-36.9c2.7-1.8 6.1-1.8 8.8 0l56 36.9c2.2 1.5 3.6 4 3.6 6.7z"/>
+	<path id="Polygon_executive" class="s1" d="m128 9.2c0 2.6-1.4 5.2-3.6 6.6l-56 36.9c-2.7 1.8-6.1 1.8-8.8 0l-56-36.9c-2.2-1.4-3.6-4-3.6-6.6v-75.7c0-2.7 1.4-5.2 3.6-6.7l56-36.9c2.7-1.8 6.1-1.8 8.8 0l56 36.9c2.2 1.5 3.6 4 3.6 6.7z"/>
+	<use id="Layer 1" href="#img1" x="48" y="41"/>
+</svg>

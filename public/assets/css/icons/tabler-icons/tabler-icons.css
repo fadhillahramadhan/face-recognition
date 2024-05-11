@@ -30,8 +30,30 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+.ti-in-out-arrow {
+  content: "\f3a1";
+}
+
+.ti-arrow-left-right {
+  content: "\f04b";
+
+}
+
 .ti-123:before {
   content: "\f554";
+}
+
+.ti-pin:before {
+  content: "\f3a8";
+}
+
+.ti-quota::before {
+  content: "\f3a9";
+}
+
+.ti-stock {
+  content: "\f3aa";
+
 }
 
 .ti-2fa:before {

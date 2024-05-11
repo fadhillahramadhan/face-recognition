@@ -1,11 +1,7 @@
 <?= $this->section('content') ?>
-<div class="card">
-    <div class="card-body ">
-        <h5 class="card-title align-self-start">Presensi</h5>
-        <p class="card-text align-self-start">Daftar presensi yang tersedia</p>
-        <div id="table"></div>
-    </div>
-</div>
+
+<div id="table"></div>
+
 <?= $this->endSection() ?>
 
 <?= $this->section('script') ?>
