@@ -52,6 +52,9 @@
 </div>
 
 
+
+
+
 <div class="card">
     <div class="card-body ">
         <h5 class="card-title align-self-start">Presensi</h5>
@@ -60,22 +63,20 @@
     <div class="row p-5">
 
         <div class="col-12 lg-12 md-12 sm-12 d-flex flex-column justify-content-center align-items-center">
+
             <video id="webcam" class="responsive-video" autoplay></video>
-            <canvas id="canvas" class="responsive-canvas"></canvas>
-
-
+            <!-- photo canvas -->
+            <canvas id="canvas" class="responsive-canvas" width="640" height="480"></canvas>
         </div>
-        <div class="col-12 lg-12 md-12 sm-12">
-            <!-- Other content in the second column -->
-        </div>
+
         <div class="col-12 mt-5 text-center">
-            <button class="btn btn-primary btn-block" id="captureBtn" onclick="captureAndCompare()">Presensi</button>
             <div id="result"></div>
+            <button class="btn btn-primary btn-block" id="captureBtn" onclick="captureAndCompare()">Presensi</button>
+
         </div>
     </div>
 
 </div>
-
 
 <?= $this->endSection() ?>
 
@@ -125,6 +126,8 @@
         // Draw video frame on canvas
         const ctx = canvas.getContext('2d');
         ctx.drawImage(video, 0, 0, canvas.width, canvas.height);
+
+
         canvas.toBlob(blob => {
             const formData = new FormData();
             formData.append('webcam_image', blob, 'webcam_image.jpg');
