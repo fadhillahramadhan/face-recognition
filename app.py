@@ -14,49 +14,40 @@ app = Flask(__name__)
 CORS(app)
 
 
-# Function to compare faces
-def compare_faces(known_encodings, img_encoding2):
-    for img_path, known_encoding in known_encodings.items():
-        result = face_recognition.compare_faces([known_encoding], img_encoding2)
-        if result[0]:
-            return os.path.splitext(os.path.basename(img_path))[0]  
-    return 'Unknown'
+
 
 @app.route('/compare', methods=['POST'])
 def compare():
-    # Get the uploaded image file from the request
-    image_file = request.files['webcam_image']
-    image_path_comparer = 'public/compare/' + image_file.filename
-    image_file.save(image_path_comparer)
+    try:
+        image_file = request.files['webcam_image']
+        image_path_comparer = 'public/compare/' + image_file.filename
+        image_file.save(image_path_comparer)
 
-    # Load and encode known images
-    known_encodings = {}
-    images_path = glob.glob(os.path.join('public/images/', "*.*"))
-    
-    for img_path in images_path:
-        img = cv2.imread(img_path)
-        rgb_img = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
-        img_encoding = face_recognition.face_encodings(rgb_img)
-        if img_encoding:
-            known_encodings[img_path] = img_encoding[0]
+        images_path = glob.glob(os.path.join('public/images/', "*.*"))
 
-    img2 = cv2.imread(image_path_comparer)
-    rgb_img2 = cv2.cvtColor(img2, cv2.COLOR_BGR2RGB)
-    img_encoding2 = face_recognition.face_encodings(rgb_img2)
-    
-    if not img_encoding2:   
-        return jsonify({'person': 'Unknown'})
+        name = ''
 
-    img_encoding2 = img_encoding2[0]
+        for img_path in images_path:
+            img = cv2.imread(img_path)
+            rgb_img = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
+            img_encoding = face_recognition.face_encodings(rgb_img)[0]
+            
+            img2 = cv2.imread(image_path_comparer)
+            rgb_img2 = cv2.cvtColor(img2, cv2.COLOR_BGR2RGB)
 
-    # Compare faces using parallel processing
-    with ThreadPoolExecutor() as executor:
-        result = executor.submit(compare_faces, known_encodings, img_encoding2)
-        current_name = result.result()
+            img_encoding2 = face_recognition.face_encodings(rgb_img2)[0]
 
-    response = jsonify({'person': current_name})
-    response.headers.add('Access-Control-Allow-Origin', '*')
+            results = face_recognition.compare_faces([img_encoding], img_encoding2)
 
+            if results[0] == True:
+                name = os.path.basename(img_path)
+
+        response = jsonify({'person': name})
+    except Exception as e:
+        print(e)
+        response = jsonify({'person': 'unknown'})
+
+            
     return response
 
 
