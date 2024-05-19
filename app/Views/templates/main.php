@@ -4,9 +4,11 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Modernize Free</title>
+    <title>Office Absensi</title>
     <link rel="shortcut icon" type="image/png" href="<?= base_url() ?>/assets/images/logos/favicon.png" />
     <link rel="stylesheet" href="<?= base_url() ?>/assets/css/styles.min.css" />
+    <link rel="icon" type="image/x-icon" href="<?php echo base_url('assets/images/favicon/favicon.png'); ?>">
+    <link rel="shortcut icon" type="image/x-icon" href="<?php echo base_url('assets/images/favicon/favicon.png'); ?>">
 </head>
 
 <body>
@@ -27,6 +29,22 @@
                 <!--  End Page Content -->
             </div>
 
+        </div>
+    </div>
+
+    <div class="position-fixed top-0 end-0 p-3" style="z-index: 11">
+        <div id="toastSuccess" class="toast bg-success hide" role="alert" aria-live="assertive" aria-atomic="true">
+            <div class="toast-body" style="color: white;">
+
+            </div>
+        </div>
+    </div>
+
+    <div class="position-fixed top-0 end-0 p-3" style="z-index: 11">
+        <div id="toastDanger" class="toast bg-danger hide" role="alert" aria-live="assertive" aria-atomic="true">
+            <div class="toast-body" style="color: white;">
+
+            </div>
         </div>
     </div>
     <script src="<?= base_url() ?>/assets/libs/jquery/dist/jquery.min.js"></script>

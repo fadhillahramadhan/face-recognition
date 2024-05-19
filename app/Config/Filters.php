@@ -12,7 +12,9 @@ use CodeIgniter\Filters\InvalidChars;
 use CodeIgniter\Filters\PageCache;
 use CodeIgniter\Filters\PerformanceMetrics;
 use CodeIgniter\Filters\SecureHeaders;
+
 use App\Filters\AuthMember;
+use App\Filters\AuthAdmin;
 
 class Filters extends BaseFilters
 {
@@ -36,6 +38,7 @@ class Filters extends BaseFilters
         'pagecache'     => PageCache::class,
         'performance'   => PerformanceMetrics::class,
         'auth_member'   => AuthMember::class,
+        'auth_admin'    => AuthAdmin::class,
     ];
 
     /**
@@ -108,5 +111,10 @@ class Filters extends BaseFilters
     // public array $filters = ['auth_member' => ['before' => ['member/*']]];
 
     // filters /except member/auth & member/logout
-    public array $filters = ['auth_member' => ['before' => ['member/*'], 'except' => ['member/auth', 'member/logout']]];
+    public array $filters = [
+        'auth_member' => ['before' => ['member/*'], 'except' => ['member/auth', 'member/logout']],
+        'auth_admin' => ['before' => ['admin/*'], 'except' => ['admin/auth', 'admin/logout']],
+
+
+    ];
 }

@@ -123,10 +123,8 @@
     function captureAndCompare() {
         showLoading();
 
-        // Draw video frame on canvas
         const ctx = canvas.getContext('2d');
         ctx.drawImage(video, 0, 0, canvas.width, canvas.height);
-
 
         canvas.toBlob(blob => {
             const formData = new FormData();
@@ -145,7 +143,9 @@
                 .catch(error => {
                     console.error('Error:', error);
                 }).finally(() => {
-                    hideLoading();
+                    setTimeout(() => {
+                        hideLoading();
+                    }, 4000);
                 });
         }, 'image/jpeg');
     }

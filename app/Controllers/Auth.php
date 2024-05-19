@@ -4,6 +4,7 @@ namespace App\Controllers;
 
 
 use App\Controllers\BaseController;
+use App\Models\AdminModel;
 use App\Models\UserModel;
 
 class Auth extends BaseController
@@ -35,9 +36,9 @@ class Auth extends BaseController
             return redirect()->to('/auth')->withInput()->with('errors', $this->validator->getErrors());
         }
 
-        $model = new UserModel();
+        $model = new AdminModel();
         $email = $this->request->getPost('email');
-        $password = $this->request->getPost('password');
+        $password = (string) $this->request->getPost('password');
 
         $user = $model->where('email', $email)->first();
 

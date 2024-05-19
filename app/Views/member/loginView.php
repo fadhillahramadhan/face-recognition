@@ -4,9 +4,12 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Modernize Free</title>
+    <title>Office Login</title>
     <link rel="shortcut icon" type="image/png" href="<?= base_url() ?>/assets/images/logos/favicon.png" />
     <link rel="stylesheet" href="<?= base_url() ?>/assets/css/styles.min.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
+    <link rel="icon" type="image/x-icon" href="<?php echo base_url('assets/images/favicon/favicon.png'); ?>">
+    <link rel="shortcut icon" type="image/x-icon" href="<?php echo base_url('assets/images/favicon/favicon.png'); ?>">
 </head>
 
 <body>
@@ -19,9 +22,10 @@
                         <div class="card mb-0">
                             <div class="card-body">
                                 <a href="./index.html" class="text-nowrap logo-img text-center d-block py-3 w-100">
-                                    <img src="../assets/images/logos/dark-logo.svg" width="180" alt="">
+                                    <img src="<?= base_url() ?>/assets/images/logos/logo.svg" height="100" width="250" class="mx-auto" alt="" />
+
                                 </a>
-                                <p class="text-center">Assistant presensi dan absensi</p>
+                                <p class="text-center">Assistant presensi dan absensi office</p>
                                 <form class="mt-4" action="<?= base_url() ?>/auth/login" method="post">
                                     <div class="mb-3">
                                         <label for="email" class="form-label">Email</label>

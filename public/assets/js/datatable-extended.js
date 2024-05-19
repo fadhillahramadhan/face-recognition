@@ -1061,7 +1061,7 @@ $.getData = function (
 							}
 							tbody =
 								tbody +
-								`<td data-label="${label}" style="vertical-align: top; text-align: ` +
+								`<td data-label="${label}" style="vertical-align: middle; text-align: ` +
 								(field.align == undefined
 									? 'left'
 									: field.align) +
@@ -1137,7 +1137,7 @@ $.getData = function (
 						}
 						tbody =
 							tbody +
-							`<td data-label="${label}" style="vertical-align: top; text-align: ` +
+							`<td data-label="${label}" style="vertical-align: middle; text-align: ` +
 							(field.align == undefined ? 'left' : field.align) +
 							';' +
 							(property.colModel[irWidth].width == undefined

@@ -10928,6 +10928,10 @@
   content: "\f4e0";
 }
 
+.ti-saving:before {
+  content: "\f4e1";
+}
+
 .ti-text-caption:before {
   content: "\f4a4";
 }

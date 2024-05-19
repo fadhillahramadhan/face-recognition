@@ -24,7 +24,12 @@
 
 
             <ul class="navbar-nav flex-row ms-auto align-items-center justify-content-end">
-
+                <li class="nav-item">
+                    <div class="user-nav d-flex flex-column align-items-end justify-content-center">
+                        <span class=" user-status text-black"><b style="color: #089c33!important"><?= session('user')['email'] ?></b></span>
+                        <span class="user-status text-muted"><?= session('user')['name'] ?></span>
+                    </div>
+                </li>
                 <li class="nav-item dropdown">
                     <a class="nav-link nav-icon-hover" href="javascript:void(0)" id="drop2" data-bs-toggle="dropdown" aria-expanded="false">
                         <img src="<?= base_url() ?>/assets/images/profile/user-1.jpg" alt="" width="35" height="35" class="rounded-circle">

@@ -1,0 +1,65 @@
+INFO - 2024-05-15 01:55:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-15 01:55:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2024-05-15 01:55:28 --> Error connecting to the database: mysqli_sql_exception: No connection could be made because the target machine actively refused it in E:\Project\PHP Project\freelance\absence\system\Database\MySQLi\Connection.php:186
+Stack trace:
+#0 E:\Project\PHP Project\freelance\absence\system\Database\MySQLi\Connection.php(186): mysqli->real_connect('localhost', 'root', Object(SensitiveParameterValue), 'absence', 3306, '', 0)
+#1 E:\Project\PHP Project\freelance\absence\system\Database\BaseConnection.php(421): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 E:\Project\PHP Project\freelance\absence\system\Database\BaseConnection.php(604): CodeIgniter\Database\BaseConnection->initialize()
+#3 E:\Project\PHP Project\freelance\absence\system\Database\BaseBuilder.php(1629): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 E:\Project\PHP Project\freelance\absence\system\Model.php(319): CodeIgniter\Database\BaseBuilder->get()
+#5 E:\Project\PHP Project\freelance\absence\system\BaseModel.php(714): CodeIgniter\Model->doFirst()
+#6 E:\Project\PHP Project\freelance\absence\app\Controllers\Auth.php(42): CodeIgniter\BaseModel->first()
+#7 E:\Project\PHP Project\freelance\absence\system\CodeIgniter.php(933): App\Controllers\Auth->login()
+#8 E:\Project\PHP Project\freelance\absence\system\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth))
+#9 E:\Project\PHP Project\freelance\absence\system\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 E:\Project\PHP Project\freelance\absence\system\Boot.php(312): CodeIgniter\CodeIgniter->run()
+#11 E:\Project\PHP Project\freelance\absence\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#12 E:\Project\PHP Project\freelance\absence\public\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#13 E:\Project\PHP Project\freelance\absence\system\Commands\Server\rewrite.php(49): require_once('E:\\Project\\PHP ...')
+#14 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: No connection could be made because the target machine actively refused it in E:\Project\PHP Project\freelance\absence\system\Database\MySQLi\Connection.php:231
+Stack trace:
+#0 E:\Project\PHP Project\freelance\absence\system\Database\BaseConnection.php(421): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 E:\Project\PHP Project\freelance\absence\system\Database\BaseConnection.php(604): CodeIgniter\Database\BaseConnection->initialize()
+#2 E:\Project\PHP Project\freelance\absence\system\Database\BaseBuilder.php(1629): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#3 E:\Project\PHP Project\freelance\absence\system\Model.php(319): CodeIgniter\Database\BaseBuilder->get()
+#4 E:\Project\PHP Project\freelance\absence\system\BaseModel.php(714): CodeIgniter\Model->doFirst()
+#5 E:\Project\PHP Project\freelance\absence\app\Controllers\Auth.php(42): CodeIgniter\BaseModel->first()
+#6 E:\Project\PHP Project\freelance\absence\system\CodeIgniter.php(933): App\Controllers\Auth->login()
+#7 E:\Project\PHP Project\freelance\absence\system\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth))
+#8 E:\Project\PHP Project\freelance\absence\system\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 E:\Project\PHP Project\freelance\absence\system\Boot.php(312): CodeIgniter\CodeIgniter->run()
+#10 E:\Project\PHP Project\freelance\absence\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#11 E:\Project\PHP Project\freelance\absence\public\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#12 E:\Project\PHP Project\freelance\absence\system\Commands\Server\rewrite.php(49): require_once('E:\\Project\\PHP ...')
+#13 {main}
+CRITICAL - 2024-05-15 01:55:28 --> CodeIgniter\Database\Exceptions\DatabaseException: Unable to connect to the database.
+Main connection [MySQLi]: No connection could be made because the target machine actively refused it
+[Method: POST, Route: auth/login]
+in SYSTEMPATH\Database\BaseConnection.php on line 457.
+ 1 SYSTEMPATH\Database\BaseConnection.php(604): CodeIgniter\Database\BaseConnection->initialize()
+ 2 SYSTEMPATH\Database\BaseBuilder.php(1629): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `users`
+WHERE `email` = :email:
+ LIMIT 1', [...], false)
+ 3 SYSTEMPATH\Model.php(319): CodeIgniter\Database\BaseBuilder->get()
+ 4 SYSTEMPATH\BaseModel.php(714): CodeIgniter\Model->doFirst()
+ 5 APPPATH\Controllers\Auth.php(42): CodeIgniter\BaseModel->first()
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Auth->login()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\Commands\Server\rewrite.php(49): require_once('E:\\Project\\PHP Project\\freelance\\absence\\public\\index.php')
+INFO - 2024-05-15 01:55:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-15 01:55:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-15 01:55:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-15 01:55:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-15 01:55:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-15 01:55:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-15 01:55:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-15 01:58:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-15 01:58:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-15 01:58:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
