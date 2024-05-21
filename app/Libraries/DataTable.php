@@ -382,7 +382,7 @@ class DataTable
     }
 
 
-    public function getListDataExcelCustom($request, $table, $joinTable = '', $whereFixed, $limit = 1000, $groupBy = '')
+    public function getListDataExcelCustom($request, $table, $joinTable = '', $whereFixed = '', $limit = 1000, $groupBy = '')
     {
         $filter = (array) $request['filter'];
         $dir = json_decode(strtoupper($request['dir'])) ?? "ASC";

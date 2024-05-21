@@ -3,7 +3,7 @@
 namespace App\Controllers\Admin;
 
 use App\Controllers\BaseController;
-use App\Models\UserModel;
+use App\Models\CoursesModel;
 
 class Courses extends BaseController
 {
@@ -21,22 +21,20 @@ class Courses extends BaseController
         ];
 
 
-        return view('admin/userView', [
+        return view('admin/coursesView', [
             'breadcumbs' => $breadcumbs,
         ]);
     }
 
-    public function get_users()
+    public function get_courses()
     {
-        $tableName = "users";
+        $tableName = "courses";
         $columns = [
-            "users.id" => "id",
-            "users.name" => "name",
-            'users.image' => 'image', // Add this line to get the image column from the users table
-            "users.email" => "email",
-            "users.password" => "password",
-            "users.created_at" => "created_at",
-            "users.updated_at" => "updated_at",
+            "courses.id" => "id",
+            "courses.name" => "name",
+            "courses.description" => "description",
+            "courses.scheduled_at" => "scheduled_at",
+            "courses.expired_at" => "expired_at",
         ];
         $joinTable = "";
         $whereCondition = "";
@@ -46,15 +44,14 @@ class Courses extends BaseController
 
 
         foreach ($data['results'] as $key => $value) {
-            $data['results'][$key]['created_at'] = $this->convertDatetime($value['created_at'], 'id');
-            $data['results'][$key]['updated_at'] = $this->convertDatetime($value['updated_at'], 'id');
-            $data['results'][$key]['image'] = $value['image'] == '' ? base_url() . 'assets/images/profile/user-1.jpg' :  $value['image']; // Add this line to get the image column from the users table
+            $data['results'][$key]['scheduled_at'] = $this->convertDatetime($value['scheduled_at'], 'id');
+            $data['results'][$key]['expired_at'] = $this->convertDatetime($value['expired_at'], 'id');
         }
 
-        $this->rest->responseSuccess("Data User", $data);
+        $this->rest->responseSuccess("Data", $data);
     }
 
-    public function add_user()
+    public function add_course()
     {
         $validate = $this->validate([
             'name' => [
@@ -63,20 +60,7 @@ class Courses extends BaseController
                     'required' => 'Nama Dosen harus diisi',
                 ]
             ],
-            'email' => [
-                'rules' => 'required|valid_email|is_unique[users.email]',
-                'errors' => [
-                    'required' => 'Email harus diisi',
-                    'valid_email' => 'Email tidak valid',
-                    'is_unique' => 'Email sudah terdaftar',
-                ]
-            ],
-            'password' => [
-                'rules' => 'required',
-                'errors' => [
-                    'required' => 'Password harus diisi',
-                ]
-            ],
+
         ]);
 
         if (!$validate) {
@@ -87,13 +71,10 @@ class Courses extends BaseController
             $password = (string) $this->request->getPost('password');
 
 
-            $model = new UserModel();
+            $model = new CoursesModel();
             $data = [
                 'name' => $this->request->getPost('name'),
-                'email' => $this->request->getPost('email'),
-                'password' => password_hash($password, PASSWORD_DEFAULT),
-                'created_at' => date('Y-m-d H:i:s'),
-                'updated_at' => date('Y-m-d H:i:s'),
+                'description' => $this->request->getPost('description'),
             ];
 
             $model->insert($data);
@@ -108,7 +89,7 @@ class Courses extends BaseController
         }
     }
 
-    public function update_user()
+    public function update_course()
     {
         $validate = $this->validate([
             'id' => [
@@ -123,19 +104,6 @@ class Courses extends BaseController
                     'required' => 'Nama Dosen harus diisi',
                 ]
             ],
-            'email' => [
-                'rules' => 'required|valid_email',
-                'errors' => [
-                    'required' => 'Email harus diisi',
-                    'valid_email' => 'Email tidak valid',
-                ]
-            ],
-            'password' => [
-                'rules' => 'required',
-                'errors' => [
-                    'required' => 'Password harus diisi',
-                ]
-            ],
         ]);
 
         if (!$validate) {
@@ -144,12 +112,10 @@ class Courses extends BaseController
 
         try {
             $password = (string) $this->request->getPost('password');
-            $model = new UserModel();
+            $model = new CoursesModel();
             $data = [
                 'name' => $this->request->getPost('name'),
-                'email' => $this->request->getPost('email'),
-                'updated_at' => date('Y-m-d H:i:s'),
-                'password' => password_hash($password, PASSWORD_DEFAULT),
+                'description' => $this->request->getPost('description'),
             ];
 
             $model->update($this->request->getPost('id'), $data);
@@ -164,9 +130,9 @@ class Courses extends BaseController
         }
     }
 
-    public function get_user($id)
+    public function get_course($id)
     {
-        $model = new UserModel();
+        $model = new CoursesModel();
         $data = $model->find($id);
 
         if ($data) {

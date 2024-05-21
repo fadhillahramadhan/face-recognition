@@ -36,7 +36,7 @@
                     </a>
                 </li>
                 <li class="sidebar-item">
-                    <a class="sidebar-link" href="<?= base_url('/admin/courses') ?>" aria-expanded="false">
+                    <a class="sidebar-link" href="<?= base_url('/admin/presence') ?>" aria-expanded="false">
                         <span>
                             <i class="ti ti-paperclip"></i>
                         </span>
@@ -57,7 +57,7 @@
                 </li>
 
                 <li class="sidebar-item">
-                    <a class="sidebar-link" href="<?= base_url('/admin/courses') ?>" aria-expanded="false">
+                    <a class="sidebar-link" href="<?= base_url('/admin/addcourses') ?>" aria-expanded="false">
                         <span>
                             <i class="ti ti-plus"></i>
                         </span>
