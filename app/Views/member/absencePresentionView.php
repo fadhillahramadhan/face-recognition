@@ -89,6 +89,7 @@
     const video = document.getElementById('webcam');
     const resultElement = document.getElementById('result');
     const captureBtn = document.getElementById('captureBtn');
+    let params = new URLSearchParams(window.location.search);
 
     function showLoading() {
         loadingElement.style.display = 'block';
@@ -131,17 +132,38 @@
             formData.append('webcam_image', blob, 'webcam_image.jpg');
             let url = "http://127.0.0.1:5000/compare";
 
-
             fetch(url, {
                     method: 'POST',
                     body: formData
                 })
                 .then(response => response.json())
                 .then(data => {
-                    resultElement.innerText = `Person: ${data.person}`;
+                    let person = data.person.split('.').slice(0, -1).join('.')
+                    resultElement.innerText = `Person: ${person}`;
+                    // remove extension jpg
+                    if (data.person == 'Unknown') {
+                        throw new Error('Presensi Gagal')
+                    }
+                    var myToastEl = document.getElementById('toastSuccess')
+                    var bsToast = new bootstrap.Toast(myToastEl)
+                    $('#toastSuccess .toast-body').html('Presensi Berhasil')
+                    bsToast.show()
+                    // http://localhost:8080/member/absence/add/1 get latest absence id
+                    fetch('<?= base_url('member/absence/presence') ?>', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json',
+                        },
+                        body: JSON.stringify({
+                            person: person,
+                        })
+                    })
                 })
                 .catch(error => {
-                    console.error('Error:', error);
+                    var myToastEl = document.getElementById('toastDanger')
+                    var bsToast = new bootstrap.Toast(myToastEl)
+                    $('#toastDanger .toast-body').html('Presensi Gagal')
+                    bsToast.show()
                 }).finally(() => {
                     setTimeout(() => {
                         hideLoading();

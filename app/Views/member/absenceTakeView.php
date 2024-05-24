@@ -71,7 +71,7 @@
 
         <div class="col-12 mt-5 text-center">
             <div id="result"></div>
-            <button class="btn btn-primary btn-block" id="captureBtn" onclick="captureAndCompare()">Presensi</button>
+            <button class="btn btn-primary btn-block" id="captureBtn" onclick="captureAndCompare()">Ambil Foto</button>
 
         </div>
     </div>
@@ -124,6 +124,11 @@
         showLoading();
 
         const ctx = canvas.getContext('2d');
+        // add background color to the canvas
+        ctx.fillStyle = '#ffffff';
+        ctx.fillRect(0, 0, canvas.width, canvas.height);
+        // Draw the video frame to the canvas
+
         ctx.drawImage(video, 0, 0, canvas.width, canvas.height);
 
         canvas.toBlob(blob => {
@@ -137,7 +142,10 @@
                     body: formData
                 })
                 .then(response => response.json())
-                .then(data => {})
+                .then(data => {
+                    // redirect to dashboard
+                    window.location.href = "<?= base_url() ?>member/dashboard";
+                })
                 .catch(error => {
                     console.error('Error:', error);
                 }).finally(() => {

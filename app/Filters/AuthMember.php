@@ -15,6 +15,18 @@ class AuthMember implements FilterInterface
 
         if (!$session) {
             return redirect()->to('/');
+        } else {
+            // check photo
+            $user = new \App\Models\UserModel();
+            $user = $user->find($session['id']);
+            if (!$user['image']) {
+                // if on same path 
+                // allow path absence 
+                if ($request->getUri()->getPath() != '/member/absence/take' && $request->getUri()->getPath() != '/member/absence/take_photo') {
+                    // allow path any absence
+                    return redirect()->to('/member/absence/take');
+                }
+            }
         }
     }
 

@@ -4,6 +4,8 @@ namespace App\Controllers\Member;
 
 
 use App\Controllers\BaseController;
+use App\Models\AbsenceModel;
+use App\Models\CoursesUsersModel;
 // user model
 use App\Models\UserModel;
 
@@ -29,6 +31,13 @@ class Absence extends BaseController
 
     public function add($id = null)
     {
+        if ($id) {
+            // set session absence id
+            session()->set('absence_id', $id);
+            // remove /1 from url
+            return redirect()->to('/member/absence/add');
+        }
+
         $breadcumbs = [
             'Laporan' => [
                 'active' => false,
@@ -79,11 +88,9 @@ class Absence extends BaseController
             "absence.updated_at" => "updated_at",
         ];
         $joinTable = "
-        JOIN courses_users ON absence.course_id = courses_users.course_id
-        JOIN courses ON courses_users.course_id = courses.id
-        JOIN users ON absence.user_id = users.id
+        JOIN courses ON courses.id = absence.course_id
         ";
-        $whereCondition = "users.id = " . session('user')['id'];
+        $whereCondition = "user_id = " . session('user')['id'];
         $groupBy = "";
 
         $data = $this->dataTable->getListDataTable($this->request, $tableName, $columns, $joinTable, $whereCondition, $groupBy);
@@ -97,6 +104,43 @@ class Absence extends BaseController
         $this->rest->responseSuccess("Data Courses", $data);
     }
 
+    // presence
+    // CREATE TABLE `absence` (
+    //     `id` INT(5) UNSIGNED NOT NULL AUTO_INCREMENT,
+    //     `user_id` INT(5) UNSIGNED NOT NULL,
+    //     `course_id` INT(5) UNSIGNED NOT NULL,
+    //     `date` DATE NOT NULL,
+    //     `reason` TEXT NOT NULL COLLATE 'utf8mb4_general_ci',
+    //     `created_at` DATETIME NULL DEFAULT NULL,
+    //     `updated_at` DATETIME NULL DEFAULT NULL,
+    //     `courses_users_id` INT(5) UNSIGNED NOT NULL,
+    //     PRIMARY KEY (`id`) USING BTREE
+    // )
+    // COLLATE='utf8mb4_general_ci'
+    // ENGINE=InnoDB
+    // AUTO_INCREMENT=2
+    // ;
+
+    public function presence()
+    {
+        $courses_user = new CoursesUsersModel();
+        $courses_user = $courses_user->where('id', session('absence_id'))->first();
+
+
+        $absence = new AbsenceModel();
+        $absence->insert([
+            'user_id' => session('user')['id'],
+            'course_id' => $courses_user['course_id'],
+            'date' => date('Y-m-d'),
+            'reason' => 'Presensi',
+            'courses_users_id' => session('absence_id'),
+            'created_at' => date('Y-m-d H:i:s'),
+            'updated_at' => date('Y-m-d H:i:s'),
+        ]);
+
+        $this->rest->responseSuccess("Success");
+    }
+
     // take photo
     public function take_photo()
     {
@@ -107,7 +151,7 @@ class Absence extends BaseController
 
         $file = $this->request->getFile('webcam_image');
         $fileName = $email . '.' . $file->getExtension();
-        $file->move('images', $fileName);
+        $file->move('images', $fileName, true);
 
         // update user image
         $user = new UserModel();
