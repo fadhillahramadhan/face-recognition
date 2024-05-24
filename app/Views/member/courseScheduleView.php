@@ -17,13 +17,12 @@
             colModel: [{
                     display: 'Nama Matkul',
                     name: 'name',
-                    align: 'center',
+                    align: 'left',
+                    render: (data, args) => {
+                        return `<p class="text-left"><span><b>${data}</b></span><br><span>${args.description}</span></p>`
+                    }
                 },
-                {
-                    display: 'Deskripsi',
-                    name: 'description',
-                    align: 'center',
-                },
+
                 {
                     display: 'Jadwal',
                     name: 'scheduled_at',
@@ -33,6 +32,18 @@
                     display: 'Jadwal Berakhir',
                     name: 'expired_at',
                     align: 'center',
+                },
+                {
+                    display: 'Absen',
+                    name: 'is_enable',
+                    align: 'center',
+                    render: (data, args) => {
+                        if (data == 1) {
+                            return `<a href="<?= base_url() ?>member/absence/add/${args.id}" class="btn btn-primary">Absen</a>`
+                        } else {
+                            return `<button class="btn btn-secondary" disabled>Absen</button>`
+                        }
+                    }
                 },
 
             ],
@@ -65,7 +76,7 @@
 
 
             ],
-            sortName: "bonus_log_date",
+            sortName: "scheduled_at",
             sortOrder: "DESC",
             tableIsResponsive: true,
             select: false,

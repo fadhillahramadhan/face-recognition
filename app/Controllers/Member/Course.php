@@ -45,11 +45,25 @@ class Course extends BaseController
 
 
         foreach ($data['results'] as $key => $value) {
+            $data['results'][$key]['is_enable'] = $this->isEnable($value['scheduled_at'], $value['expired_at']);
             $data['results'][$key]['scheduled_at'] = $this->convertDatetime($value['scheduled_at'], 'id');
             $data['results'][$key]['expired_at'] = $this->convertDatetime($value['expired_at'], 'id');
+            // is button enable
         }
 
 
         $this->rest->responseSuccess("Data Courses", $data);
+    }
+
+    private function isEnable($scheduled_at, $expired_at)
+    {
+        // indonesia timezone
+        date_default_timezone_set('Asia/Jakarta');
+        $now = date('Y-m-d H:i:s');
+
+        if ($now >= $scheduled_at && $now <= $expired_at) {
+            return true;
+        }
+        return false;
     }
 }

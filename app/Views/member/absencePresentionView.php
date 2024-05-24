@@ -57,8 +57,8 @@
 
 <div class="card">
     <div class="card-body ">
-        <h5 class="card-title align-self-start">Ambil Foto</h5>
-        <p class="card-text align-self-start">Sebelum memakai Aplikasi ini, pastikan wajah anda terlihat jelas</p>
+        <h5 class="card-title align-self-start">Presensi</h5>
+        <p class="card-text align-self-start">Ini adalah halaman presensi, silahkan klik tombol dibawah ini untuk melakukan presensi</p>
     </div>
     <div class="row p-5">
 
@@ -129,7 +129,7 @@
         canvas.toBlob(blob => {
             const formData = new FormData();
             formData.append('webcam_image', blob, 'webcam_image.jpg');
-            let url = "<?= base_url() ?>member/absence/take_photo";
+            let url = "http://127.0.0.1:5000/compare";
 
 
             fetch(url, {
@@ -137,7 +137,9 @@
                     body: formData
                 })
                 .then(response => response.json())
-                .then(data => {})
+                .then(data => {
+                    resultElement.innerText = `Person: ${data.person}`;
+                })
                 .catch(error => {
                     console.error('Error:', error);
                 }).finally(() => {
