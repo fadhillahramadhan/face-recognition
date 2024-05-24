@@ -3,6 +3,7 @@
 namespace App\Controllers\Admin;
 
 use App\Controllers\BaseController;
+use App\Models\AbsenceModel;
 use App\Models\CoursesModel;
 
 class Courses extends BaseController
@@ -135,6 +136,7 @@ class Courses extends BaseController
         $model = new CoursesModel();
         $data = $model->find($id);
 
+        // check also absnce
         if ($data) {
             return $this->rest->responseSuccess("Data User", $data);
         } else {

@@ -4,6 +4,7 @@ namespace App\Controllers\Member;
 
 
 use App\Controllers\BaseController;
+use App\Models\AbsenceModel;
 
 class Course extends BaseController
 {
@@ -28,7 +29,7 @@ class Course extends BaseController
     {
         $tableName = "courses";
         $columns = [
-            "courses.id" => "id",
+            "courses_users.id" => "id",
             "courses.name" => "name",
             "courses.description" => "description",
             "courses_users.scheduled_at",
@@ -45,7 +46,8 @@ class Course extends BaseController
 
 
         foreach ($data['results'] as $key => $value) {
-            $data['results'][$key]['is_enable'] = $this->isEnable($value['scheduled_at'], $value['expired_at']);
+            $data['results'][$key]['is_enable'] = $this->isEnable($value['id'], $value['scheduled_at'], $value['expired_at']);
+
             $data['results'][$key]['scheduled_at'] = $this->convertDatetime($value['scheduled_at'], 'id');
             $data['results'][$key]['expired_at'] = $this->convertDatetime($value['expired_at'], 'id');
             // is button enable
@@ -55,11 +57,18 @@ class Course extends BaseController
         $this->rest->responseSuccess("Data Courses", $data);
     }
 
-    private function isEnable($scheduled_at, $expired_at)
+    private function isEnable($courses_users_id, $scheduled_at, $expired_at)
     {
         // indonesia timezone
         date_default_timezone_set('Asia/Jakarta');
         $now = date('Y-m-d H:i:s');
+
+        $absence = new AbsenceModel();
+        $data = $absence->where('courses_users_id', $courses_users_id)->first();
+
+        if ($data) {
+            return false;
+        }
 
         if ($now >= $scheduled_at && $now <= $expired_at) {
             return true;
