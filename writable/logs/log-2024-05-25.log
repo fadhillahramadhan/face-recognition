@@ -1,0 +1,369 @@
+INFO - 2024-05-25 20:33:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2024-05-25 20:33:33 --> Error connecting to the database: mysqli_sql_exception: No connection could be made because the target machine actively refused it in E:\Project\PHP Project\freelance\absence\system\Database\MySQLi\Connection.php:186
+Stack trace:
+#0 E:\Project\PHP Project\freelance\absence\system\Database\MySQLi\Connection.php(186): mysqli->real_connect('localhost', 'root', Object(SensitiveParameterValue), 'absence', 3306, '', 0)
+#1 E:\Project\PHP Project\freelance\absence\system\Database\BaseConnection.php(421): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 E:\Project\PHP Project\freelance\absence\system\Database\BaseConnection.php(604): CodeIgniter\Database\BaseConnection->initialize()
+#3 E:\Project\PHP Project\freelance\absence\system\Database\BaseBuilder.php(1629): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 E:\Project\PHP Project\freelance\absence\system\Model.php(319): CodeIgniter\Database\BaseBuilder->get()
+#5 E:\Project\PHP Project\freelance\absence\system\BaseModel.php(714): CodeIgniter\Model->doFirst()
+#6 E:\Project\PHP Project\freelance\absence\app\Controllers\Auth.php(43): CodeIgniter\BaseModel->first()
+#7 E:\Project\PHP Project\freelance\absence\system\CodeIgniter.php(933): App\Controllers\Auth->login()
+#8 E:\Project\PHP Project\freelance\absence\system\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth))
+#9 E:\Project\PHP Project\freelance\absence\system\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 E:\Project\PHP Project\freelance\absence\system\Boot.php(312): CodeIgniter\CodeIgniter->run()
+#11 E:\Project\PHP Project\freelance\absence\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#12 E:\Project\PHP Project\freelance\absence\public\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#13 E:\Project\PHP Project\freelance\absence\system\Commands\Server\rewrite.php(49): require_once('E:\\Project\\PHP ...')
+#14 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: No connection could be made because the target machine actively refused it in E:\Project\PHP Project\freelance\absence\system\Database\MySQLi\Connection.php:231
+Stack trace:
+#0 E:\Project\PHP Project\freelance\absence\system\Database\BaseConnection.php(421): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 E:\Project\PHP Project\freelance\absence\system\Database\BaseConnection.php(604): CodeIgniter\Database\BaseConnection->initialize()
+#2 E:\Project\PHP Project\freelance\absence\system\Database\BaseBuilder.php(1629): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#3 E:\Project\PHP Project\freelance\absence\system\Model.php(319): CodeIgniter\Database\BaseBuilder->get()
+#4 E:\Project\PHP Project\freelance\absence\system\BaseModel.php(714): CodeIgniter\Model->doFirst()
+#5 E:\Project\PHP Project\freelance\absence\app\Controllers\Auth.php(43): CodeIgniter\BaseModel->first()
+#6 E:\Project\PHP Project\freelance\absence\system\CodeIgniter.php(933): App\Controllers\Auth->login()
+#7 E:\Project\PHP Project\freelance\absence\system\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth))
+#8 E:\Project\PHP Project\freelance\absence\system\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 E:\Project\PHP Project\freelance\absence\system\Boot.php(312): CodeIgniter\CodeIgniter->run()
+#10 E:\Project\PHP Project\freelance\absence\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#11 E:\Project\PHP Project\freelance\absence\public\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#12 E:\Project\PHP Project\freelance\absence\system\Commands\Server\rewrite.php(49): require_once('E:\\Project\\PHP ...')
+#13 {main}
+CRITICAL - 2024-05-25 20:33:33 --> CodeIgniter\Database\Exceptions\DatabaseException: Unable to connect to the database.
+Main connection [MySQLi]: No connection could be made because the target machine actively refused it
+[Method: POST, Route: auth/login]
+in SYSTEMPATH\Database\BaseConnection.php on line 457.
+ 1 SYSTEMPATH\Database\BaseConnection.php(604): CodeIgniter\Database\BaseConnection->initialize()
+ 2 SYSTEMPATH\Database\BaseBuilder.php(1629): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `users`
+WHERE `email` = :email:
+ LIMIT 1', [...], false)
+ 3 SYSTEMPATH\Model.php(319): CodeIgniter\Database\BaseBuilder->get()
+ 4 SYSTEMPATH\BaseModel.php(714): CodeIgniter\Model->doFirst()
+ 5 APPPATH\Controllers\Auth.php(43): CodeIgniter\BaseModel->first()
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Auth->login()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\Commands\Server\rewrite.php(49): require_once('E:\\Project\\PHP Project\\freelance\\absence\\public\\index.php')
+INFO - 2024-05-25 20:33:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-25 20:33:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-25 20:33:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-25 20:33:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-25 20:33:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-25 20:33:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-25 20:33:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-25 20:35:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-25 20:35:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-25 20:35:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-05-25 20:35:26 --> ErrorException: Undefined variable $total_bonus_yearly
+[Method: GET, Route: member/dashboard]
+in APPPATH\Views\member\dashboardView.php on line 60.
+ 1 APPPATH\Views\member\dashboardView.php(60): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $total_bonus_yearly', 'E:\\Project\\PHP Project\\freelance\\absence\\app\\Views\\member\\dashboardView.php', 60)
+ 2 SYSTEMPATH\View\View.php(234): include('E:\\Project\\PHP Project\\freelance\\absence\\app\\Views\\member\\dashboardView.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('member/dashboardView', [], true)
+ 5 APPPATH\Controllers\Member\Dashboard.php(24): view('member/dashboardView', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Member\Dashboard->index()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Member\Dashboard))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\Commands\Server\rewrite.php(49): require_once('E:\\Project\\PHP Project\\freelance\\absence\\public\\index.php')
+INFO - 2024-05-25 20:35:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-05-25 20:35:52 --> ErrorException: Undefined variable $total_bonus_yearly
+[Method: GET, Route: member/dashboard]
+in APPPATH\Views\member\dashboardView.php on line 264.
+ 1 APPPATH\Views\member\dashboardView.php(264): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $total_bonus_yearly', 'E:\\Project\\PHP Project\\freelance\\absence\\app\\Views\\member\\dashboardView.php', 264)
+ 2 SYSTEMPATH\View\View.php(234): include('E:\\Project\\PHP Project\\freelance\\absence\\app\\Views\\member\\dashboardView.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('member/dashboardView', [], true)
+ 5 APPPATH\Controllers\Member\Dashboard.php(24): view('member/dashboardView', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Member\Dashboard->index()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Member\Dashboard))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\Commands\Server\rewrite.php(49): require_once('E:\\Project\\PHP Project\\freelance\\absence\\public\\index.php')
+INFO - 2024-05-25 20:36:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-25 20:49:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-05-25 20:49:43 --> Error: Call to undefined method CodeIgniter\Database\Database::connect()
+[Method: GET, Route: member/dashboard]
+in APPPATH\Controllers\Member\Dashboard.php on line 33.
+ 1 APPPATH\Controllers\Member\Dashboard.php(26): App\Controllers\Member\Dashboard->getChart()
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Member\Dashboard->index()
+ 3 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Member\Dashboard))
+ 4 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 8 SYSTEMPATH\Commands\Server\rewrite.php(49): require_once('E:\\Project\\PHP Project\\freelance\\absence\\public\\index.php')
+INFO - 2024-05-25 20:50:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-05-25 20:50:01 --> Error: Call to undefined method CodeIgniter\Database\Database::table()
+[Method: GET, Route: member/dashboard]
+in APPPATH\Controllers\Member\Dashboard.php on line 34.
+ 1 APPPATH\Controllers\Member\Dashboard.php(26): App\Controllers\Member\Dashboard->getChart()
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Member\Dashboard->index()
+ 3 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Member\Dashboard))
+ 4 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 8 SYSTEMPATH\Commands\Server\rewrite.php(49): require_once('E:\\Project\\PHP Project\\freelance\\absence\\public\\index.php')
+INFO - 2024-05-25 20:50:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-05-25 20:50:36 --> Error: Call to undefined method CodeIgniter\Database\Database::connect()
+[Method: GET, Route: member/dashboard]
+in APPPATH\Controllers\Member\Dashboard.php on line 34.
+ 1 APPPATH\Controllers\Member\Dashboard.php(26): App\Controllers\Member\Dashboard->getChart()
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Member\Dashboard->index()
+ 3 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Member\Dashboard))
+ 4 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 8 SYSTEMPATH\Commands\Server\rewrite.php(49): require_once('E:\\Project\\PHP Project\\freelance\\absence\\public\\index.php')
+INFO - 2024-05-25 20:51:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-25 20:53:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-05-25 20:53:14 --> ErrorException: Attempt to read property "count" on string
+[Method: GET, Route: member/dashboard]
+in APPPATH\Views\member\dashboardView.php on line 143.
+ 1 APPPATH\Views\member\dashboardView.php(143): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Attempt to read property "count" on string', 'E:\\Project\\PHP Project\\freelance\\absence\\app\\Views\\member\\dashboardView.php', 143)
+ 2 SYSTEMPATH\View\View.php(234): include('E:\\Project\\PHP Project\\freelance\\absence\\app\\Views\\member\\dashboardView.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('member/dashboardView', [], true)
+ 5 APPPATH\Controllers\Member\Dashboard.php(25): view('member/dashboardView', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Member\Dashboard->index()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Member\Dashboard))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\Commands\Server\rewrite.php(49): require_once('E:\\Project\\PHP Project\\freelance\\absence\\public\\index.php')
+INFO - 2024-05-25 20:53:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-05-25 20:53:27 --> TypeError: Cannot access offset of type string on string
+[Method: GET, Route: member/dashboard]
+in APPPATH\Views\member\dashboardView.php on line 143.
+ 1 SYSTEMPATH\View\View.php(234): include()
+ 2 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 3 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('member/dashboardView', [], true)
+ 4 APPPATH\Controllers\Member\Dashboard.php(25): view('member/dashboardView', [...])
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Member\Dashboard->index()
+ 6 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Member\Dashboard))
+ 7 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+11 SYSTEMPATH\Commands\Server\rewrite.php(49): require_once('E:\\Project\\PHP Project\\freelance\\absence\\public\\index.php')
+INFO - 2024-05-25 20:53:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-25 20:54:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-05-25 20:54:21 --> ErrorException: Undefined variable $summary_monthly_date
+[Method: GET, Route: member/dashboard]
+in APPPATH\Views\member\dashboardView.php on line 120.
+ 1 APPPATH\Views\member\dashboardView.php(120): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $summary_monthly_date', 'E:\\Project\\PHP Project\\freelance\\absence\\app\\Views\\member\\dashboardView.php', 120)
+ 2 SYSTEMPATH\View\View.php(234): include('E:\\Project\\PHP Project\\freelance\\absence\\app\\Views\\member\\dashboardView.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('member/dashboardView', [], true)
+ 5 APPPATH\Controllers\Member\Dashboard.php(25): view('member/dashboardView', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Member\Dashboard->index()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Member\Dashboard))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\Commands\Server\rewrite.php(49): require_once('E:\\Project\\PHP Project\\freelance\\absence\\public\\index.php')
+INFO - 2024-05-25 20:54:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-25 20:54:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-25 20:55:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-25 20:55:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-25 20:55:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-25 20:56:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-25 20:56:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-25 20:56:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-25 20:57:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-25 20:57:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-25 20:58:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-25 20:58:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-25 20:59:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-25 20:59:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-25 20:59:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-25 20:59:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-25 20:59:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-25 20:59:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-25 20:59:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-25 21:00:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-25 21:01:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-25 21:01:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-25 21:01:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-25 21:02:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-25 21:02:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-25 21:02:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-25 21:02:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-25 21:03:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-25 21:03:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-25 21:03:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-25 21:05:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-05-25 21:05:25 --> ErrorException: Undefined array key "count"
+[Method: GET, Route: member/dashboard]
+in APPPATH\Views\member\dashboardView.php on line 104.
+ 1 APPPATH\Views\member\dashboardView.php(104): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "count"', 'E:\\Project\\PHP Project\\freelance\\absence\\app\\Views\\member\\dashboardView.php', 104)
+ 2 SYSTEMPATH\View\View.php(234): include('E:\\Project\\PHP Project\\freelance\\absence\\app\\Views\\member\\dashboardView.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('member/dashboardView', [], true)
+ 5 APPPATH\Controllers\Member\Dashboard.php(25): view('member/dashboardView', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Member\Dashboard->index()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Member\Dashboard))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\Commands\Server\rewrite.php(49): require_once('E:\\Project\\PHP Project\\freelance\\absence\\public\\index.php')
+INFO - 2024-05-25 21:05:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-25 21:05:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-25 21:06:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-25 21:06:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-25 21:07:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-25 21:07:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-25 21:07:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-25 21:08:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-25 21:08:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-25 21:08:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-25 21:09:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-25 21:09:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-25 21:10:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-05-25 21:10:42 --> ErrorException: Array to string conversion
+[Method: GET, Route: member/dashboard]
+in APPPATH\Views\member\dashboardView.php on line 50.
+ 1 APPPATH\Views\member\dashboardView.php(50): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Array to string conversion', 'E:\\Project\\PHP Project\\freelance\\absence\\app\\Views\\member\\dashboardView.php', 50)
+ 2 SYSTEMPATH\View\View.php(234): include('E:\\Project\\PHP Project\\freelance\\absence\\app\\Views\\member\\dashboardView.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('member/dashboardView', [], true)
+ 5 APPPATH\Controllers\Member\Dashboard.php(25): view('member/dashboardView', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Member\Dashboard->index()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Member\Dashboard))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\Commands\Server\rewrite.php(49): require_once('E:\\Project\\PHP Project\\freelance\\absence\\public\\index.php')
+INFO - 2024-05-25 21:11:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-25 21:11:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-25 21:11:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-25 21:11:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-25 21:11:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-25 21:11:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-25 21:11:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-25 21:11:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-25 21:11:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-25 21:11:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-25 21:11:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-25 21:11:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-25 21:11:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-25 21:11:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-25 21:11:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-25 21:11:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-25 21:11:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-25 21:12:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-25 21:12:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-25 21:13:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-25 21:13:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-25 21:13:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-25 21:13:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-25 21:13:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-25 21:13:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-25 21:13:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-25 21:13:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-25 21:13:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-25 21:13:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-25 21:13:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-25 21:13:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-25 21:13:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-25 21:13:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-25 21:14:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-25 21:14:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-25 21:14:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-25 21:14:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-25 21:14:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-25 21:14:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-25 21:15:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-05-25 21:15:50 --> ErrorException: Trying to access array offset on value of type null
+[Method: GET, Route: admin/dashboard]
+in APPPATH\Views\templates\header.php on line 29.
+ 1 APPPATH\Views\templates\header.php(29): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Trying to access array offset on value of type null', 'E:\\Project\\PHP Project\\freelance\\absence\\app\\Views\\templates\\header.php', 29)
+ 2 SYSTEMPATH\View\View.php(234): include('E:\\Project\\PHP Project\\freelance\\absence\\app\\Views\\templates\\header.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\View\View.php(484): CodeIgniter\View\View->render('templates/header', null, true)
+ 5 APPPATH\Views\templates\main.php(24): CodeIgniter\View\View->include('templates/header')
+ 6 SYSTEMPATH\View\View.php(234): include('E:\\Project\\PHP Project\\freelance\\absence\\app\\Views\\templates\\main.php')
+ 7 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 8 SYSTEMPATH\View\View.php(484): CodeIgniter\View\View->render('templates/main', null, true)
+ 9 APPPATH\Views\admin\dashboardView.php(209): CodeIgniter\View\View->include('templates/main')
+10 SYSTEMPATH\View\View.php(234): include('E:\\Project\\PHP Project\\freelance\\absence\\app\\Views\\admin\\dashboardView.php')
+11 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+12 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('admin/dashboardView', [], true)
+13 APPPATH\Controllers\Admin\Dashboard.php(25): view('admin/dashboardView', [...])
+14 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin\Dashboard->index()
+15 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\Dashboard))
+16 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+17 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+18 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+19 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+20 SYSTEMPATH\Commands\Server\rewrite.php(49): require_once('E:\\Project\\PHP Project\\freelance\\absence\\public\\index.php')
+INFO - 2024-05-25 21:15:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-05-25 21:15:57 --> ErrorException: Trying to access array offset on value of type null
+[Method: GET, Route: admin/dashboard]
+in APPPATH\Views\templates\header.php on line 29.
+ 1 APPPATH\Views\templates\header.php(29): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Trying to access array offset on value of type null', 'E:\\Project\\PHP Project\\freelance\\absence\\app\\Views\\templates\\header.php', 29)
+ 2 SYSTEMPATH\View\View.php(234): include('E:\\Project\\PHP Project\\freelance\\absence\\app\\Views\\templates\\header.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\View\View.php(484): CodeIgniter\View\View->render('templates/header', null, true)
+ 5 APPPATH\Views\templates\main.php(24): CodeIgniter\View\View->include('templates/header')
+ 6 SYSTEMPATH\View\View.php(234): include('E:\\Project\\PHP Project\\freelance\\absence\\app\\Views\\templates\\main.php')
+ 7 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 8 SYSTEMPATH\View\View.php(484): CodeIgniter\View\View->render('templates/main', null, true)
+ 9 APPPATH\Views\admin\dashboardView.php(209): CodeIgniter\View\View->include('templates/main')
+10 SYSTEMPATH\View\View.php(234): include('E:\\Project\\PHP Project\\freelance\\absence\\app\\Views\\admin\\dashboardView.php')
+11 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+12 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('admin/dashboardView', [], true)
+13 APPPATH\Controllers\Admin\Dashboard.php(25): view('admin/dashboardView', [...])
+14 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin\Dashboard->index()
+15 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\Dashboard))
+16 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+17 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+18 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+19 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+20 SYSTEMPATH\Commands\Server\rewrite.php(49): require_once('E:\\Project\\PHP Project\\freelance\\absence\\public\\index.php')
+INFO - 2024-05-25 21:16:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-25 21:16:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-25 21:16:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-05-25 21:16:15 --> ErrorException: Trying to access array offset on value of type null
+[Method: GET, Route: admin/dashboard]
+in APPPATH\Views\templates\header.php on line 29.
+ 1 APPPATH\Views\templates\header.php(29): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Trying to access array offset on value of type null', 'E:\\Project\\PHP Project\\freelance\\absence\\app\\Views\\templates\\header.php', 29)
+ 2 SYSTEMPATH\View\View.php(234): include('E:\\Project\\PHP Project\\freelance\\absence\\app\\Views\\templates\\header.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\View\View.php(484): CodeIgniter\View\View->render('templates/header', null, true)
+ 5 APPPATH\Views\templates\main.php(24): CodeIgniter\View\View->include('templates/header')
+ 6 SYSTEMPATH\View\View.php(234): include('E:\\Project\\PHP Project\\freelance\\absence\\app\\Views\\templates\\main.php')
+ 7 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 8 SYSTEMPATH\View\View.php(484): CodeIgniter\View\View->render('templates/main', null, true)
+ 9 APPPATH\Views\admin\dashboardView.php(209): CodeIgniter\View\View->include('templates/main')
+10 SYSTEMPATH\View\View.php(234): include('E:\\Project\\PHP Project\\freelance\\absence\\app\\Views\\admin\\dashboardView.php')
+11 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+12 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('admin/dashboardView', [], true)
+13 APPPATH\Controllers\Admin\Dashboard.php(25): view('admin/dashboardView', [...])
+14 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin\Dashboard->index()
+15 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\Dashboard))
+16 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+17 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+18 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+19 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+20 SYSTEMPATH\Commands\Server\rewrite.php(49): require_once('E:\\Project\\PHP Project\\freelance\\absence\\public\\index.php')
+INFO - 2024-05-25 21:17:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
