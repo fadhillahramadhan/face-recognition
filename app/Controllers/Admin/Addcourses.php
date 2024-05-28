@@ -63,6 +63,7 @@ class Addcourses extends BaseController
             "courses_users.id" => "id",
             "courses_users.course_id" => "course_id",
             "courses.name" => "name",
+            "courses.code" => "code", // add this line
             'courses.description' => 'description',
             "courses_users.user_id" => "user_id",
             "courses_users.scheduled_at" => "scheduled_at",

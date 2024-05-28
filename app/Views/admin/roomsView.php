@@ -1,73 +1,41 @@
 <?= $this->section('content') ?>
 
-<div class="row">
-    <div class="col-sm-12 col-md-6 col-lg-6">
-        <!-- Monthly Earnings -->
-        <div class="card">
-            <div class="card-body">
-                <div class="row align-items-start">
-                    <div class="col-12 col-md-8">
-                        <h5 class="card-title mb-9 fw-semibold">Nama Dosen</h5>
-                        <h4 class="fw-semibold mb-3">
-                            <?= $user['name'] ?><br>
-                            <small class="text-muted"><?= $user['email'] ?></small>
-                        </h4>
-
-                    </div>
-                    <div class="col-4 d-none d-md-block">
-                        <div class="d-flex justify-content-end">
-                            <div class="text-white bg-primary rounded-circle p-6 d-flex align-items-center justify-content-center">
-                                <i class="ti ti-user fs-6"></i>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="col-12">
-
-        <div id="table"></div>
-    </div>
-</div>
+<div id="table"></div>
 
 <div class="modal fade" id="addUpdateModal">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title">Tambah Nama Jadwal</h5>
+                <h5 class="modal-title">Tambah Ruangan</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
                 <form>
                     <div class=" mb-3">
-                        <label class="form-label">Nama Jadwal</label>
-                        <select class="form-select" name="course_id">
-                            <option value="">Pilih Jadwal</option>
-                            <?php foreach ($courses as $course) : ?>
-                                <option value="<?= $course['id'] ?>"><?= $course['name'] ?></option>
-                            <?php endforeach; ?>
-                        </select>
-
-                    </div>
-                    <!-- datetime -->
-                    <div class="mb-3">
-                        <label class="form-label d-block">Tanggal Mulai</label>
-                        <input type="datetime-local" name="scheduled_at" class="form-control">
-                        <small class="form-text text-muted">Masukkan tanggal mulai</small>
+                        <label class="form-label">Nama ruangan</label>
+                        <input type="text" name="name" class="form-control">
+                        <small class="form-text text-muted">Masukkan nama ruangan</small>
                         <!-- error -->
-                        <div id="scheduled_at_error" class="invalid-feedback">
+                        <div id="name_error" class="invalid-feedback">
+                        </div>
+                    </div>
+                    <div class=" mb-3">
+                        <label class="form-label">Kode</label>
+                        <input type="text" name="code" class="form-control">
+                        <small class="form-text text-muted">Masukkan Kode</small>
+                        <!-- error -->
+                        <div id="code_error" class="invalid-feedback">
+                        </div>
+                    </div>
+                    <div class=" mb-3">
+                        <label class="form-label">Deskripsi</label>
+                        <textarea type="text" name="description" class="form-control"> </textarea>
+                        <small class="form-text text-muted">Masukkan deskripsi</small>
+                        <!-- error -->
+                        <div id="description_error" class="invalid-feedback">
                         </div>
                     </div>
 
-                    <div class="mb-3">
-                        <label class="form-label d-block">Tanggal Selesai</label>
-                        <input type="datetime-local" name="expired_at" class="form-control">
-                        <small class="form-text text-muted">Masukkan tanggal selesai</small>
-                        <!-- error -->
-                        <div id="expired_at_error" class="invalid-feedback">
-                        </div>
-                    </div>
                 </form>
             </div>
             <div class="modal-footer">
@@ -91,12 +59,12 @@
 
     getTable = () => {
         $("#table").dataTableLib({
-            url: window.location.origin + "/admin/addcourses/get_courses_users/" + "<?= $id ?>",
+            url: window.location.origin + "/admin/rooms/get_rooms",
             selectID: "id",
             colModel: [
 
                 {
-                    display: 'Nama Mata Kuliah',
+                    display: 'Nama Ruangan',
                     name: 'name',
                     align: 'left',
                     render: (params, args) => {
@@ -104,16 +72,8 @@
                     },
                 },
                 {
-                    display: 'Tanggal Mulai',
-                    name: 'scheduled_at',
-                    align: 'left',
-                    render: (params, args) => {
-                        return `<span>${params}</span>`;
-                    },
-                },
-                {
-                    display: 'Tanggal Selesai',
-                    name: 'expired_at',
+                    display: 'Deskripsi',
+                    name: 'description',
                     align: 'left',
                     render: (params, args) => {
                         return `<span>${params}</span>`;
@@ -139,7 +99,7 @@
             searchTitle: "Pencarian",
             searchItems: [{
                     name: "name",
-                    title: "Nama Mata Kuliah",
+                    title: "Nama Mata ruangan",
                     type: "text"
                 },
                 {
@@ -154,22 +114,12 @@
             tableIsResponsive: true,
             select: false,
             multiSelect: false,
-            buttonAction: [
-                // kembali
-                {
-                    display: 'Kembali',
-                    icon: 'ti ti-arrow-left',
-                    style: "secondary",
-                    action: "back"
-
-                },
-                {
-                    display: 'Tambah',
-                    icon: 'bx bx-plus',
-                    style: "info",
-                    action: "addData"
-                },
-            ],
+            buttonAction: [{
+                display: 'Tambah',
+                icon: 'bx bx-plus',
+                style: "info",
+                action: "addData"
+            }, ],
             success: (res) => {
                 data = res.data.results
 
@@ -186,23 +136,22 @@
         update = false
         current_id = null
 
-        $(".modal-title").html("Tambah Jadwal")
+        $(".modal-title").html("Tambah Mata ruangan")
 
         new bootstrap.Modal(document.getElementById('addUpdateModal')).show()
     }
 
     saveData = () => {
-        let url = update ? window.location.origin + "/admin/addcourses/update_course" : window.location.origin + "/admin/addcourses/add_course"
+        let url = update ? window.location.origin + "/admin/rooms/update_room" : window.location.origin + "/admin/rooms/add_room"
 
         $.ajax({
             url: url,
             type: "POST",
             data: {
                 id: current_id,
-                course_id: $("select[name=course_id]").val(),
-                scheduled_at: $("input[name=scheduled_at]").val(),
-                expired_at: $("input[name=expired_at]").val(),
-                user_id: '<?= $id ?>'
+                name: $("input[name=name]").val(),
+                code: $("input[name=code]").val(),
+                description: $("textarea[name=description]").val(),
             },
             success: (res) => {
                 // hide modal
@@ -238,12 +187,15 @@
         current_id = id
 
         // change modal title
-        $(".modal-title").html("Update Jadwal")
+        $(".modal-title").html("Update Mata ruangan")
 
         getCourse(id).then((res) => {
             let data = res.data
 
-            $("select[name=course_id]").val(data.course_id)
+            $("input[name=name]").val(data.name)
+            $("input[name=code]").val(data.code)
+            $("textarea[name=description]").val(data.description)
+
 
             new bootstrap.Modal(document.getElementById('addUpdateModal')).show()
         }).error((err) => {
@@ -253,16 +205,12 @@
 
     getCourse = (id) => {
         return $.ajax({
-            url: window.location.origin + "/admin/addcourses/get_course/" + id,
+            url: window.location.origin + "/admin/rooms/get_room/" + id,
             type: "GET",
             data: {
                 id: id
             },
         })
-    }
-
-    back = () => {
-        window.location.href = window.location.origin + "/admin/addcourses"
     }
 </script>
 <?= $this->endSection() ?>

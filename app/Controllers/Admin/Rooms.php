@@ -3,10 +3,9 @@
 namespace App\Controllers\Admin;
 
 use App\Controllers\BaseController;
-use App\Models\AbsenceModel;
-use App\Models\CoursesModel;
+use App\Models\RoomsModel;
 
-class Courses extends BaseController
+class Rooms extends BaseController
 {
     public function index(): string
     {
@@ -15,28 +14,27 @@ class Courses extends BaseController
                 'active' => false,
                 'href' => '#',
             ],
-            'Dosen' => [
+            'Rooms' => [
                 'active' => true,
-                'href' => '/admin/user',
+                'href' => '/admin/rooms',
             ]
         ];
 
-
-        return view('admin/coursesView', [
+        return view('admin/roomsView', [
             'breadcumbs' => $breadcumbs,
         ]);
     }
 
-    public function get_courses()
+    public function get_rooms()
     {
-        $tableName = "courses";
+        $tableName = "rooms";
         $columns = [
-            "courses.id" => "id",
-            "courses.name" => "name",
-            "courses.code" => "code", // add this line
-            "courses.description" => "description",
-            "courses.scheduled_at" => "scheduled_at",
-            "courses.expired_at" => "expired_at",
+            "rooms.id" => "id",
+            "rooms.name" => "name",
+            "rooms.code" => "code", // add this line
+            "rooms.description" => "description",
+            "rooms.created_at" => "created_at",
+            "rooms.updated_at" => "updated_at",
         ];
         $joinTable = "";
         $whereCondition = "";
@@ -46,14 +44,14 @@ class Courses extends BaseController
 
 
         foreach ($data['results'] as $key => $value) {
-            $data['results'][$key]['scheduled_at'] = $this->convertDatetime($value['scheduled_at'], 'id');
-            $data['results'][$key]['expired_at'] = $this->convertDatetime($value['expired_at'], 'id');
+            $data['results'][$key]['created_at'] = $this->convertDatetime($value['created_at'], 'id');
+            $data['results'][$key]['updated_at'] = $this->convertDatetime($value['updated_at'], 'id');
         }
 
         $this->rest->responseSuccess("Data", $data);
     }
 
-    public function add_course()
+    public function add_room()
     {
         $validate = $this->validate([
             'name' => [
@@ -79,7 +77,7 @@ class Courses extends BaseController
             $password = (string) $this->request->getPost('password');
 
 
-            $model = new CoursesModel();
+            $model = new RoomsModel();
             $data = [
                 'name' => $this->request->getPost('name'),
                 'description' => $this->request->getPost('description'),
@@ -98,7 +96,7 @@ class Courses extends BaseController
         }
     }
 
-    public function update_course()
+    public function update_room()
     {
         $validate = $this->validate([
             'id' => [
@@ -127,7 +125,7 @@ class Courses extends BaseController
 
         try {
             $password = (string) $this->request->getPost('password');
-            $model = new CoursesModel();
+            $model = new RoomsModel();
             $data = [
                 'name' => $this->request->getPost('name'),
                 'description' => $this->request->getPost('description'),
@@ -146,9 +144,9 @@ class Courses extends BaseController
         }
     }
 
-    public function get_course($id)
+    public function get_room($id)
     {
-        $model = new CoursesModel();
+        $model = new RoomsModel();
         $data = $model->find($id);
 
         // check also absnce

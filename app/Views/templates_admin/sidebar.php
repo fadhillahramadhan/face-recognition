@@ -23,6 +23,7 @@
                         <span class="hide-menu">Dashboard</span>
                     </a>
                 </li>
+
                 <li class="nav-small-cap">
                     <i class="ti ti-dots nav-small-cap-icon fs-4"></i>
                     <span class="hide-menu">Dosen</span>
@@ -45,8 +46,21 @@
                 </li>
                 <li class="nav-small-cap">
                     <i class="ti ti-dots nav-small-cap-icon fs-4"></i>
+                    <span class="hide-menu">Ruangan</span>
+                </li>
+                <li class="sidebar-item">
+                    <a class="sidebar-link" href="<?= base_url('/admin/rooms') ?>" aria-expanded="false">
+                        <span>
+                            <i class="ti ti-user"></i>
+                        </span>
+                        <span class="hide-menu">Ruangan</span>
+                    </a>
+                </li>
+                <li class="nav-small-cap">
+                    <i class="ti ti-dots nav-small-cap-icon fs-4"></i>
                     <span class="hide-menu">Mata Kuliah</span>
                 </li>
+
                 <li class="sidebar-item">
                     <a class="sidebar-link" href="<?= base_url('/admin/courses') ?>" aria-expanded="false">
                         <span>

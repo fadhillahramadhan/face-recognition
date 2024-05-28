@@ -20,6 +20,14 @@
                         </div>
                     </div>
                     <div class=" mb-3">
+                        <label class="form-label">Kode</label>
+                        <input type="text" name="code" class="form-control">
+                        <small class="form-text text-muted">Masukkan Kode</small>
+                        <!-- error -->
+                        <div id="code_error" class="invalid-feedback">
+                        </div>
+                    </div>
+                    <div class=" mb-3">
                         <label class="form-label">Deskripsi</label>
                         <textarea type="text" name="description" class="form-control"> </textarea>
                         <small class="form-text text-muted">Masukkan deskripsi</small>
@@ -60,7 +68,7 @@
                     name: 'name',
                     align: 'left',
                     render: (params, args) => {
-                        return `<span><b>${params}</b></span>`;
+                        return `<span><b>${params}</b></span><br><span>${args.code}</span>`;
                     },
                 },
                 {
@@ -128,7 +136,7 @@
         update = false
         current_id = null
 
-        $(".modal-title").html("Tambah Dosen")
+        $(".modal-title").html("Tambah Mata Kuliah")
 
         new bootstrap.Modal(document.getElementById('addUpdateModal')).show()
     }
@@ -142,6 +150,7 @@
             data: {
                 id: current_id,
                 name: $("input[name=name]").val(),
+                code: $("input[name=code]").val(),
                 description: $("textarea[name=description]").val(),
             },
             success: (res) => {
@@ -178,12 +187,13 @@
         current_id = id
 
         // change modal title
-        $(".modal-title").html("Update Dosen")
+        $(".modal-title").html("Update Mata Kuliah")
 
         getCourse(id).then((res) => {
             let data = res.data
 
             $("input[name=name]").val(data.name)
+            $("input[name=code]").val(data.code)
             $("textarea[name=description]").val(data.description)
 
 
