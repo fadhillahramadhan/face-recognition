@@ -41,26 +41,40 @@
                         <span>
                             <i class="ti ti-paperclip"></i>
                         </span>
-                        <span class="hide-menu">Presensi Dosen</span>
+                        <span class="hide-menu">Data Rekapitulasi</span>
                     </a>
                 </li>
+
+                <li class="sidebar-item">
+                    <a class="sidebar-link" href="<?= base_url('/admin/addcourses') ?>" aria-expanded="false">
+                        <span>
+                            <i class="ti ti-report"></i>
+                        </span>
+                        <span class="hide-menu">Tambah Jadwal</span>
+                    </a>
+                </li>
+
                 <li class="nav-small-cap">
                     <i class="ti ti-dots nav-small-cap-icon fs-4"></i>
-                    <span class="hide-menu">Ruangan</span>
+                    <span class="hide-menu">Data Master</span>
                 </li>
                 <li class="sidebar-item">
                     <a class="sidebar-link" href="<?= base_url('/admin/rooms') ?>" aria-expanded="false">
                         <span>
-                            <i class="ti ti-user"></i>
+                            <i class="ti ti-building"></i>
                         </span>
                         <span class="hide-menu">Ruangan</span>
                     </a>
                 </li>
-                <li class="nav-small-cap">
-                    <i class="ti ti-dots nav-small-cap-icon fs-4"></i>
-                    <span class="hide-menu">Mata Kuliah</span>
-                </li>
 
+                <li class="sidebar-item">
+                    <a class="sidebar-link" href="<?= base_url('/admin/studies') ?>" aria-expanded="false">
+                        <span>
+                            <i class="ti ti-building-community"></i>
+                        </span>
+                        <span class="hide-menu">Prodi</span>
+                    </a>
+                </li>
                 <li class="sidebar-item">
                     <a class="sidebar-link" href="<?= base_url('/admin/courses') ?>" aria-expanded="false">
                         <span>
@@ -70,14 +84,8 @@
                     </a>
                 </li>
 
-                <li class="sidebar-item">
-                    <a class="sidebar-link" href="<?= base_url('/admin/addcourses') ?>" aria-expanded="false">
-                        <span>
-                            <i class="ti ti-plus"></i>
-                        </span>
-                        <span class="hide-menu">Tambah Mata Kuliah</span>
-                    </a>
-                </li>
+
+
             </ul>
             <div class="unlimited-access hide-menu bg-light-primary position-relative mb-7 mt-5 rounded">
                 <div class="d-flex">

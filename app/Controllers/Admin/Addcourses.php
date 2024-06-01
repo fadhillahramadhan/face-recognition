@@ -12,11 +12,11 @@ class Addcourses extends BaseController
     public function index(): string
     {
         $breadcumbs = [
-            'Data' => [
+            'Dosen' => [
                 'active' => false,
                 'href' => '#',
             ],
-            'Tambah Mata kuliah' => [
+            'Tambah Jadwal' => [
                 'active' => true,
                 'href' => '/admin/addcourses',
             ]
