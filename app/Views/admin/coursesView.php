@@ -12,6 +12,15 @@
             <div class="modal-body">
                 <form>
                     <div class=" mb-3">
+                        <label class="form-label">Kode</label>
+                        <input type="text" name="code" class="form-control">
+                        <small class="form-text text-muted">Masukkan Kode</small>
+                        <!-- error -->
+                        <div id="code_error" class="invalid-feedback">
+                        </div>
+                    </div>
+
+                    <div class=" mb-3">
                         <label class="form-label">Nama kuliah</label>
                         <input type="text" name="name" class="form-control">
                         <small class="form-text text-muted">Masukkan nama kuliah</small>
@@ -19,12 +28,27 @@
                         <div id="name_error" class="invalid-feedback">
                         </div>
                     </div>
+
+                    <!-- sks -->
                     <div class=" mb-3">
-                        <label class="form-label">Kode</label>
-                        <input type="text" name="code" class="form-control">
-                        <small class="form-text text-muted">Masukkan Kode</small>
+                        <label class="form-label">SKS</label>
+                        <input type="number" name="sks" class="form-control">
+                        <small class="form-text text-muted">Masukkan SKS</small>
                         <!-- error -->
-                        <div id="code_error" class="invalid-feedback">
+                        <div id="sks_error" class="invalid-feedback">
+                        </div>
+                    </div>
+
+                    <!-- status  online offline -->
+                    <div class=" mb-3">
+                        <label class="form-label">Status</label>
+                        <select name="status" class="form-select">
+                            <option value="offline">Offline</option>
+                            <option value="online">Online</option>
+                        </select>
+                        <small class="form-text text-muted">Pilih Status</small>
+                        <!-- error -->
+                        <div id="status_error" class="invalid-feedback">
                         </div>
                     </div>
                     <div class=" mb-3">
@@ -35,7 +59,6 @@
                         <div id="description_error" class="invalid-feedback">
                         </div>
                     </div>
-
                 </form>
             </div>
             <div class="modal-footer">
@@ -72,6 +95,24 @@
                     },
                 },
                 {
+                    display: 'Status',
+                    name: 'status',
+                    align: 'center',
+                    render: (params, args) => {
+                        // uppercase first
+                        return `<span>${params.charAt(0).toUpperCase() + params.slice(1)}</span>`;
+                    },
+                },
+                // sks
+                {
+                    display: 'SKS',
+                    name: 'sks',
+                    align: 'center',
+                    render: (params, args) => {
+                        return `<span>${params}</span>`;
+                    },
+                },
+                {
                     display: 'Deskripsi',
                     name: 'description',
                     align: 'left',
@@ -79,6 +120,9 @@
                         return `<span>${params}</span>`;
                     },
                 },
+                // status online offline
+
+
                 {
                     display: 'Action',
                     name: 'id',
@@ -152,6 +196,8 @@
                 name: $("input[name=name]").val(),
                 code: $("input[name=code]").val(),
                 description: $("textarea[name=description]").val(),
+                sks: $("input[name=sks]").val(),
+                status: $("select[name=status]").val(),
             },
             success: (res) => {
                 // hide modal
@@ -194,6 +240,8 @@
 
             $("input[name=name]").val(data.name)
             $("input[name=code]").val(data.code)
+            $("input[name=sks]").val(data.sks)
+            $("select[name=status]").val(data.status)
             $("textarea[name=description]").val(data.description)
 
 

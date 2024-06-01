@@ -34,6 +34,8 @@ class Courses extends BaseController
             "courses.id" => "id",
             "courses.name" => "name",
             "courses.code" => "code", // add this line
+            "courses.sks" => "sks",
+            "courses.status" => "status",
             "courses.description" => "description",
             "courses.scheduled_at" => "scheduled_at",
             "courses.expired_at" => "expired_at",
@@ -68,6 +70,18 @@ class Courses extends BaseController
                     'required' => 'Kode Mata Kuliah harus diisi',
                 ]
             ],
+            'sks' => [
+                'rules' => 'required',
+                'errors' => [
+                    'required' => 'SKS harus diisi',
+                ]
+            ],
+            'status' => [
+                'rules' => 'required',
+                'errors' => [
+                    'required' => 'Status harus diisi',
+                ]
+            ],
 
         ]);
 
@@ -84,6 +98,8 @@ class Courses extends BaseController
                 'name' => $this->request->getPost('name'),
                 'description' => $this->request->getPost('description'),
                 'code' => $this->request->getPost('code'), // add this line
+                'sks' => $this->request->getPost('sks') ?? 0,
+                'status' => $this->request->getPost('status') ?? 'offline',
             ];
 
             $model->insert($data);
@@ -132,6 +148,8 @@ class Courses extends BaseController
                 'name' => $this->request->getPost('name'),
                 'description' => $this->request->getPost('description'),
                 'code' => $this->request->getPost('code'), // add this line
+                'sks' => $this->request->getPost('sks') ?? 0,
+                'status' => $this->request->getPost('status') ?? 'offline',
             ];
 
             $model->update($this->request->getPost('id'), $data);
