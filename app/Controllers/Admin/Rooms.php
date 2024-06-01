@@ -10,11 +10,11 @@ class Rooms extends BaseController
     public function index(): string
     {
         $breadcumbs = [
-            'Data' => [
+            'Data Master' => [
                 'active' => false,
                 'href' => '#',
             ],
-            'Rooms' => [
+            'Ruangan' => [
                 'active' => true,
                 'href' => '/admin/rooms',
             ]
@@ -82,6 +82,8 @@ class Rooms extends BaseController
                 'name' => $this->request->getPost('name'),
                 'description' => $this->request->getPost('description'),
                 'code' => $this->request->getPost('code'), // add this line
+                'created_at' => date('Y-m-d H:i:s'),
+                'updated_at' => date('Y-m-d H:i:s'),
             ];
 
             $model->insert($data);
@@ -130,6 +132,7 @@ class Rooms extends BaseController
                 'name' => $this->request->getPost('name'),
                 'description' => $this->request->getPost('description'),
                 'code' => $this->request->getPost('code'), // add this line
+                'updated_at' => date('Y-m-d H:i:s'),
             ];
 
             $model->update($this->request->getPost('id'), $data);

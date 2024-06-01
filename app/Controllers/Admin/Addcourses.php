@@ -5,6 +5,8 @@ namespace App\Controllers\Admin;
 use App\Controllers\BaseController;
 use App\Models\CoursesModel;
 use App\Models\CoursesUsersModel;
+use App\Models\RoomsModel;
+use App\Models\StudiesModel;
 use App\Models\UserModel;
 
 class Addcourses extends BaseController
@@ -16,7 +18,7 @@ class Addcourses extends BaseController
                 'active' => false,
                 'href' => '#',
             ],
-            'Tambah Jadwal' => [
+            'Data Dosen' => [
                 'active' => true,
                 'href' => '/admin/addcourses',
             ]
@@ -44,6 +46,12 @@ class Addcourses extends BaseController
         $coursesModel = new CoursesModel();
         $courses = $coursesModel->findAll();
 
+        $roomsModel = new RoomsModel();
+        $rooms = $roomsModel->findAll();
+
+        $studiesModel = new StudiesModel();
+        $studies = $studiesModel->findAll();
+
         $userModel = new UserModel();
         $users = $userModel->find($id);
 
@@ -51,6 +59,8 @@ class Addcourses extends BaseController
         return view('admin/addCoursesViewSchedule', [
             'breadcumbs' => $breadcumbs,
             'courses' => $courses,
+            'rooms' => $rooms,
+            'studies' => $studies,
             'user' => $users,
             'id' => $id
         ]);
@@ -64,6 +74,11 @@ class Addcourses extends BaseController
             "courses_users.course_id" => "course_id",
             "courses.name" => "name",
             "courses.code" => "code", // add this line
+            // room and code
+            "rooms.name" => "room_name",
+            'rooms.code' => 'room_code',
+            'studies.name' => 'study_name',
+            'studies.code' => 'study_code',
             'courses.description' => 'description',
             "courses_users.user_id" => "user_id",
             "courses_users.scheduled_at" => "scheduled_at",
@@ -72,6 +87,8 @@ class Addcourses extends BaseController
         $joinTable = "
         JOIN users ON users.id = courses_users.user_id
         JOIN courses ON courses.id = courses_users.course_id
+        JOIN rooms ON rooms.id = courses_users.room_id
+        JOIN studies ON studies.id = courses_users.study_id
         ";
         $whereCondition = "courses_users.user_id = $id";
         $groupBy = "";
@@ -87,11 +104,6 @@ class Addcourses extends BaseController
         $this->rest->responseSuccess("Data", $data);
     }
 
-    // id: current_id,
-    // course_id: ,
-    // scheduled_at: 
-    // expired_at:
-    // user_id: 
 
     public function add_course()
     {
@@ -120,6 +132,18 @@ class Addcourses extends BaseController
                     'required' => 'User harus diisi',
                 ]
             ],
+            'study_id' => [
+                'rules' => 'required',
+                'errors' => [
+                    'required' => 'Prodi harus diisi',
+                ]
+            ],
+            'room_id' => [
+                'rules' => 'required',
+                'errors' => [
+                    'required' => 'Ruangan harus diisi',
+                ]
+            ],
         ]);
 
         if (!$validate) {
@@ -133,6 +157,8 @@ class Addcourses extends BaseController
                 'scheduled_at' => $this->request->getPost('scheduled_at'),
                 'expired_at' => $this->request->getPost('expired_at'),
                 'user_id' => $this->request->getPost('user_id'),
+                'study_id' => $this->request->getPost('study_id'),
+                'room_id' => $this->request->getPost('room_id'),
             ];
 
             $model->insert($data);
@@ -180,6 +206,18 @@ class Addcourses extends BaseController
                     'required' => 'User harus diisi',
                 ]
             ],
+            'study_id' => [
+                'rules' => 'required',
+                'errors' => [
+                    'required' => 'Prodi harus diisi',
+                ]
+            ],
+            'room_id' => [
+                'rules' => 'required',
+                'errors' => [
+                    'required' => 'Ruangan harus diisi',
+                ]
+            ],
 
         ]);
 
@@ -194,6 +232,8 @@ class Addcourses extends BaseController
                 'scheduled_at' => $this->request->getPost('scheduled_at'),
                 'expired_at' => $this->request->getPost('expired_at'),
                 'user_id' => $this->request->getPost('user_id'),
+                'study_id' => $this->request->getPost('study_id'),
+                'room_id' => $this->request->getPost('room_id'),
             ];
 
             $model->update($this->request->getPost('id'), $data);

@@ -28,29 +28,23 @@
                     <i class="ti ti-dots nav-small-cap-icon fs-4"></i>
                     <span class="hide-menu">Dosen</span>
                 </li>
+
+
                 <li class="sidebar-item">
-                    <a class="sidebar-link" href="<?= base_url('/admin/user') ?>" aria-expanded="false">
+                    <a class="sidebar-link" href="<?= base_url('/admin/addcourses') ?>" aria-expanded="false">
                         <span>
                             <i class="ti ti-user"></i>
                         </span>
                         <span class="hide-menu">Dosen</span>
                     </a>
                 </li>
+
                 <li class="sidebar-item">
                     <a class="sidebar-link" href="<?= base_url('/admin/absence') ?>" aria-expanded="false">
                         <span>
                             <i class="ti ti-paperclip"></i>
                         </span>
                         <span class="hide-menu">Data Rekapitulasi</span>
-                    </a>
-                </li>
-
-                <li class="sidebar-item">
-                    <a class="sidebar-link" href="<?= base_url('/admin/addcourses') ?>" aria-expanded="false">
-                        <span>
-                            <i class="ti ti-report"></i>
-                        </span>
-                        <span class="hide-menu">Tambah Jadwal</span>
                     </a>
                 </li>
 

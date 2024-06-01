@@ -50,6 +50,26 @@
                         </select>
 
                     </div>
+                    <!-- TAMBAH PRODI -->
+                    <div class="mb-3">
+                        <label class="form-label">Pilih Prodi</label>
+                        <select class="form-select" name="study_id">
+                            <option value="">Pilih Prodi</option>
+                            <?php foreach ($studies as $study) : ?>
+                                <option value="<?= $study['id'] ?>"><?= $study['name'] ?></option>
+                            <?php endforeach; ?>
+                        </select>
+                    </div>
+                    <!-- TAMBAH PRODI -->
+                    <div class="mb-3">
+                        <label class="form-label">Pilih Ruangan</label>
+                        <select class="form-select" name="room_id">
+                            <option value="">Pilih Ruangan</option>
+                            <?php foreach ($rooms as $room) : ?>
+                                <option value="<?= $room['id'] ?>"><?= $room['name'] ?></option>
+                            <?php endforeach; ?>
+                        </select>
+                    </div>
                     <!-- datetime -->
                     <div class="mb-3">
                         <label class="form-label d-block">Tanggal Mulai</label>
@@ -93,8 +113,14 @@
         $("#table").dataTableLib({
             url: window.location.origin + "/admin/addcourses/get_courses_users/" + "<?= $id ?>",
             selectID: "id",
-            colModel: [
-
+            colModel: [{
+                    display: 'Prodi',
+                    name: 'name',
+                    align: 'left',
+                    render: (params, args) => {
+                        return `<span><b>${args.study_code}</b></span><br><span>${args.study_name}</span>`;
+                    },
+                },
                 {
                     display: 'Nama Mata Kuliah',
                     name: 'name',
@@ -103,6 +129,15 @@
                         return `<span><b>${params}</b></span><br><span>${args.code}</span>`;
                     },
                 },
+                {
+                    display: 'Ruangan',
+                    name: 'name',
+                    align: 'left',
+                    render: (params, args) => {
+                        return `<span><b>${args.room_code}</b></span><br><span>${args.room_name}</span>`;
+                    },
+                },
+
                 {
                     display: 'Tanggal Mulai',
                     name: 'scheduled_at',
@@ -200,6 +235,8 @@
             data: {
                 id: current_id,
                 course_id: $("select[name=course_id]").val(),
+                study_id: $("select[name=study_id]").val(),
+                room_id: $("select[name=room_id]").val(),
                 scheduled_at: $("input[name=scheduled_at]").val(),
                 expired_at: $("input[name=expired_at]").val(),
                 user_id: '<?= $id ?>'
@@ -244,6 +281,8 @@
             let data = res.data
 
             $("select[name=course_id]").val(data.course_id)
+            $("select[name=study_id]").val(data.study_id)
+            $("select[name=room_id]").val(data.room_id)
 
             new bootstrap.Modal(document.getElementById('addUpdateModal')).show()
         }).error((err) => {
