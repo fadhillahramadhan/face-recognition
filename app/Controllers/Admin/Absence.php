@@ -17,7 +17,7 @@ class Absence extends BaseController
                 'active' => false,
                 'href' => '/admin/absence',
             ],
-            'Presensi' => [
+            'Data Rekapitulasi' => [
                 'active' => true,
                 'href' => '/admin/absence',
             ]
@@ -29,31 +29,33 @@ class Absence extends BaseController
 
     public function get_absence()
     {
+
         $tableName = "absence";
         $columns = [
-            "absence.id" => "id",
-            "absence.user_id" => "user_id",
-            "absence.course_id" => "course_id",
-            "courses.name" => "course_name",
+            "MONTH(absence.date)" => "bulan",
+            "YEAR(absence.date)" => "tahun",
             "users.name" => "user_name",
-            "users.email" => "user_email",
-            "absence.date" => "date",
-            "absence.reason" => "reason",
-            "absence.created_at" => "created_at",
-            "absence.updated_at" => "updated_at",
+            "courses.code" => "course_code",
+            "courses.name" => "course_name",
+            "studies.name" => "study_name",
+            "courses.status" => "status",
+            "courses.sks" => "sks",
+            "COUNT(*)" => "total_absence",
         ];
         $joinTable = "
-        JOIN courses ON courses.id = absence.course_id
         JOIN users ON users.id = absence.user_id
+        JOIN courses ON courses.id = absence.course_id
+        JOIN studies ON studies.id = absence.study_id
         ";
         $whereCondition = "";
-        $groupBy = "";
+        $groupBy = "GROUP BY MONTH(absence.date),YEAR(absence.date),user_id,course_id,study_id
+        ";
 
         $data = $this->dataTable->getListDataTable($this->request, $tableName, $columns, $joinTable, $whereCondition, $groupBy);
 
 
         foreach ($data['results'] as $key => $value) {
-            $data['results'][$key]['created_at'] = $this->convertDatetime($value['created_at'], 'id');
+            $data['results'][$key]['bulan'] = $this->convertMonth($value['bulan']);
         }
 
         $this->rest->responseSuccess("Data Courses", $data);

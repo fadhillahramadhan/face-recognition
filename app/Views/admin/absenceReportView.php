@@ -14,23 +14,70 @@
             url: window.location.origin + "/admin/absence/get_absence",
             selectID: "id",
             colModel: [{
+                    display: 'Tahun',
+                    name: 'tahun',
+                    align: 'left',
+                    // render bold
+                    render: (data) => {
+                        return `<b>${data}</b>`
+                    }
+                },
+                {
+                    display: 'Bulan',
+                    name: 'bulan',
+                    align: 'left',
+                    // render bold
+                    render: (data) => {
+                        return `${data}`
+                    }
+                },
+
+                {
                     display: 'Nama Dosen',
                     name: 'user_name',
                     align: 'left',
-                    render: (data, args) => {
-                        return `<p> <b>${data}</b> <br> ${args.user_email} </p>`
+                    render: (data) => {
+                        return `<b>${data}</b>`
                     }
+                },
+                {
+                    display: 'Kode Matkul',
+                    name: 'course_code',
+                    align: 'left',
                 },
                 {
                     display: 'Nama Matkul',
                     name: 'course_name',
                     align: 'left',
+                    render: (data) => {
+                        return `<b>${data}</b>`
+                    }
                 },
                 {
-                    display: 'Tanggal Absensi',
-                    name: 'created_at',
+                    display: 'Jurusan',
+                    name: 'study_name',
                     align: 'left',
                 },
+                {
+                    display: 'Status',
+                    name: 'status',
+                    align: 'left',
+                },
+
+                {
+                    display: 'SKS',
+                    name: 'sks',
+                    align: 'left',
+                },
+                {
+                    display: 'Total Absensi',
+                    name: 'total_absence',
+                    align: 'center',
+                    render: (data) => {
+                        return `<b>${data}</b>`
+                    }
+                },
+
 
 
             ],
@@ -40,11 +87,122 @@
             },
             search: true,
             searchTitle: "Pencarian",
-            searchItems: [{
-                display: 'Jadwal',
-                name: 'created_at',
-                type: 'date'
-            }, ],
+            searchItems: [
+                //     {
+                //     display: 'Jadwal',
+                //     name: 'created_at',
+                //     type: 'date'
+                // }, 
+                // bulan tahun
+                // {
+                //             display: 'Apakah Stockist',
+                //             name: 'member_is_stockist',
+                //             type: 'select',
+                //             option: [{
+                //                 title: 'Ya',
+                //                 value: '1'
+                //             }, {
+                //                 title: 'Tidak',
+                //                 value: '0'
+                //             }]
+                //         },
+                {
+                    display: 'Tahun',
+                    name: 'tahun',
+                    type: 'text'
+                },
+                {
+                    display: 'Bulan',
+                    name: 'bulan',
+                    type: 'select',
+                    option: [{
+                            title: 'Januari',
+                            value: '1'
+                        },
+                        {
+                            title: 'Februari',
+                            value: '2'
+                        },
+                        {
+                            title: 'Maret',
+                            value: '3'
+                        },
+                        {
+                            title: 'April',
+                            value: '4'
+                        },
+                        {
+                            title: 'Mei',
+                            value: '5'
+                        },
+                        {
+                            title: 'Juni',
+                            value: '6'
+                        },
+                        {
+                            title: 'Juli',
+                            value: '7'
+                        },
+                        {
+                            title: 'Agustus',
+                            value: '8'
+                        },
+                        {
+                            title: 'September',
+                            value: '9'
+                        },
+                        {
+                            title: 'Oktober',
+                            value: '10'
+                        },
+                        {
+                            title: 'November',
+                            value: '11'
+                        },
+                        {
+                            title: 'Desember',
+                            value: '12'
+                        }
+                    ]
+                },
+                {
+                    display: 'Nama Dosen',
+                    name: 'user_name',
+                    type: 'text'
+                },
+                {
+                    display: 'Kode Matkul',
+                    name: 'course_code',
+                    type: 'text'
+                },
+                {
+                    display: 'Nama Matkul',
+                    name: 'course_name',
+                    type: 'text'
+                },
+                {
+                    display: 'Jurusan',
+                    name: 'study_name',
+                    type: 'text'
+                },
+                {
+                    display: 'Status',
+                    name: 'status',
+                    type: 'text'
+                },
+                {
+                    display: 'SKS',
+                    name: 'sks',
+                    type: 'text'
+                },
+                {
+                    display: 'Total Absensi',
+                    name: 'total_absence',
+                    type: 'text'
+                },
+
+
+            ],
             sortName: "created_at",
             sortOrder: "DESC",
             tableIsResponsive: true,
