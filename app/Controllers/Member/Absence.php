@@ -131,6 +131,8 @@ class Absence extends BaseController
         $absence->insert([
             'user_id' => session('user')['id'],
             'course_id' => $courses_user['course_id'],
+            'study_id' => $courses_user['study_id'],
+            'room_id' => $courses_user['room_id'],
             'date' => date('Y-m-d'),
             'reason' => 'Presensi',
             'courses_users_id' => session('absence_id'),

@@ -11,11 +11,11 @@ class Courses extends BaseController
     public function index(): string
     {
         $breadcumbs = [
-            'Data' => [
+            'Data Master' => [
                 'active' => false,
                 'href' => '#',
             ],
-            'Dosen' => [
+            'Mata Kuliah' => [
                 'active' => true,
                 'href' => '/admin/user',
             ]
