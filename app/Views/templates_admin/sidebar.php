@@ -52,14 +52,6 @@
                     <i class="ti ti-dots nav-small-cap-icon fs-4"></i>
                     <span class="hide-menu">Data Master</span>
                 </li>
-                <li class="sidebar-item">
-                    <a class="sidebar-link" href="<?= base_url('/admin/rooms') ?>" aria-expanded="false">
-                        <span>
-                            <i class="ti ti-building"></i>
-                        </span>
-                        <span class="hide-menu">Ruangan</span>
-                    </a>
-                </li>
 
                 <li class="sidebar-item">
                     <a class="sidebar-link" href="<?= base_url('/admin/studies') ?>" aria-expanded="false">

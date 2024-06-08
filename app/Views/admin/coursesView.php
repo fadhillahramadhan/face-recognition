@@ -43,8 +43,8 @@
                     <div class=" mb-3">
                         <label class="form-label">Status</label>
                         <select name="status" class="form-select">
-                            <option value="offline">Offline</option>
-                            <option value="online">Online</option>
+                            <option value="O">Optional</option>
+                            <option value="W">Wajib</option>
                         </select>
                         <small class="form-text text-muted">Pilih Status</small>
                         <!-- error -->
@@ -100,7 +100,7 @@
                     align: 'center',
                     render: (params, args) => {
                         // uppercase first
-                        return `<span>${params.charAt(0).toUpperCase() + params.slice(1)}</span>`;
+                        return `<span>${params == 'O' ? 'Optional' : 'Wajib'}</span>`;
                     },
                 },
                 // sks
@@ -126,9 +126,9 @@
                 {
                     display: 'Action',
                     name: 'id',
-                    align: 'center',
+                    align: 'right',
                     render(data) {
-                        return `<a href="javascript:void(0)" onclick="updateData(${data})" class="btn btn-warning btn-sm">Edit</a>`
+                        return `<a href="javascript:void(0)" onclick="updateData(${data})" class="btn btn-warning btn-sm">Update</a>`
                     }
                 }
 

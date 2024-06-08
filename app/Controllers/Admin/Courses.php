@@ -37,8 +37,6 @@ class Courses extends BaseController
             "courses.sks" => "sks",
             "courses.status" => "status",
             "courses.description" => "description",
-            "courses.scheduled_at" => "scheduled_at",
-            "courses.expired_at" => "expired_at",
         ];
         $joinTable = "";
         $whereCondition = "";
@@ -46,11 +44,6 @@ class Courses extends BaseController
 
         $data = $this->dataTable->getListDataTable($this->request, $tableName, $columns, $joinTable, $whereCondition, $groupBy);
 
-
-        foreach ($data['results'] as $key => $value) {
-            $data['results'][$key]['scheduled_at'] = $this->convertDatetime($value['scheduled_at'], 'id');
-            $data['results'][$key]['expired_at'] = $this->convertDatetime($value['expired_at'], 'id');
-        }
 
         $this->rest->responseSuccess("Data", $data);
     }

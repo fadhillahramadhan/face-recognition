@@ -27,13 +27,14 @@
                         <div id="code_error" class="invalid-feedback">
                         </div>
                     </div>
-                    <div class=" mb-3">
-                        <label class="form-label">Deskripsi</label>
-                        <textarea type="text" name="description" class="form-control"> </textarea>
-                        <small class="form-text text-muted">Masukkan deskripsi</small>
-                        <!-- error -->
-                        <div id="description_error" class="invalid-feedback">
-                        </div>
+                    <!-- KELAS OPTION A ATAU B -->
+                    <div class="mb-3">
+                        <label class="form-label d-block">Kelas</label>
+                        <!-- SELECT -->
+                        <select class="form-select" name="class">
+                            <option value="A">A</option>
+                            <option value="B">B</option>
+                        </select>
                     </div>
 
                 </form>
@@ -72,21 +73,23 @@
                     },
                 },
                 {
-                    display: 'Deskripsi',
-                    name: 'description',
-                    align: 'left',
-                    render: (params, args) => {
+                    display: 'Kelas',
+                    name: 'class',
+                    align: 'center',
+                    render: (params) => {
                         return `<span>${params}</span>`;
                     },
                 },
+
                 {
                     display: 'Action',
                     name: 'id',
-                    align: 'center',
+                    align: 'right',
                     render(data) {
                         return `<a href="javascript:void(0)" onclick="updateData(${data})" class="btn btn-warning btn-sm">Edit</a>`
                     }
-                }
+                },
+
 
 
 
@@ -151,7 +154,7 @@
                 id: current_id,
                 name: $("input[name=name]").val(),
                 code: $("input[name=code]").val(),
-                description: $("textarea[name=description]").val(),
+                class: $("select[name=class]").val(),
             },
             success: (res) => {
                 // hide modal
@@ -191,10 +194,10 @@
 
         getStudy(id).then((res) => {
             let data = res.data
-            console.log(data)
+
             $("input[name=name]").val(data.name)
             $("input[name=code]").val(data.code)
-            $("textarea[name=description]").val(data.description)
+            $("select[name=class]").val(data.class)
 
 
             new bootstrap.Modal(document.getElementById('addUpdateModal')).show()

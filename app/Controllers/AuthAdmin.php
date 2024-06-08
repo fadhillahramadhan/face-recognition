@@ -4,6 +4,7 @@ namespace App\Controllers;
 
 
 use App\Controllers\BaseController;
+use App\Models\AdminModel;
 use App\Models\UserModel;
 
 class AuthAdmin extends BaseController
@@ -35,7 +36,7 @@ class AuthAdmin extends BaseController
             return redirect()->to('/authadmin')->withInput()->with('errors', $this->validator->getErrors());
         }
 
-        $model = new UserModel();
+        $model = new AdminModel();
         $email = $this->request->getPost('email');
         $password = (string) $this->request->getPost('password');
 

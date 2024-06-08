@@ -35,10 +35,12 @@ class User extends BaseController
             'users.image' => 'image', // Add this line to get the image column from the users table
             "users.email" => "email",
             "users.password" => "password",
+            "users.study_id" => "study_id", // Add this line to get the study_id column from the users table
+            "studies.name" => "study",
             "users.created_at" => "created_at",
             "users.updated_at" => "updated_at",
         ];
-        $joinTable = "";
+        $joinTable = "LEFT JOIN studies ON users.study_id = studies.id";
         $whereCondition = "";
         $groupBy = "";
 
@@ -92,6 +94,7 @@ class User extends BaseController
                 'name' => $this->request->getPost('name'),
                 'email' => $this->request->getPost('email'),
                 'password' => password_hash($password, PASSWORD_DEFAULT),
+                'study_id' =>  $this->request->getPost('study_id'),
                 'created_at' => date('Y-m-d H:i:s'),
                 'updated_at' => date('Y-m-d H:i:s'),
             ];
@@ -152,6 +155,11 @@ class User extends BaseController
                 'password' => password_hash($password, PASSWORD_DEFAULT),
             ];
 
+            // if study id
+            if ($this->request->getPost('study_id')) {
+                $data['study_id'] = $this->request->getPost('study_id');
+            }
+
             $model->update($this->request->getPost('id'), $data);
 
             return $this->rest->responseSuccess("Berhasil mengubah data");
@@ -173,6 +181,34 @@ class User extends BaseController
             return $this->rest->responseSuccess("Data User", $data);
         } else {
             return $this->rest->responseFailed("Data tidak ditemukan");
+        }
+    }
+
+    public function delete_users()
+    {
+        $id = $this->request->getPost('data');
+
+        if (is_array($id)) {
+            $success = $failed = 0;
+            foreach ($id as $value) {
+                $model = new UserModel();
+                if ($model->delete($value)) {
+                    $success++;
+                } else {
+                    $failed++;
+                }
+            }
+            $dataActive = [
+                'success' => $success,
+                'failed' => $failed
+            ];
+            $message = 'Berhasil menghapus Data User!';
+            if ($success == 0) {
+                $message = 'Gagal menghapus Data User';
+            }
+            return $this->rest->responseSuccess($message, $dataActive);
+        } else {
+            return $this->rest->responseFailed("Data tidak valid");
         }
     }
 }

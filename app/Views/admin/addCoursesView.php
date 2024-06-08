@@ -20,6 +20,15 @@
                         </div>
                     </div>
                     <div class="mb-3">
+                        <label class="form-label">Pilih Prodi</label>
+                        <select class="form-select" name="study_id">
+                            <option value="0">Pilih Prodi</option>
+                            <?php foreach ($studies as $study) : ?>
+                                <option value="<?= $study['id'] ?>"><?= $study['name'] ?></option>
+                            <?php endforeach; ?>
+                        </select>
+                    </div>
+                    <div class="mb-3">
                         <label class="form-label">Email</label>
                         <input name="email" type="email" class="form-control">
                         <small class="form-text text-muted">Masukkan email dosen misalnya: test@gmail.com </small>
@@ -76,17 +85,19 @@
                         return `<span><b>${params}</b></span> <br> ${args.email}<br>`;
                     },
                 },
+                // prodi
+                {
+                    display: 'Prodi',
+                    name: 'study',
+                    align: 'left',
+                    render(data) {
+                        return data == null || data == '' ? '-' : data
+                    }
+                },
 
-                {
-                    display: 'Tanggal Dibuat',
-                    name: 'created_at',
-                    align: 'left',
-                },
-                {
-                    display: 'Tanggal Diubah',
-                    name: 'updated_at',
-                    align: 'left',
-                },
+
+
+
                 // edit
                 {
                     display: 'Action',
@@ -130,14 +141,24 @@
             sortName: "created_at",
             sortOrder: "DESC",
             tableIsResponsive: true,
-            select: false,
-            multiSelect: false,
+            select: true,
+            multiSelect: true,
             buttonAction: [{
-                display: 'Tambah',
-                icon: 'bx bx-plus',
-                style: "info",
-                action: "addData"
-            }, ],
+                    display: 'Hapus',
+                    icon: 'ti ti-trash',
+                    message: "Hapus",
+                    style: "danger",
+                    action: "remove",
+                    url: window.location.origin + "/admin/user/delete_users"
+                },
+                {
+                    display: 'Tambah',
+                    icon: 'ti ti-plus',
+                    style: "info",
+                    action: "addData"
+                },
+
+            ],
             success: (res) => {
                 data = res.data.results
 
@@ -175,6 +196,7 @@
                 name: $("input[name=name]").val(),
                 email: $("input[name=email]").val(),
                 password: $("input[name=password]").val(),
+                study_id: $("select[name=study_id]").val()
             },
             success: (res) => {
                 // hide modal
@@ -217,6 +239,8 @@
 
             $("input[name=name]").val(data.name)
             $("input[name=email]").val(data.email)
+            // $("input[name=password]").val(data.password)
+            $("select[name=study_id]").val(data.study_id)
 
 
             new bootstrap.Modal(document.getElementById('addUpdateModal')).show()

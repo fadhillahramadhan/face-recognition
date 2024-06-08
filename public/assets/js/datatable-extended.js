@@ -1020,7 +1020,7 @@ $.getData = function (
 								tbody +
 								"<td class='" +
 								$(t).attr('id') +
-								"-select-td text-center' title='select' class='text-center'><input type='checkbox' name='" +
+								"-select-td text-center' title='select' class='text-center' style='vertical-align:middle;'><input type='checkbox' name='" +
 								property.selectID +
 								"' class='" +
 								$(t).attr('id') +

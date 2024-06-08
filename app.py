@@ -35,7 +35,7 @@ def compare():
             rgb_img = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
             img_encoding = face_recognition.face_encodings(rgb_img)[0]
 
-            results = face_recognition.compare_faces([img_encoding], img_encoding2, tolerance=0.5)
+            results = face_recognition.compare_faces([img_encoding], img_encoding2, tolerance=0.6)
 
             if results[0] == True:
                 name = os.path.basename(img_path)

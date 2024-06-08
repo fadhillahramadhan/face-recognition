@@ -32,9 +32,7 @@ class Studies extends BaseController
             "studies.id" => "id",
             "studies.name" => "name",
             "studies.code" => "code", // add this line
-            "studies.description" => "description",
-            "studies.created_at" => "created_at",
-            "studies.updated_at" => "updated_at",
+            "studies.class" => "class", // add this line
         ];
         $joinTable = "";
         $whereCondition = "";
@@ -42,11 +40,6 @@ class Studies extends BaseController
 
         $data = $this->dataTable->getListDataTable($this->request, $tableName, $columns, $joinTable, $whereCondition, $groupBy);
 
-
-        foreach ($data['results'] as $key => $value) {
-            $data['results'][$key]['created_at'] = $this->convertDatetime($value['created_at'], 'id');
-            $data['results'][$key]['updated_at'] = $this->convertDatetime($value['updated_at'], 'id');
-        }
 
         $this->rest->responseSuccess("Data", $data);
     }
@@ -80,10 +73,8 @@ class Studies extends BaseController
             $model = new StudiesModel();
             $data = [
                 'name' => $this->request->getPost('name'),
-                'description' => $this->request->getPost('description'),
                 'code' => $this->request->getPost('code'), // add this line
-                'created_at' => date('Y-m-d H:i:s'),
-                'updated_at' => date('Y-m-d H:i:s'),
+                'class' => $this->request->getPost('class') ?? 'A'
             ];
 
             $model->insert($data);
@@ -130,9 +121,8 @@ class Studies extends BaseController
             $model = new StudiesModel();
             $data = [
                 'name' => $this->request->getPost('name'),
-                'description' => $this->request->getPost('description'),
                 'code' => $this->request->getPost('code'), // add this line
-                'updated_at' => date('Y-m-d H:i:s'),
+                'class' => $this->request->getPost('class') ?? 'A'
             ];
 
             $model->update($this->request->getPost('id'), $data);

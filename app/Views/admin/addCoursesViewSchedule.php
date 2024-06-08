@@ -6,21 +6,16 @@
         <div class="card">
             <div class="card-body">
                 <div class="row align-items-start">
-                    <div class="col-12 col-md-8">
-                        <h5 class="card-title mb-9 fw-semibold">Nama Dosen</h5>
-                        <h4 class="fw-semibold mb-3">
+
+                    <div class="col-12 col-md-6">
+                        <h6 class="fw-semibold mb-3">Detail Dosen</h6>
+                        <h6 class="fw-semibold mb-3">
                             <?= $user['name'] ?><br>
                             <small class="text-muted"><?= $user['email'] ?></small>
-                        </h4>
+                        </h6>
 
                     </div>
-                    <div class="col-4 d-none d-md-block">
-                        <div class="d-flex justify-content-end">
-                            <div class="text-white bg-primary rounded-circle p-6 d-flex align-items-center justify-content-center">
-                                <i class="ti ti-user fs-6"></i>
-                            </div>
-                        </div>
-                    </div>
+
                 </div>
             </div>
         </div>
@@ -50,40 +45,19 @@
                         </select>
 
                     </div>
-                    <!-- TAMBAH PRODI -->
                     <div class="mb-3">
-                        <label class="form-label">Pilih Prodi</label>
-                        <select class="form-select" name="study_id">
-                            <option value="">Pilih Prodi</option>
-                            <?php foreach ($studies as $study) : ?>
-                                <option value="<?= $study['id'] ?>"><?= $study['name'] ?></option>
-                            <?php endforeach; ?>
-                        </select>
-                    </div>
-                    <!-- TAMBAH PRODI -->
-                    <div class="mb-3">
-                        <label class="form-label">Pilih Ruangan</label>
-                        <select class="form-select" name="room_id">
-                            <option value="">Pilih Ruangan</option>
-                            <?php foreach ($rooms as $room) : ?>
-                                <option value="<?= $room['id'] ?>"><?= $room['name'] ?></option>
-                            <?php endforeach; ?>
-                        </select>
-                    </div>
-                    <!-- datetime -->
-                    <div class="mb-3">
-                        <label class="form-label d-block">Tanggal Mulai</label>
+                        <label class="form-label d-block">Waktu Mulai</label>
                         <input type="datetime-local" name="scheduled_at" class="form-control">
-                        <small class="form-text text-muted">Masukkan tanggal mulai</small>
+                        <small class="form-text text-muted">Masukkan Waktu mulai</small>
                         <!-- error -->
                         <div id="scheduled_at_error" class="invalid-feedback">
                         </div>
                     </div>
 
                     <div class="mb-3">
-                        <label class="form-label d-block">Tanggal Selesai</label>
+                        <label class="form-label d-block">Waktu Selesai</label>
                         <input type="datetime-local" name="expired_at" class="form-control">
-                        <small class="form-text text-muted">Masukkan tanggal selesai</small>
+                        <small class="form-text text-muted">Masukkan Waktu selesai</small>
                         <!-- error -->
                         <div id="expired_at_error" class="invalid-feedback">
                         </div>
@@ -114,14 +88,6 @@
             url: window.location.origin + "/admin/addcourses/get_courses_users/" + "<?= $id ?>",
             selectID: "id",
             colModel: [{
-                    display: 'Prodi',
-                    name: 'name',
-                    align: 'left',
-                    render: (params, args) => {
-                        return `<span><b>${args.study_code}</b></span><br><span>${args.study_name}</span>`;
-                    },
-                },
-                {
                     display: 'Nama Mata Kuliah',
                     name: 'name',
                     align: 'left',
@@ -129,17 +95,10 @@
                         return `<span><b>${params}</b></span><br><span>${args.code}</span>`;
                     },
                 },
-                {
-                    display: 'Ruangan',
-                    name: 'name',
-                    align: 'left',
-                    render: (params, args) => {
-                        return `<span><b>${args.room_code}</b></span><br><span>${args.room_name}</span>`;
-                    },
-                },
+
 
                 {
-                    display: 'Tanggal Mulai',
+                    display: 'Waktu Mulai',
                     name: 'scheduled_at',
                     align: 'left',
                     render: (params, args) => {
@@ -147,7 +106,7 @@
                     },
                 },
                 {
-                    display: 'Tanggal Selesai',
+                    display: 'Waktu Selesai',
                     name: 'expired_at',
                     align: 'left',
                     render: (params, args) => {
@@ -175,11 +134,6 @@
             searchItems: [{
                     name: "name",
                     title: "Nama Mata Kuliah",
-                    type: "text"
-                },
-                {
-                    name: "description",
-                    title: "Deskripsi",
                     type: "text"
                 },
 
@@ -235,11 +189,9 @@
             data: {
                 id: current_id,
                 course_id: $("select[name=course_id]").val(),
-                study_id: $("select[name=study_id]").val(),
-                room_id: $("select[name=room_id]").val(),
+                user_id: '<?= $id ?>',
                 scheduled_at: $("input[name=scheduled_at]").val(),
                 expired_at: $("input[name=expired_at]").val(),
-                user_id: '<?= $id ?>'
             },
             success: (res) => {
                 // hide modal

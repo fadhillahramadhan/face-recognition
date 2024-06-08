@@ -19,7 +19,7 @@
                     align: 'left',
                 },
                 {
-                    display: 'Tanggal Absensi',
+                    display: 'Waktu Absensi',
                     name: 'created_at',
                     align: 'left',
                 },
@@ -33,7 +33,7 @@
             search: true,
             searchTitle: "Pencarian",
             searchItems: [{
-                display: 'Jadwal',
+                display: 'Waktu Absensi',
                 name: 'created_at',
                 type: 'date'
             }, ],

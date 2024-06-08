@@ -34,44 +34,54 @@
 
                 {
                     display: 'Nama Dosen',
-                    name: 'user_name',
+                    name: 'nama',
                     align: 'left',
-                    render: (data) => {
-                        return `<b>${data}</b>`
-                    }
-                },
-                {
-                    display: 'Kode Matkul',
-                    name: 'course_code',
-                    align: 'left',
-                },
-                {
-                    display: 'Nama Matkul',
-                    name: 'course_name',
-                    align: 'left',
-                    render: (data) => {
-                        return `<b>${data}</b>`
-                    }
-                },
-                {
-                    display: 'Jurusan',
-                    name: 'study_name',
-                    align: 'left',
-                },
-                {
-                    display: 'Status',
-                    name: 'status',
-                    align: 'left',
-                },
 
+                },
+                {
+                    display: 'Kode',
+                    name: 'kode',
+                    align: 'left',
+                },
+                {
+                    display: 'Matkul',
+                    name: 'nama_matkul',
+                    align: 'left',
+
+                },
                 {
                     display: 'SKS',
                     name: 'sks',
                     align: 'left',
                 },
                 {
-                    display: 'Total Absensi',
-                    name: 'total_absence',
+                    display: 'Sifat',
+                    name: 'status',
+                    align: 'left',
+                },
+                {
+                    display: 'Kelas',
+                    name: 'kelas',
+                    align: 'left',
+                },
+
+                {
+                    display: 'Prodi',
+                    name: 'jurusan',
+                    align: 'left',
+                },
+
+                {
+                    display: 'Hadir',
+                    name: 'total_hadir',
+                    align: 'center',
+                    render: (data) => {
+                        return `<b>${data}</b>`
+                    }
+                },
+                {
+                    display: 'Tidak Hadir',
+                    name: 'total_tidak_hadir',
                     align: 'center',
                     render: (data) => {
                         return `<b>${data}</b>`
@@ -87,26 +97,7 @@
             },
             search: true,
             searchTitle: "Pencarian",
-            searchItems: [
-                //     {
-                //     display: 'Jadwal',
-                //     name: 'created_at',
-                //     type: 'date'
-                // }, 
-                // bulan tahun
-                // {
-                //             display: 'Apakah Stockist',
-                //             name: 'member_is_stockist',
-                //             type: 'select',
-                //             option: [{
-                //                 title: 'Ya',
-                //                 value: '1'
-                //             }, {
-                //                 title: 'Tidak',
-                //                 value: '0'
-                //             }]
-                //         },
-                {
+            searchItems: [{
                     display: 'Tahun',
                     name: 'tahun',
                     type: 'text'
@@ -167,27 +158,17 @@
                 },
                 {
                     display: 'Nama Dosen',
-                    name: 'user_name',
+                    name: 'nama',
                     type: 'text'
                 },
                 {
                     display: 'Kode Matkul',
-                    name: 'course_code',
+                    name: 'kode',
                     type: 'text'
                 },
                 {
                     display: 'Nama Matkul',
-                    name: 'course_name',
-                    type: 'text'
-                },
-                {
-                    display: 'Jurusan',
-                    name: 'study_name',
-                    type: 'text'
-                },
-                {
-                    display: 'Status',
-                    name: 'status',
+                    name: 'nama_matkul',
                     type: 'text'
                 },
                 {
@@ -196,8 +177,23 @@
                     type: 'text'
                 },
                 {
-                    display: 'Total Absensi',
-                    name: 'total_absence',
+                    display: 'Sifat',
+                    name: 'status',
+                    type: 'text'
+                },
+                {
+                    display: 'Kelas',
+                    name: 'kelas',
+                    type: 'text'
+                },
+                {
+                    display: 'Jurusan',
+                    name: 'jurusan',
+                    type: 'text'
+                },
+                {
+                    display: 'Status',
+                    name: 'status',
                     type: 'text'
                 },
 
