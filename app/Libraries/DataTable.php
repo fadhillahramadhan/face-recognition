@@ -105,8 +105,6 @@ class DataTable
 
         $sqlGetData = "SELECT $fieldSearch FROM " . $this->table . " " . $this->joinTable . " WHERE 1 " . $querySearch['sqlSearch'] . " " . $this->whereFixed . " " . $this->groupBy . " ORDER BY $sort $dir {$this->limitString}";
 
-        // print_r($sqlGetData);
-        // die;
 
         $results['data'] = $this->db->query($sqlGetData, $querySearch['sqlSearchValue'])->getResultArray();
 

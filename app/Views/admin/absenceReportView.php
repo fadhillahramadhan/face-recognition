@@ -87,6 +87,24 @@
                         return `<b>${data}</b>`
                     }
                 },
+                // TOTAL ONLINE
+                {
+                    display: 'Online',
+                    name: 'total_online',
+                    align: 'center',
+                    render: (data) => {
+                        return `<b>${data}</b>`
+                    }
+                },
+                // TOTAL OFFLINE
+                {
+                    display: 'Offline',
+                    name: 'total_offline',
+                    align: 'center',
+                    render: (data) => {
+                        return `<b>${data}</b>`
+                    }
+                },
 
 
 

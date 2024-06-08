@@ -29,7 +29,7 @@ class Absence extends BaseController
 
     public function get_absence()
     {
-
+        $current_datetime = date('Y-m-d H:i:s');
         $tableName = "courses_users";
         $columns = [
             "MONTH(courses_users.scheduled_at)" => "bulan",
@@ -42,7 +42,9 @@ class Absence extends BaseController
             "studies.class" => "kelas",
             "studies.name" => "jurusan",
             "SUM(IF(IFNULL(absence.id,0) > 0 ,1,0))" => "total_hadir",
-            "SUM(IF(IFNULL(absence.id,0) > 0 ,0,1))" => "total_tidak_hadir"
+            "SUM(IF(IFNULL(absence.id,0) > 0 ,0,1))" => "total_tidak_hadir",
+            'SUM(IF(IFNULL(absence.`status`,"-") = "online",1,0))' => 'total_online',
+            'SUM(IF(IFNULL(absence.`status`,"-") = "offline",1,0))' => 'total_offline'
 
         ];
         $joinTable = "
@@ -51,7 +53,7 @@ class Absence extends BaseController
         JOIN studies ON studies.id = courses_users.study_id
         JOIN users ON users.id = courses_users.user_id
         ";
-        $whereCondition = "";
+        $whereCondition = "courses_users.scheduled_at <= '$current_datetime'";
         $groupBy = "GROUP BY MONTH(courses_users.scheduled_at), 
         YEAR(courses_users.scheduled_at), 
         courses_users.user_id, 
@@ -61,6 +63,8 @@ class Absence extends BaseController
 
         $data = $this->dataTable->getListDataTable($this->request, $tableName, $columns, $joinTable, $whereCondition, $groupBy);
 
+
+        // get last query
         foreach ($data['results'] as $key => $value) {
             $data['results'][$key]['bulan'] = $this->convertMonth($value['bulan']);
         }

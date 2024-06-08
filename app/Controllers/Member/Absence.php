@@ -76,56 +76,59 @@ class Absence extends BaseController
 
     public function get_absence()
     {
-        $tableName = "absence";
+
+        $current_datetime = date('Y-m-d H:i:s');
+        $tableName = "courses_users";
         $columns = [
-            "absence.id" => "id",
-            "absence.user_id" => "user_id",
-            "absence.course_id" => "course_id",
-            "courses.name" => "course_name",
-            "absence.date" => "date",
-            "absence.reason" => "reason",
-            "absence.created_at" => "created_at",
-            "absence.updated_at" => "updated_at",
+            "courses.code" => "kode",
+            "courses.name" => "nama_matkul",
+            "courses.sks" => "sks",
+            "courses_users.scheduled_at" => "waktu_mulai",
+            "courses_users.expired_at" => "waktu_akhir",
+            "IF(IFNULL(absence.id,0)>0,'Hadir','Tidak Hadir')" => "kehadiran",
+            "IFNULL(absence.`status`,'-')" => "status_online"
         ];
         $joinTable = "
-        JOIN courses ON courses.id = absence.course_id
+        LEFT JOIN absence ON courses_users.id = absence.courses_users_id
+        JOIN courses ON courses.id = courses_users.course_id
+        JOIN studies ON studies.id = courses_users.study_id
+        JOIN users ON users.id = courses_users.user_id
         ";
-        $whereCondition = "user_id = " . session('user')['id'];
+        // $whereCondition = "user_id = " . session('user')['id'];
+        $whereCondition = "courses_users.scheduled_at <= '$current_datetime' AND courses_users.user_id = " . session('user')['id'];
         $groupBy = "";
 
         $data = $this->dataTable->getListDataTable($this->request, $tableName, $columns, $joinTable, $whereCondition, $groupBy);
 
-
         foreach ($data['results'] as $key => $value) {
-            $data['results'][$key]['created_at'] = $this->convertDatetime($value['created_at'], 'id');
+            $data['results'][$key]['waktu_mulai'] = $this->convertDatetime($value['waktu_mulai'], 'id');
+            $data['results'][$key]['waktu_akhir'] = $this->convertDatetime($value['waktu_akhir'], 'id');
+            // ucfirst status
+            $data['results'][$key]['status_online'] = ucfirst($value['status_online']);
         }
 
 
         $this->rest->responseSuccess("Data Courses", $data);
     }
 
-    // presence
-    // CREATE TABLE `absence` (
-    //     `id` INT(5) UNSIGNED NOT NULL AUTO_INCREMENT,
-    //     `user_id` INT(5) UNSIGNED NOT NULL,
-    //     `course_id` INT(5) UNSIGNED NOT NULL,
-    //     `date` DATE NOT NULL,
-    //     `reason` TEXT NOT NULL COLLATE 'utf8mb4_general_ci',
-    //     `created_at` DATETIME NULL DEFAULT NULL,
-    //     `updated_at` DATETIME NULL DEFAULT NULL,
-    //     `courses_users_id` INT(5) UNSIGNED NOT NULL,
-    //     PRIMARY KEY (`id`) USING BTREE
-    // )
-    // COLLATE='utf8mb4_general_ci'
-    // ENGINE=InnoDB
-    // AUTO_INCREMENT=2
-    // ;
+
 
     public function presence()
     {
         $courses_user = new CoursesUsersModel();
         $courses_user = $courses_user->where('id', session('absence_id'))->first();
 
+        if (!$courses_user) {
+            $this->rest->responseFailed("Data not found");
+        }
+
+
+        $check_absence = new AbsenceModel();
+        $check_absence = $check_absence->where('courses_users_id', session('absence_id'))->first();
+
+        if ($check_absence) {
+            return $this->rest->responseFailed("Anda sudah melakukan presensi");
+        }
 
         $absence = new AbsenceModel();
         $absence->insert([
@@ -133,13 +136,15 @@ class Absence extends BaseController
             'course_id' => $courses_user['course_id'],
             'study_id' => $courses_user['study_id'],
             'date' => date('Y-m-d'),
+            'accuracy' => $this->request->getVar('accuracy'),
+            'status' => $this->request->getVar('status'),
             'reason' => 'Presensi',
             'courses_users_id' => session('absence_id'),
             'created_at' => date('Y-m-d H:i:s'),
             'updated_at' => date('Y-m-d H:i:s'),
         ]);
 
-        $this->rest->responseSuccess("Success");
+        return $this->rest->responseSuccess("Success");
     }
 
     // take photo

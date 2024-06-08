@@ -70,8 +70,26 @@
         </div>
 
         <div class="col-12 mt-5 text-center">
+            <!-- pilih online offline -->
+            <!-- select -->
+            <div class="row justify-content-center">
+                <div class="col-4">
+                    <div class="form-group">
+                        <label for="exampleFormControlSelect1">Pilih Online/Offline</label>
+                        <select class="form-control" name="status" id="status">
+                            <!-- <op -->
+                            <!-- silahkan Pilih -->
+                            <option disabled>Silahkan Pilih</option>
+                            <option value="offline">Offline</option>
+                            <option value="online">Online</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
             <div id="result"></div>
-            <button class="btn btn-primary btn-block" id="captureBtn" onclick="captureAndCompare()">Presensi</button>
+
+            <button class="btn btn-primary btn-block mt-2" id="captureBtn" onclick="captureAndCompare()">Presensi</button>
+
 
         </div>
     </div>
@@ -139,15 +157,16 @@
                 .then(response => response.json())
                 .then(data => {
                     let person = data.person.split('.').slice(0, -1).join('.')
-                    resultElement.innerText = `Person: ${person}`;
+                    let accuracy = data.accuracy;
+                    resultElement.innerText = `Accuracy: ${accuracy}`;
                     // remove extension jpg
                     if (data.person == 'Unknown') {
                         throw new Error('Presensi Gagal')
                     }
-                    var myToastEl = document.getElementById('toastSuccess')
-                    var bsToast = new bootstrap.Toast(myToastEl)
-                    $('#toastSuccess .toast-body').html('Presensi Berhasil')
-                    bsToast.show()
+                    // var myToastEl = document.getElementById('toastSuccess')
+                    // var bsToast = new bootstrap.Toast(myToastEl)
+                    // $('#toastSuccess .toast-body').html('Presensi Berhasil')
+                    // bsToast.show()
                     // http://localhost:8080/member/absence/add/1 get latest absence id
                     fetch('<?= base_url('member/absence/presence') ?>', {
                         method: 'POST',
@@ -156,10 +175,27 @@
                         },
                         body: JSON.stringify({
                             person: person,
+                            accuracy: accuracy,
+                            status: document.getElementById('status').value
                         })
+                    }).then(response => response.json()).then(data_presence => {
+                        if (data_presence.error) {
+                            resultElement.innerText = 'Accuracy: 0';
+                            var myToastEl = document.getElementById('toastDanger')
+                            var bsToast = new bootstrap.Toast(myToastEl)
+                            $('#toastDanger .toast-body').html(data_presence.message)
+                            bsToast.show()
+                        } else {
+                            var myToastEl = document.getElementById('toastSuccess')
+                            var bsToast = new bootstrap.Toast(myToastEl)
+                            $('#toastSuccess .toast-body').html(data_presence.message)
+                            bsToast.show()
+                        }
                     })
                 })
                 .catch(error => {
+                    // accuracy
+                    resultElement.innerText = 'Accuracy: 0';
                     var myToastEl = document.getElementById('toastDanger')
                     var bsToast = new bootstrap.Toast(myToastEl)
                     $('#toastDanger .toast-body').html('Presensi Gagal')
