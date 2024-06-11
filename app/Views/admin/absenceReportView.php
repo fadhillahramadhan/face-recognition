@@ -17,7 +17,7 @@
                     display: 'Tahun',
                     name: 'tahun',
                     align: 'left',
-                    // render bold
+                    // render bolds
                     render: (data) => {
                         return `<b>${data}</b>`
                     }
@@ -179,41 +179,7 @@
                     name: 'nama',
                     type: 'text'
                 },
-                {
-                    display: 'Kode Matkul',
-                    name: 'kode',
-                    type: 'text'
-                },
-                {
-                    display: 'Nama Matkul',
-                    name: 'nama_matkul',
-                    type: 'text'
-                },
-                {
-                    display: 'SKS',
-                    name: 'sks',
-                    type: 'text'
-                },
-                {
-                    display: 'Sifat',
-                    name: 'status',
-                    type: 'text'
-                },
-                {
-                    display: 'Kelas',
-                    name: 'kelas',
-                    type: 'text'
-                },
-                {
-                    display: 'Jurusan',
-                    name: 'jurusan',
-                    type: 'text'
-                },
-                {
-                    display: 'Status',
-                    name: 'status',
-                    type: 'text'
-                },
+
 
 
             ],

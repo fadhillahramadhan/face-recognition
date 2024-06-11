@@ -165,6 +165,11 @@ class Absence extends BaseController
             'image' => base_url('images/' . $fileName)
         ]);
 
+
+        $userModel = new UserModel();
+        $user = $userModel->find(session('user')['id']);
+        session()->set('user', $user);
+
         $this->rest->responseSuccess("Success", [
             'file_name' => $fileName,
         ]);

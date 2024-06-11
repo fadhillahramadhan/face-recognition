@@ -55,6 +55,7 @@
     <script src="<?= base_url() ?>/assets/libs/apexcharts/dist/apexcharts.min.js"></script>
     <script src="<?= base_url() ?>/assets/libs/simplebar/dist/simplebar.js"></script>
     <script src="<?= base_url() ?>/assets/js/dashboard.js"></script>
+    <script src="<?= base_url() ?>/assets/js/sweetalert2.all.min.js"></script>
     <script src="<?= base_url() ?>/assets/js/datatable-extended.js"></script>
     <?= $this->renderSection('script') ?>
 

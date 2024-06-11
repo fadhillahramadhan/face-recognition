@@ -108,6 +108,7 @@
                         <a href="javascript:void(0)" onclick="addCourses(${data})" class="btn btn-primary btn-sm">
                         Tambah Jadwal</a>
                         <a href="javascript:void(0)" onclick="updateData(${data})" class="btn btn-warning btn-sm">Update</a>
+                        <a href="javascript:void(0)" onclick="remove(${data})" class="btn btn-danger btn-sm">Hapus</a>
                         
                         `
                     }
@@ -141,16 +142,17 @@
             sortName: "created_at",
             sortOrder: "DESC",
             tableIsResponsive: true,
-            select: true,
-            multiSelect: true,
-            buttonAction: [{
-                    display: 'Hapus',
-                    icon: 'ti ti-trash',
-                    message: "Hapus",
-                    style: "danger",
-                    action: "remove",
-                    url: window.location.origin + "/admin/user/delete_users"
-                },
+            select: false,
+            multiSelect: false,
+            buttonAction: [
+                // {
+                //     display: 'Hapus',
+                //     icon: 'ti ti-trash',
+                //     message: "Hapus",
+                //     style: "danger",
+                //     action: "remove",
+                //     url: window.location.origin + "/admin/user/delete_users"
+                // },
                 {
                     display: 'Tambah',
                     icon: 'ti ti-plus',
@@ -256,6 +258,45 @@
             data: {
                 id: id
             },
+        })
+    }
+
+    remove = (id) => {
+        Swal.fire({
+            title: 'Apakah anda yakin?',
+            text: "Data yang sudah dihapus tidak dapat dikembalikan!",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#d33',
+            cancelButtonColor: '#3085d6',
+            confirmButtonText: 'Ya, Hapus!',
+            cancelButtonText: 'Batal'
+        }).then((result) => {
+            if (result.isConfirmed) {
+                $.ajax({
+                    url: window.location.origin + "/admin/user/delete_users",
+                    type: "POST",
+                    data: {
+                        field: 'id',
+                        data: [id]
+                    },
+                    success: (res) => {
+                        var myToastEl = document.getElementById('toastSuccess')
+                        var bsToast = new bootstrap.Toast(myToastEl)
+                        $('#toastSuccess .toast-body').html(res.message)
+                        bsToast.show()
+                        window.location.reload()
+                    },
+                    error: (err) => {
+                        err = err.responseJSON
+
+                        var myToastEl = document.getElementById('toastError')
+                        var bsToast = new bootstrap.Toast(myToastEl)
+                        $('#toastError .toast-body').html(err.message)
+                        bsToast.show()
+                    }
+                })
+            }
         })
     }
 </script>
