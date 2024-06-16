@@ -157,6 +157,9 @@ class Courses extends BaseController
         }
     }
 
+
+
+
     public function get_course($id)
     {
         $model = new CoursesModel();
@@ -167,6 +170,34 @@ class Courses extends BaseController
             return $this->rest->responseSuccess("Data User", $data);
         } else {
             return $this->rest->responseFailed("Data tidak ditemukan");
+        }
+    }
+
+    public function delete_course()
+    {
+        $id = $this->request->getPost('data');
+
+        if (is_array($id)) {
+            $success = $failed = 0;
+            foreach ($id as $value) {
+                $model = new CoursesModel();
+                if ($model->delete($value)) {
+                    $success++;
+                } else {
+                    $failed++;
+                }
+            }
+            $dataActive = [
+                'success' => $success,
+                'failed' => $failed
+            ];
+            $message = 'Berhasil menghapus Data ';
+            if ($success == 0) {
+                $message = 'Gagal menghapus Data ';
+            }
+            return $this->rest->responseSuccess($message, $dataActive);
+        } else {
+            return $this->rest->responseFailed("Data tidak valid");
         }
     }
 }

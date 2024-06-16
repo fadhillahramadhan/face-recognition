@@ -31,12 +31,18 @@ class Course extends BaseController
         $columns = [
             "courses_users.id" => "id",
             "courses.name" => "name",
+            "courses.code" => "code",
+            "studies.class" => "class",
             "courses.description" => "description",
-            "courses_users.scheduled_at",
-            "courses_users.expired_at",
+            "courses.sks" => "sks",
+            "DATE(courses_users.scheduled_at)" => "scheduled_at",
+            "TIME(courses_users.scheduled_at)" => "scheduled_at_time",
+            "DATE(courses_users.expired_at)" => "expired_at",
+            "TIME(courses_users.expired_at)" => "expired_at_time",
         ];
         $joinTable = "
         JOIN courses_users ON courses.id = courses_users.course_id
+        JOIN studies ON courses_users.study_id = studies.id
         JOIN users ON courses_users.user_id = users.id
         ";
         $whereCondition = "users.id = " . session('user')['id'];
@@ -59,7 +65,6 @@ class Course extends BaseController
 
     private function isEnable($courses_users_id, $scheduled_at, $expired_at)
     {
-        // indonesia timezone
         date_default_timezone_set('Asia/Jakarta');
         $now = date('Y-m-d H:i:s');
 
@@ -70,9 +75,6 @@ class Course extends BaseController
             return false;
         }
 
-        if ($now >= $scheduled_at && $now <= $expired_at) {
-            return true;
-        }
-        return false;
+        return $now >= $scheduled_at && $now <= $expired_at;
     }
 }

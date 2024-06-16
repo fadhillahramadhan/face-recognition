@@ -149,4 +149,32 @@ class Studies extends BaseController
             return $this->rest->responseFailed("Data tidak ditemukan");
         }
     }
+
+    public function delete_study()
+    {
+        $id = $this->request->getPost('data');
+
+        if (is_array($id)) {
+            $success = $failed = 0;
+            foreach ($id as $value) {
+                $model = new StudiesModel();
+                if ($model->delete($value)) {
+                    $success++;
+                } else {
+                    $failed++;
+                }
+            }
+            $dataActive = [
+                'success' => $success,
+                'failed' => $failed
+            ];
+            $message = 'Berhasil menghapus Data ';
+            if ($success == 0) {
+                $message = 'Gagal menghapus Data ';
+            }
+            return $this->rest->responseSuccess($message, $dataActive);
+        } else {
+            return $this->rest->responseFailed("Data tidak valid");
+        }
+    }
 }

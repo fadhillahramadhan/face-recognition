@@ -82,9 +82,14 @@ class Absence extends BaseController
         $columns = [
             "courses.code" => "kode",
             "courses.name" => "nama_matkul",
+            "studies.class" => "class", // "studies.class" => "class
             "courses.sks" => "sks",
-            "courses_users.scheduled_at" => "waktu_mulai",
-            "courses_users.expired_at" => "waktu_akhir",
+            // "courses_users.scheduled_at" => "waktu_mulai",
+            // "courses_users.expired_at" => "waktu_akhir",
+            "DATE(courses_users.scheduled_at)" => "waktu_mulai",
+            "TIME(courses_users.scheduled_at)" => "waktu_mulai_time",
+            "DATE(courses_users.expired_at)" => "waktu_akhir",
+            "TIME(courses_users.expired_at)" => "waktu_akhir_time",
             "IF(IFNULL(absence.id,0)>0,'Hadir','Tidak Hadir')" => "kehadiran",
             "IFNULL(absence.`status`,'-')" => "status_online"
         ];

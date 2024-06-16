@@ -75,13 +75,17 @@ class Addcourses extends BaseController
             "courses_users.course_id" => "course_id",
             "courses.name" => "name",
             "courses.code" => "code", // add this line
+            'courses.sks' => 'sks',
             // room and code
+            'studies.class' => 'class',
             'studies.name' => 'study_name',
             'studies.code' => 'study_code',
             'courses.description' => 'description',
             "courses_users.user_id" => "user_id",
-            "courses_users.scheduled_at" => "scheduled_at",
-            "courses_users.expired_at" => "expired_at",
+            "DATE(courses_users.scheduled_at)" => "scheduled_at",
+            "TIME(courses_users.scheduled_at)" => "scheduled_at_time",
+            "DATE(courses_users.expired_at)" => "expired_at",
+            "TIME(courses_users.expired_at)" => "expired_at_time",
         ];
         $joinTable = "
         JOIN users ON users.id = courses_users.user_id
@@ -243,6 +247,34 @@ class Addcourses extends BaseController
             return $this->rest->responseSuccess("Data User", $data);
         } else {
             return $this->rest->responseFailed("Data tidak ditemukan");
+        }
+    }
+
+    public function delete_course()
+    {
+        $id = $this->request->getPost('data');
+
+        if (is_array($id)) {
+            $success = $failed = 0;
+            foreach ($id as $value) {
+                $model = new CoursesUsersModel();
+                if ($model->delete($value)) {
+                    $success++;
+                } else {
+                    $failed++;
+                }
+            }
+            $dataActive = [
+                'success' => $success,
+                'failed' => $failed
+            ];
+            $message = 'Berhasil menghapus Data User!';
+            if ($success == 0) {
+                $message = 'Gagal menghapus Data User';
+            }
+            return $this->rest->responseSuccess($message, $dataActive);
+        } else {
+            return $this->rest->responseFailed("Data tidak valid");
         }
     }
 }

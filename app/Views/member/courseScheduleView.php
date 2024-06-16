@@ -14,32 +14,50 @@
         $("#table").dataTableLib({
             url: window.location.origin + "/member/course/get_courses",
             selectID: "id",
-            colModel: [{
+            colModel: [
+                // KODE
+                {
+                    display: 'Kode Matkul',
+                    name: 'code',
+                    align: 'left',
+                },
+                {
                     display: 'Nama Matkul',
                     name: 'name',
                     align: 'left',
-                    render: (data, args) => {
-                        return `<p class="text-left"><span><b>${data}</b></span><br><span>${args.description}</span></p>`
-                    }
+
+                },
+                {
+                    display: 'Kelas',
+                    name: 'class',
+                    align: 'left',
+                },
+                {
+                    display: 'SKS',
+                    name: 'sks',
+                    align: 'left',
                 },
 
+
+                // jadwal 
                 {
                     display: 'Jadwal',
                     name: 'scheduled_at',
-                    align: 'center',
+                    align: 'left',
+                    render: (data, args) => {
+                        return `${data} (jam ${args.scheduled_at_time} - ${args.expired_at_time})`
+                    }
                 },
-                {
-                    display: 'Jadwal Berakhir',
-                    name: 'expired_at',
-                    align: 'center',
-                },
+
+
                 {
                     display: 'Absen',
                     name: 'is_enable',
                     align: 'center',
                     render: (data, args) => {
                         if (data == 1) {
-                            return `<a href="<?= base_url() ?>member/absence/add/${args.id}" class="btn btn-primary">Absen</a>`
+                            return ` < a href = "<?= base_url() ?>member/absence/add/${args.id}"
+                            class = "btn btn-primary" > Absen < /a>`
                         } else {
                             return `<button class="btn btn-secondary" disabled>Absen</button>`
                         }

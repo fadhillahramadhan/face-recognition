@@ -128,7 +128,10 @@
                     name: 'id',
                     align: 'right',
                     render(data) {
-                        return `<a href="javascript:void(0)" onclick="updateData(${data})" class="btn btn-warning btn-sm">Update</a>`
+                        return `
+                        <a href="javascript:void(0)" onclick="updateData(${data})" class="btn btn-warning btn-sm">Update</a>
+                        <a href="javascript:void(0)" onclick="remove(${data})" class="btn btn-danger btn-sm">Hapus</a>
+                        `
                     }
                 }
 
@@ -258,6 +261,45 @@
             data: {
                 id: id
             },
+        })
+    }
+
+    remove = (id) => {
+        Swal.fire({
+            title: 'Apakah anda yakin?',
+            text: "Data yang sudah dihapus tidak dapat dikembalikan!",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#d33',
+            cancelButtonColor: '#3085d6',
+            confirmButtonText: 'Ya, Hapus!',
+            cancelButtonText: 'Batal'
+        }).then((result) => {
+            if (result.isConfirmed) {
+                $.ajax({
+                    url: window.location.origin + "/admin/courses/delete_course",
+                    type: "POST",
+                    data: {
+                        field: 'id',
+                        data: [id]
+                    },
+                    success: (res) => {
+                        var myToastEl = document.getElementById('toastSuccess')
+                        var bsToast = new bootstrap.Toast(myToastEl)
+                        $('#toastSuccess .toast-body').html(res.message)
+                        bsToast.show()
+                        window.location.reload()
+                    },
+                    error: (err) => {
+                        err = err.responseJSON
+
+                        var myToastEl = document.getElementById('toastError')
+                        var bsToast = new bootstrap.Toast(myToastEl)
+                        $('#toastError .toast-body').html(err.message)
+                        bsToast.show()
+                    }
+                })
+            }
         })
     }
 </script>

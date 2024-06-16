@@ -10,15 +10,6 @@
         getTable()
     })
     getTable = () => {
-        // {
-        //         "kode": "FB10000001",
-        //         "nama_matkul": "Web Mobile",
-        //         "sks": "5",
-        //         "waktu_mulai": "09-06-2024 04:46",
-        //         "waktu_akhir": "09-06-2024 06:47",
-        //         "kehadiran": "Hadir",
-        //         "status_online": "offline"
-        //     },
         $("#table").dataTableLib({
             url: window.location.origin + "/member/absence/get_absence",
             selectID: "id",
@@ -33,19 +24,23 @@
                     align: 'left',
                 },
                 {
+                    display: 'Kelas',
+                    name: 'class',
+                    align: 'left',
+                },
+
+                {
                     display: 'SKS',
                     name: 'sks',
                     align: 'left',
                 },
                 {
-                    display: 'Waktu Mulai',
-                    name: 'waktu_mulai',
-                    align: 'left',
-                },
-                {
-                    display: 'Waktu Akhir',
-                    name: 'waktu_akhir',
-                    align: 'left',
+                    display: "Jadwal",
+                    name: "waktu_mulai",
+                    align: "left",
+                    render: (data, args) => {
+                        return `${data} (jam ${args.waktu_mulai_time} - ${args.waktu_akhir_time})`
+                    }
                 },
                 {
                     display: 'Kehadiran',
