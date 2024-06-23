@@ -10,6 +10,7 @@ $.fn.dataTableLib = function (property) {
 	let countTD = 0;
 	let countSelectedTD = 0;
 	let exportColumns = [];
+	let res_data = [];
 	property.pagination = property.hasOwnProperty('pagination')
 		? property.pagination
 		: true;
@@ -979,8 +980,6 @@ $.getData = function (
 		data_label[index++] = value.display;
 	});
 
-	console.log(data_label);
-
 	let dataResponse = {};
 	$.ajax({
 		url: url + queryString,
@@ -988,6 +987,7 @@ $.getData = function (
 		dataType: property.dataType,
 		async: false,
 		success: function (response) {
+			res_data = response.data.results;
 			if (property.pagination) {
 				dataResponse = response;
 				if (isSearch < 1 && response.data.pagination.total_data == 0) {
@@ -1647,6 +1647,64 @@ function exportExcel(data) {
 		.find('#dtexport-excel-form')
 		.submit();
 	$('#dtexport-excel-form').remove();
+}
+
+function exportPdf(data) {
+	const { jsPDF } = window.jspdf;
+	let dataBtnPdf = data.property.buttonAction.find(
+		(x) => x.action == 'exportPdf'
+	);
+	let headers = dataBtnPdf.headers;
+	let title = dataBtnPdf.title;
+	let subtitle = dataBtnPdf.subtitle;
+
+	const doc = new jsPDF();
+
+	// Custom title, date, and logo
+	const logoUrl = 'http://localhost:8080//assets/images/logos/logo.png'; // Replace with your logo URL or Base64 string
+
+	// Load the logo image
+	const img = new Image();
+	img.src = logoUrl;
+
+	img.onload = function () {
+		// Add the logo to the PDF
+		doc.addImage(img, 'PNG', 14, -3, 50, 50); // Adjust dimensions as needed
+
+		// Add title and date to the PDF
+		doc.setFontSize(18);
+		doc.text(title, 70, 20);
+		doc.setFontSize(12);
+		doc.text(subtitle, 70, 30);
+
+		let columns = [];
+		let rows = [];
+		headers.forEach((header) => {
+			columns.push(header.title);
+		});
+
+		rows = res_data.map((item) => {
+			let row = [];
+			headers.forEach((header) => {
+				row.push(item[header.key]);
+			});
+			return row;
+		});
+
+		// Add the table to the PDF (start the table below the title and date)
+		doc.autoTable({
+			startY: 40, // Adjust the start Y position
+			head: [columns],
+			body: rows,
+		});
+
+		// Save the PDF
+		doc.save(`${title}.pdf`);
+	};
+
+	img.onerror = function () {
+		console.error('Failed to load the logo image.');
+	};
 }
 
 $.countTD = function (tableID, property) {
