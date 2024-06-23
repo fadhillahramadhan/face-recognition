@@ -76,11 +76,11 @@ class Addcourses extends BaseController
             "courses.name" => "name",
             "courses.code" => "code", // add this line
             'courses.sks' => 'sks',
+            'courses.status' => 'status',
             // room and code
             'studies.class' => 'class',
             'studies.name' => 'study_name',
             'studies.code' => 'study_code',
-            'courses.description' => 'description',
             "courses_users.user_id" => "user_id",
             "DATE(courses_users.scheduled_at)" => "scheduled_at",
             "TIME(courses_users.scheduled_at)" => "scheduled_at_time",

@@ -51,14 +51,6 @@
                         <div id="status_error" class="invalid-feedback">
                         </div>
                     </div>
-                    <div class=" mb-3">
-                        <label class="form-label">Deskripsi</label>
-                        <textarea type="text" name="description" class="form-control"> </textarea>
-                        <small class="form-text text-muted">Masukkan deskripsi</small>
-                        <!-- error -->
-                        <div id="description_error" class="invalid-feedback">
-                        </div>
-                    </div>
                 </form>
             </div>
             <div class="modal-footer">
@@ -86,13 +78,20 @@
             selectID: "id",
             colModel: [
 
+                // kode
                 {
-                    display: 'Nama Mata Kuliah',
-                    name: 'name',
+                    display: 'Kode',
+                    name: 'code',
                     align: 'left',
                     render: (params, args) => {
-                        return `<span><b>${params}</b></span><br><span>${args.code}</span>`;
+                        return `<span>${params}</span>`;
                     },
+                },
+                {
+                    display: 'Mata Kuliah',
+                    name: 'name',
+                    align: 'left',
+
                 },
                 {
                     display: 'Status',
@@ -113,20 +112,9 @@
                     },
                 },
                 {
-                    display: 'Deskripsi',
-                    name: 'description',
-                    align: 'left',
-                    render: (params, args) => {
-                        return `<span>${params}</span>`;
-                    },
-                },
-                // status online offline
-
-
-                {
                     display: 'Action',
                     name: 'id',
-                    align: 'right',
+                    align: 'center',
                     render(data) {
                         return `
                         <a href="javascript:void(0)" onclick="updateData(${data})" class="btn btn-warning btn-sm">Update</a>
@@ -147,11 +135,6 @@
             searchItems: [{
                     name: "name",
                     title: "Nama Mata Kuliah",
-                    type: "text"
-                },
-                {
-                    name: "description",
-                    title: "Deskripsi",
                     type: "text"
                 },
 
@@ -198,7 +181,6 @@
                 id: current_id,
                 name: $("input[name=name]").val(),
                 code: $("input[name=code]").val(),
-                description: $("textarea[name=description]").val(),
                 sks: $("input[name=sks]").val(),
                 status: $("select[name=status]").val(),
             },
@@ -245,7 +227,6 @@
             $("input[name=code]").val(data.code)
             $("input[name=sks]").val(data.sks)
             $("select[name=status]").val(data.status)
-            $("textarea[name=description]").val(data.description)
 
 
             new bootstrap.Modal(document.getElementById('addUpdateModal')).show()

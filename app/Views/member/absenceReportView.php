@@ -24,32 +24,41 @@
                     align: 'left',
                 },
                 {
-                    display: 'Kelas',
-                    name: 'class',
-                    align: 'left',
-                },
-
-                {
                     display: 'SKS',
                     name: 'sks',
                     align: 'left',
                 },
                 {
-                    display: "Jadwal",
+                    display: 'Kelas',
+                    name: 'class',
+                    align: 'left',
+                },
+
+
+                {
+                    display: "Tanggal",
                     name: "waktu_mulai",
                     align: "left",
                     render: (data, args) => {
-                        return `${data} (jam ${args.waktu_mulai_time} - ${args.waktu_akhir_time})`
+                        return `${data}`
                     }
                 },
                 {
-                    display: 'Kehadiran',
-                    name: 'kehadiran',
+                    display: 'Waktu',
+                    name: 'waktu_mulai_time',
+                    align: 'left',
+                    render: (data, args) => {
+                        return `${data} - ${args.waktu_akhir_time}`
+                    }
+                },
+                {
+                    display: 'Sifat',
+                    name: 'status_courses',
                     align: 'left',
                 },
                 {
-                    display: 'Status Online',
-                    name: 'status_online',
+                    display: 'Status',
+                    name: 'kehadiran',
                     align: 'left',
                 },
 
@@ -79,16 +88,10 @@
                     type: 'text'
                 },
                 {
-                    display: 'Kehadiran',
+                    display: 'Status',
                     name: 'kehadiran',
                     type: 'text'
                 },
-                {
-                    display: 'Status Online',
-                    name: 'status_online',
-                    type: 'text'
-                },
-
 
             ],
             sortName: "scheduled_at",

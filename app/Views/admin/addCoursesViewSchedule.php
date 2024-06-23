@@ -88,36 +88,44 @@
             url: window.location.origin + "/admin/addcourses/get_courses_users/" + "<?= $id ?>",
             selectID: "id",
             colModel: [{
-                    display: 'Nama Mata Kuliah',
+                    display: 'Kode',
                     name: 'code',
                     align: 'left',
 
                 },
                 {
-                    display: 'Nama Mata Kuliah',
+                    display: ' Mata Kuliah',
                     name: 'name',
                     align: 'left',
 
                 },
-                {
-                    display: 'Kelas',
-                    name: 'class',
-                    align: 'left',
 
-                },
+
                 {
                     display: 'SKS',
                     name: 'sks',
                     align: 'left',
 
                 },
-
                 {
-                    display: "Jadwal",
+                    display: 'Status',
+                    name: 'status',
+                    align: 'left',
+                    render: (data) => {
+                        return data == 'O' ? "Optional" : "Wajib"
+                    }
+                },
+                {
+                    display: "Tanggal",
                     name: "scheduled_at",
                     align: "left",
+                },
+                {
+                    display: "Waktu",
+                    name: "scheduled_at_time",
+                    align: "left",
                     render: (data, args) => {
-                        return `${data} (jam ${args.scheduled_at_time} - ${args.expired_at_time})`
+                        return `${data} - ${args.expired_at_time}`
                     }
                 },
                 {
@@ -127,7 +135,6 @@
                     render(data) {
                         return `<a href="javascript:void(0)" onclick="updateData(${data})" class="btn btn-warning btn-sm">Update</a>
                         <a href="javascript:void(0)" onclick="remove(${data})" class="btn btn-danger btn-sm">Hapus</a>
-                        
                         `
                     }
                 }

@@ -80,12 +80,12 @@ class Absence extends BaseController
         $current_datetime = date('Y-m-d H:i:s');
         $tableName = "courses_users";
         $columns = [
+            "courses_users.id" => "id",
             "courses.code" => "kode",
             "courses.name" => "nama_matkul",
-            "studies.class" => "class", // "studies.class" => "class
             "courses.sks" => "sks",
-            // "courses_users.scheduled_at" => "waktu_mulai",
-            // "courses_users.expired_at" => "waktu_akhir",
+            "courses.status" => "status_courses",
+            "studies.class" => "class",
             "DATE(courses_users.scheduled_at)" => "waktu_mulai",
             "TIME(courses_users.scheduled_at)" => "waktu_mulai_time",
             "DATE(courses_users.expired_at)" => "waktu_akhir",
@@ -99,7 +99,6 @@ class Absence extends BaseController
         JOIN studies ON studies.id = courses_users.study_id
         JOIN users ON users.id = courses_users.user_id
         ";
-        // $whereCondition = "user_id = " . session('user')['id'];
         $whereCondition = "courses_users.scheduled_at <= '$current_datetime' AND courses_users.user_id = " . session('user')['id'];
         $groupBy = "";
 
@@ -108,7 +107,6 @@ class Absence extends BaseController
         foreach ($data['results'] as $key => $value) {
             $data['results'][$key]['waktu_mulai'] = $this->convertDatetime($value['waktu_mulai'], 'id');
             $data['results'][$key]['waktu_akhir'] = $this->convertDatetime($value['waktu_akhir'], 'id');
-            // ucfirst status
             $data['results'][$key]['status_online'] = ucfirst($value['status_online']);
         }
 

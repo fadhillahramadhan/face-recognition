@@ -19,14 +19,6 @@
                         <div id="name_error" class="invalid-feedback">
                         </div>
                     </div>
-                    <div class=" mb-3">
-                        <label class="form-label">Kode</label>
-                        <input type="text" name="code" class="form-control">
-                        <small class="form-text text-muted">Masukkan Kode</small>
-                        <!-- error -->
-                        <div id="code_error" class="invalid-feedback">
-                        </div>
-                    </div>
                     <!-- KELAS OPTION A ATAU B -->
                     <div class="mb-3">
                         <label class="form-label d-block">Kelas</label>
@@ -69,7 +61,7 @@
                     name: 'name',
                     align: 'left',
                     render: (params, args) => {
-                        return `<span><b>${params}</b></span><br><span>${args.code}</span>`;
+                        return `<span>${params}</span><br>`;
                     },
                 },
                 {
@@ -84,7 +76,7 @@
                 {
                     display: 'Action',
                     name: 'id',
-                    align: 'right',
+                    align: 'center',
                     render(data) {
                         return `
                         <a href="javascript:void(0)" onclick="updateData(${data})" class="btn btn-warning btn-sm">Update</a>
@@ -156,7 +148,7 @@
             data: {
                 id: current_id,
                 name: $("input[name=name]").val(),
-                code: $("input[name=code]").val(),
+                code: '-',
                 class: $("select[name=class]").val(),
             },
             success: (res) => {
@@ -199,7 +191,6 @@
             let data = res.data
 
             $("input[name=name]").val(data.name)
-            $("input[name=code]").val(data.code)
             $("select[name=class]").val(data.class)
 
 

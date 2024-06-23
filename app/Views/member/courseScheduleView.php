@@ -22,44 +22,45 @@
                     align: 'left',
                 },
                 {
-                    display: 'Nama Matkul',
+                    display: 'Matkul',
                     name: 'name',
                     align: 'left',
 
                 },
-                {
-                    display: 'Kelas',
-                    name: 'class',
-                    align: 'left',
-                },
-                {
-                    display: 'SKS',
-                    name: 'sks',
-                    align: 'left',
-                },
+
 
 
                 // jadwal 
                 {
-                    display: 'Jadwal',
+                    display: 'Tanggal',
                     name: 'scheduled_at',
                     align: 'left',
                     render: (data, args) => {
-                        return `${data} (jam ${args.scheduled_at_time} - ${args.expired_at_time})`
+                        return `${data} `
+                    }
+                },
+                // (jam ${args.scheduled_at_time} - ${args.expired_at_time})
+                // waktu
+                {
+                    display: 'Waktu',
+                    name: 'scheduled_at_time',
+                    align: 'left',
+                    render: (data, args) => {
+                        return `${data} - ${args.expired_at_time}`
                     }
                 },
 
 
                 {
-                    display: 'Absen',
+                    display: 'Presensi',
                     name: 'is_enable',
                     align: 'center',
                     render: (data, args) => {
                         if (data == 1) {
-                            return ` < a href = "<?= base_url() ?>member/absence/add/${args.id}"
-                            class = "btn btn-primary" > Absen < /a>`
+                            return ` <a href="<?= base_url() ?>member/absence/add/${args.id}"
+                            class="btn btn-primary"> Presensi </a>`
                         } else {
-                            return `<button class="btn btn-secondary" disabled>Absen</button>`
+                            return `<button class="btn btn-secondary" disabled>Presensi</button>`
                         }
                     }
                 },
@@ -72,28 +73,10 @@
             search: true,
             searchTitle: "Pencarian",
             searchItems: [{
-                    display: 'Nama Matkul',
-                    name: 'name',
-                    type: 'text'
-                },
-                {
-                    display: 'Deskripsi',
-                    name: 'description',
-                    type: 'text'
-                },
-                {
-                    display: 'Jadwal',
-                    name: 'scheduled_at',
-                    type: 'date'
-                },
-                {
-                    display: 'Jadwal Berakhir',
-                    name: 'expired_at',
-                    type: 'date'
-                },
-
-
-            ],
+                display: 'Nama Matkul',
+                name: 'name',
+                type: 'text'
+            }, ],
             sortName: "scheduled_at",
             sortOrder: "DESC",
             tableIsResponsive: true,

@@ -33,8 +33,9 @@ class Course extends BaseController
             "courses.name" => "name",
             "courses.code" => "code",
             "studies.class" => "class",
-            "courses.description" => "description",
             "courses.sks" => "sks",
+            'scheduled_at' => 'scheduled_at_the_time',
+            'expired_at' => 'expired_at_the_time',
             "DATE(courses_users.scheduled_at)" => "scheduled_at",
             "TIME(courses_users.scheduled_at)" => "scheduled_at_time",
             "DATE(courses_users.expired_at)" => "expired_at",
@@ -52,7 +53,7 @@ class Course extends BaseController
 
 
         foreach ($data['results'] as $key => $value) {
-            $data['results'][$key]['is_enable'] = $this->isEnable($value['id'], $value['scheduled_at'], $value['expired_at']);
+            $data['results'][$key]['is_enable'] = $this->isEnable($value['id'], $value['scheduled_at_the_time'], $value['expired_at_the_time']);
 
             $data['results'][$key]['scheduled_at'] = $this->convertDatetime($value['scheduled_at'], 'id');
             $data['results'][$key]['expired_at'] = $this->convertDatetime($value['expired_at'], 'id');

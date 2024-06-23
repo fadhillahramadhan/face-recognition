@@ -94,11 +94,6 @@
                         return data == null || data == '' ? '-' : data
                     }
                 },
-
-
-
-
-                // edit
                 {
                     display: 'Action',
                     name: 'id',
@@ -113,8 +108,6 @@
                         `
                     }
                 }
-
-
             ],
             options: {
                 limit: [10, 15, 20, 50, 100],
@@ -144,16 +137,7 @@
             tableIsResponsive: true,
             select: false,
             multiSelect: false,
-            buttonAction: [
-                // {
-                //     display: 'Hapus',
-                //     icon: 'ti ti-trash',
-                //     message: "Hapus",
-                //     style: "danger",
-                //     action: "remove",
-                //     url: window.location.origin + "/admin/user/delete_users"
-                // },
-                {
+            buttonAction: [{
                     display: 'Tambah',
                     icon: 'ti ti-plus',
                     style: "info",

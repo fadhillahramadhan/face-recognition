@@ -1,5 +1,33 @@
 <?= $this->section('content') ?>
 
+<!-- date picker pilih tgl s/d  tgl -->
+<div class="row">
+    <div class="col-md-12">
+        <div class="card">
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-md-3">
+                        <div class="form-group
+                            ">
+                            <input type="date" class="form-control" id="start_date" value="<?= $start_date_of_this_month ?>" name="start_date" required>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="form-group
+                            ">
+                            <input type="date" class="form-control" value="<?= $end_date_of_this_month ?>" id="end_date" name="end_date" required>
+                        </div>
+                    </div>
+                    <div class="col-md-3 d-flex align-items-end">
+                        <button onclick="getTable($('#start_date').val(), $('#end_date').val())" class="btn btn-primary">Submit</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+<!-- end date picker pilih tgl s/d  tgl -->
 <div id="table"></div>
 
 <?= $this->endSection() ?>
@@ -7,36 +35,16 @@
 <?= $this->section('script') ?>
 <script>
     $(document).ready(() => {
-        getTable()
+        getTable('<?= $start_date_of_this_month ?>', '<?= $end_date_of_this_month ?>')
     })
-    getTable = () => {
+    getTable = (start_date = null, end_date = null) => {
         $("#table").dataTableLib({
-            url: window.location.origin + "/admin/absence/get_absence",
+            url: window.location.origin + "/admin/absence/get_absence/" + start_date + "/" + end_date,
             selectID: "id",
             colModel: [{
-                    display: 'Tahun',
-                    name: 'tahun',
-                    align: 'left',
-                    // render bolds
-                    render: (data) => {
-                        return `<b>${data}</b>`
-                    }
-                },
-                {
-                    display: 'Bulan',
-                    name: 'bulan',
-                    align: 'left',
-                    // render bold
-                    render: (data) => {
-                        return `${data}`
-                    }
-                },
-
-                {
                     display: 'Nama Dosen',
                     name: 'nama',
                     align: 'left',
-
                 },
                 {
                     display: 'Kode',
@@ -116,65 +124,6 @@
             search: true,
             searchTitle: "Pencarian",
             searchItems: [{
-                    display: 'Tahun',
-                    name: 'tahun',
-                    type: 'text'
-                },
-                {
-                    display: 'Bulan',
-                    name: 'bulan',
-                    type: 'select',
-                    option: [{
-                            title: 'Januari',
-                            value: '1'
-                        },
-                        {
-                            title: 'Februari',
-                            value: '2'
-                        },
-                        {
-                            title: 'Maret',
-                            value: '3'
-                        },
-                        {
-                            title: 'April',
-                            value: '4'
-                        },
-                        {
-                            title: 'Mei',
-                            value: '5'
-                        },
-                        {
-                            title: 'Juni',
-                            value: '6'
-                        },
-                        {
-                            title: 'Juli',
-                            value: '7'
-                        },
-                        {
-                            title: 'Agustus',
-                            value: '8'
-                        },
-                        {
-                            title: 'September',
-                            value: '9'
-                        },
-                        {
-                            title: 'Oktober',
-                            value: '10'
-                        },
-                        {
-                            title: 'November',
-                            value: '11'
-                        },
-                        {
-                            title: 'Desember',
-                            value: '12'
-                        }
-                    ]
-                },
-                {
                     display: 'Nama Dosen',
                     name: 'nama',
                     type: 'text'
@@ -188,7 +137,60 @@
             tableIsResponsive: true,
             select: false,
             multiSelect: false,
-            buttonAction: [],
+            buttonAction: [{
+                display: 'Print PDF',
+                icon: 'bx bx-plus',
+                style: "info",
+                action: "exportPdf",
+                title: "Laporan Rekapitulasi Absensi",
+                subtitle: "Tanggal " + start_date + " s/d " + end_date,
+                headers: [{
+                        title: "Nama Dosen",
+                        key: "nama"
+                    },
+                    {
+                        title: "Kode",
+                        key: "kode"
+                    },
+                    {
+                        title: "Matkul",
+                        key: "nama_matkul"
+                    },
+                    {
+                        title: "SKS",
+                        key: "sks"
+                    },
+                    {
+                        title: "Sifat",
+                        key: "status"
+                    },
+                    {
+                        title: "Kelas",
+                        key: "kelas"
+                    },
+                    {
+                        title: "Prodi",
+                        key: "jurusan"
+                    },
+                    {
+                        title: "Hadir",
+                        key: "total_hadir"
+                    },
+                    {
+                        title: "Tidak Hadir",
+                        key: "total_tidak_hadir"
+                    },
+                    {
+                        title: "Online",
+                        key: "total_online"
+                    },
+                    {
+                        title: "Offline",
+                        key: "total_offline"
+                    },
+
+                ]
+            }],
             success: (res) => {
                 data = res.data.results
 

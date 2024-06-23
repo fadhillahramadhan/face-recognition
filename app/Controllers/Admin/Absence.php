@@ -12,6 +12,9 @@ class Absence extends BaseController
 {
     public function index()
     {
+        $start_date_of_this_month = date('Y-m-01');
+        $end_date_of_this_month = date('Y-m-t');
+
         $breadcumbs = [
             'Laporan' => [
                 'active' => false,
@@ -24,16 +27,16 @@ class Absence extends BaseController
         ];
         return view('admin/absenceReportView', [
             'breadcumbs' => $breadcumbs,
+            'start_date_of_this_month' => $start_date_of_this_month,
+            'end_date_of_this_month' => $end_date_of_this_month
         ]);
     }
 
-    public function get_absence()
+    public function get_absence($start_date = null, $end_date = null)
     {
         $current_datetime = date('Y-m-d H:i:s');
         $tableName = "courses_users";
         $columns = [
-            "MONTH(courses_users.scheduled_at)" => "bulan",
-            "YEAR(courses_users.scheduled_at)" => "tahun",
             "users.name" => "nama",
             "courses.code" => "kode",
             "courses.name" => "nama_matkul",
@@ -54,8 +57,12 @@ class Absence extends BaseController
         JOIN users ON users.id = courses_users.user_id
         ";
         $whereCondition = "courses_users.scheduled_at <= '$current_datetime'";
-        $groupBy = "GROUP BY MONTH(courses_users.scheduled_at), 
-        YEAR(courses_users.scheduled_at), 
+
+        if ($start_date != null && $end_date != null) {
+            $whereCondition .= " AND courses_users.scheduled_at BETWEEN '$start_date 00:00:00' AND '$end_date 23:59:59'";
+        }
+
+        $groupBy = "GROUP BY 
         courses_users.user_id, 
         courses_users.course_id, 
         courses_users.study_id
@@ -64,10 +71,10 @@ class Absence extends BaseController
         $data = $this->dataTable->getListDataTable($this->request, $tableName, $columns, $joinTable, $whereCondition, $groupBy);
 
 
-        // get last query
-        foreach ($data['results'] as $key => $value) {
-            $data['results'][$key]['bulan'] = $this->convertMonth($value['bulan']);
-        }
+
+        // foreach ($data['results'] as $key => $value) {
+        //     $data['results'][$key]['date'] = $this->convertDate($value['date']);
+        // }
 
         $this->rest->responseSuccess("Data Courses", $data);
     }

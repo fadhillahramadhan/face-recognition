@@ -36,7 +36,6 @@ class Courses extends BaseController
             "courses.code" => "code", // add this line
             "courses.sks" => "sks",
             "courses.status" => "status",
-            "courses.description" => "description",
         ];
         $joinTable = "";
         $whereCondition = "";
@@ -89,7 +88,6 @@ class Courses extends BaseController
             $model = new CoursesModel();
             $data = [
                 'name' => $this->request->getPost('name'),
-                'description' => $this->request->getPost('description'),
                 'code' => $this->request->getPost('code'), // add this line
                 'sks' => $this->request->getPost('sks') ?? 0,
                 'status' => $this->request->getPost('status') ?? 'offline',
@@ -139,7 +137,6 @@ class Courses extends BaseController
             $model = new CoursesModel();
             $data = [
                 'name' => $this->request->getPost('name'),
-                'description' => $this->request->getPost('description'),
                 'code' => $this->request->getPost('code'), // add this line
                 'sks' => $this->request->getPost('sks') ?? 0,
                 'status' => $this->request->getPost('status') ?? 'offline',
