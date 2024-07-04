@@ -118,11 +118,19 @@ class Absence extends BaseController
 
     public function presence()
     {
+        // get current user
+        $user = new UserModel();
+        $user = $user->where('email', session('user')['email'])->first();
+
+        if (!$user) {
+            return  $this->rest->responseFailed("Photo tidak ditemukan");
+        }
+
         $courses_user = new CoursesUsersModel();
         $courses_user = $courses_user->where('id', session('absence_id'))->first();
 
         if (!$courses_user) {
-            $this->rest->responseFailed("Data not found");
+            return $this->rest->responseFailed("Data not found");
         }
 
 
